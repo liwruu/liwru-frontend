@@ -1,0 +1,11 @@
+.link-button__link {
+    inset: 0;
+    text-decoration: none;
+    color: inherit;
+}
+
+.link-button__button {
+    width: 250px;
+    height: 50px;
+    font-family: 'Poppins', sans-serif;
+}

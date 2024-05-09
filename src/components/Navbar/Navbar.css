@@ -1,0 +1,60 @@
+.nav {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    height: 90px;
+    box-shadow: 0 1px 4px rgba(0, 0 , 0, 0.25);
+}
+
+.nav__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav__logo__icon {
+    width: 30px;
+}
+
+.nav__logo__title {
+    margin-left: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.4rem;
+}
+
+.nav__search-bar {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    width: 30vw;
+    height: 100%;
+    box-shadow: 0 0 5px rgba(0, 0 , 0, 0.5);
+}
+
+.nav__search-bar__input {
+    padding: 0 10px;
+    width: 100%;
+    height: 100%;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav__search-bar__input:focus {
+    outline: none;
+}
+
+.nav__search-bar__button {
+    width: 50px;
+    height: 100%;
+    border: none;
+    background: transparent;
+}
+
+.nav__search-bar__button__icon {
+    max-width: 50%;
+    opacity: 0.5;
+}

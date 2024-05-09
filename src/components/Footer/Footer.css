@@ -1,0 +1,20 @@
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+    height: 90px;
+    box-shadow: 0 -1px 4px rgba(0, 0 , 0, 0.25);
+}
+
+.footer__ulima-logo {
+    width: 183.5px; /* (imageWidth/imageHeight) * desiredHeight */
+    height: 100%;
+}
+
+.footer__sap-logo {
+    padding: 0 9px;
+    width: 128px; /* (imageWidth/imageHeight) * desiredHeight */
+    height: 100%;
+}

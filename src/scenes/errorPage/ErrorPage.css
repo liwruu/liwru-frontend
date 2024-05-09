@@ -1,0 +1,27 @@
+.error-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    min-height: 100vh;
+}
+
+.error-page__error__code {
+    display: inline;
+    font-size: 6rem;
+}
+
+.error-page__error__description {
+    display: inline;
+    font-size: 3rem;
+}
+
+.error-page__link-button__link {
+    width: 235px;
+    height: 45px;
+}
+
+.error-page__link-button__button {
+    font-size: 0.9rem;
+}

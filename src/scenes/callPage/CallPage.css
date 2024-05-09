@@ -1,0 +1,42 @@
+.call-page {
+    padding: 20px;
+    width: 950px;
+}
+
+.call-page__call__image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.call-page__call__category {
+    font-size: 0.8rem;
+}
+
+.call-page__call__title {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.call-page__call__description {
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+.call-page__call__deadline {
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+.call-page__call--state-unavailable
+.call-page__call__deadline {
+    color: red;
+}
+
+@media (max-width: 1000px) {
+    .call-page {
+        width: 100%;
+    }
+}
