@@ -6,8 +6,21 @@ import Layout from './components/Layout/Layout';
 import SearchPage from './scenes/searchPage/main/SearchPage';
 import AdminHomePage from './scenes/adminHomePage/AdminHomePage';
 import './App.css';
+import ConfigUser from './components/ConfigUser/ConfigUser';
 
 const router = createBrowserRouter([
+    {
+        path: '/login',
+        element: <LoginPage />,
+    },
+    {
+        path: '/register',
+        element: <RegisterPage />,
+    },
+    {
+        path: '/update_pwd',
+        element: <UpdatePwdPage />,
+    },
     {
         element: <Layout />,
         children: [
@@ -22,10 +35,6 @@ const router = createBrowserRouter([
             {
                 path: '/callPage/:callId',
                 element: <CallPage />
-            },
-            {
-                path: '/adminPage/',
-                element:<AdminHomePage />
             }
         ],
         errorElement: <ErrorPage />
