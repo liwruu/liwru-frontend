@@ -1,0 +1,61 @@
+.reservas-principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo para el contenedor de la búsqueda */
+.busqueda-reservas {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+/* Estilo para el input de búsqueda */
+.busqueda-reservas input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+/* Estilo para el botón de búsqueda */
+.busqueda-reservas button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #d81818;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+/* Estilo para los contenedores de reservas activas y pasadas */
+.reservas-activas,
+.reservas-pasadas {
+    width: 80%;
+    max-width: 800px;
+    margin-bottom: 20px;
+}
+
+.reservas-activas h2,
+.reservas-pasadas h2 {
+    margin-bottom: 10px;
+}
+
+/* Estilo para cada reserva */
+.reserva {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+}
+
+.reserva p {
+    margin: 5px 0;
+}
