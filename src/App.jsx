@@ -1,9 +1,12 @@
-import {createBrowserRouter, RouterProvider} from 'react-router-dom';
+import React from 'react';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import CallPage from './scenes/callPage/CallPage';
 import ErrorPage from './scenes/errorPage/ErrorPage';
 import HomePage from './scenes/homePage/main/HomePage';
 import Layout from './components/Layout/Layout';
 import SearchPage from './scenes/searchPage/main/SearchPage';
+import ReservationMadePage from './scenes/reservationMadePage/ReservationMadePage'; // Corregido el nombre de la carpeta en la ruta de importación
+
 import './App.css';
 
 const router = createBrowserRouter([
@@ -21,6 +24,10 @@ const router = createBrowserRouter([
             {
                 path: '/callPage/:callId',
                 element: <CallPage />
+            },
+            {
+                path: '/reservationMadePage/',
+                element: <ReservationMadePage />
             }
         ],
         errorElement: <ErrorPage />
