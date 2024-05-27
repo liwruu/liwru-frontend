@@ -35,7 +35,7 @@ export default function HeaderAdmin() {
     }
 
     return (
-        <nav className='headeradmin'>
+        <header className='headeradmin'>
             <Link className='nav__logo' onClick={handleClear}>
                 <img className='nav__logo__icon' src={logo_icon} />
                 <h1 className='nav__logo__title'>liwru</h1>
@@ -83,6 +83,6 @@ export default function HeaderAdmin() {
                     My Account
                 </button>
             </div>
-        </nav>
+        </header>
     );
 }

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link,useNavigate } from "react-router-dom";
-import './AdminHome.css';
+import './AdminHomePage.css';
 import HeaderAdmin from "../../components/HeaderAdmin/HeaderAdmin";
 
 export default function AdminHomePage() {
@@ -42,7 +42,6 @@ export default function AdminHomePage() {
 
     return(
         <div className="adminPrincipal">
-            <HeaderAdmin />
             <div className="adminlist">
                 <ul className='elements'>
                     <li onClick={handleAddBook}>Agregar Material </li>

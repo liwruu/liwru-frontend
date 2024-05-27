@@ -13,7 +13,7 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <AdminHomePage />,
+                element: <HomePage />,
             },
             {
                 path: '/searchPage/:searchQuery',
@@ -23,6 +23,10 @@ const router = createBrowserRouter([
                 path: '/callPage/:callId',
                 element: <CallPage />
             },
+            {
+                path: '/adminPage/',
+                element:<AdminHomePage />
+            }
         ],
         errorElement: <ErrorPage />
     }
