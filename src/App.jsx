@@ -24,9 +24,10 @@ const router = createBrowserRouter([
                 element: <CallPage />
             },
             {
-            path: '/categories',
-            element: <CategoriesPage />,
-            }
+                path: '/categories',
+                element: <CategoriesPage />
+            },
+            
         ],
         errorElement: <ErrorPage />
     }

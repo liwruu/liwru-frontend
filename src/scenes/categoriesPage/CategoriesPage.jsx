@@ -1,19 +1,46 @@
-import LinkButton from '../../components/LinkButton/LinkButton';
-import './CategoriesPage.css';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import products from '../../assets/data/products'; 
+import './CategoriesPage.css'; 
 
-export default function categoriesPage() {
-    return (
-        <div className="book-category">
-          {/* Enlace a la página de la categoría de libros */}
-          <Link to={`/categories/${category.id}`} className="book-category__link">
-            {/* Visualización de la categoría de libros */}
-            <div className="book-category__content">
-              {/* Imagen de la categoría de libros */}
-              <img src={category.imageUrl} alt={category.name} className="book-category__image" />
-              {/* Nombre de la categoría */}
-              <h2 className="book-category__name">{category.name}</h2>
-            </div>
-          </Link>
-        </div>
-      );
+export default function Categories() {
+  // Estado para almacenar la categoría seleccionada
+  const [selectedCategory, setSelectedCategory] = useState("all");
+
+  // Función para manejar el cambio de categoría
+  const handleCategoryClick = (category) => {
+    setSelectedCategory(category);
+  };
+
+  // Filtrar productos basados en la categoría seleccionada
+  const filteredProducts = selectedCategory === "all" ? products : products.filter(product => product.category === selectedCategory);
+
+  return (
+    <div className="categories-container">
+      {/* Botones de categoría */}
+      <div className="category_list">
+        <button className="category-item" onClick={() => handleCategoryClick("all")}>Todo</button>
+        <button className="category-item" onClick={() => handleCategoryClick("historia")}>Historia</button>
+        <button className="category-item" onClick={() => handleCategoryClick("literatura")}>Literatura</button>
+        <button className="category-item" onClick={() => handleCategoryClick("cienciaficcion")}>Ciencia Ficción</button>
+        <button className="category-item" onClick={() => handleCategoryClick("clasicos")}>Clásicos</button>
+        <button className="category-item" onClick={() => handleCategoryClick("materialuniversitario")}>Material Universitario</button>
+      </div>
+      {/* Lista de productos */}
+      <section className="products-list">
+        {filteredProducts.map((product, index) => (
+          <div className="product-item" key={index}>
+            <Link to={`/products/${product.name}`} className="product-link">
+              <img src={product.image} alt={product.name} className="product-image" />
+              <h2 className="product-title">{product.name}</h2>
+              <span className="product-description">{product.description}</span>
+              <span className={`product-availability ${product.available ? 'available' : 'not-available'}`}>
+                {product.available ? 'Disponible' : 'No disponible'}
+              </span>
+            </Link>
+          </div>
+        ))}
+      </section>
+    </div>
+  );
 }
