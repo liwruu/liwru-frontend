@@ -5,7 +5,8 @@ import ErrorPage from './scenes/errorPage/ErrorPage';
 import HomePage from './scenes/homePage/main/HomePage';
 import Layout from './components/Layout/Layout';
 import SearchPage from './scenes/searchPage/main/SearchPage';
-import ReservationMadePage from './scenes/reservationMadePage/ReservationMadePage'; // Corregido el nombre de la carpeta en la ruta de importación
+import ReservationMadePage from './scenes/reservationMadePage/ReservationMadePage';
+import DescPage from './scenes/DescPage/DescPage';
 
 import './App.css';
 
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
             {
                 path: '/reservationMadePage/',
                 element: <ReservationMadePage />
+            },
+            {
+                path: '/DescPage/',
+                element: <DescPage />
             }
         ],
         errorElement: <ErrorPage />
