@@ -7,7 +7,6 @@ module.exports = (sequelize, DataTypes) => {
     renewalDate: DataTypes.DATE
   }, {});
   Loan.associate = function (models) {
-    // associations can be defined here
   };
   return Loan;
 };
