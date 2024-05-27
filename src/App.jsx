@@ -4,6 +4,7 @@ import ErrorPage from './scenes/errorPage/ErrorPage';
 import HomePage from './scenes/homePage/main/HomePage';
 import Layout from './components/Layout/Layout';
 import SearchPage from './scenes/searchPage/main/SearchPage';
+import AdminHomePage from './scenes/adminHomePage/AdminHomePage';
 import './App.css';
 
 const router = createBrowserRouter([
@@ -12,7 +13,7 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <HomePage />,
+                element: <AdminHomePage />,
             },
             {
                 path: '/searchPage/:searchQuery',
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
             {
                 path: '/callPage/:callId',
                 element: <CallPage />
-            }
+            },
         ],
         errorElement: <ErrorPage />
     }
