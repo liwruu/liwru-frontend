@@ -23,9 +23,12 @@ export default function Navbar() {
     return (
         <nav className='nav'>
             <Link className='nav__logo' onClick={handleClear}>
-                <img className='nav__logo__icon' src={logo_icon} />
+                <img className='nav__logo__icon' src={logo_icon} alt="Logo" />
                 <h1 className='nav__logo__title'>liwru</h1>
             </Link>
+            <div className='nav__links'>
+                <Link className='nav__link' to='/categories'>Categorías</Link>
+            </div>
             <div className='nav__search-bar'>
                 <input
                     className='nav__search-bar__input'

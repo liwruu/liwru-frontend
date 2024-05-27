@@ -4,6 +4,7 @@ import ErrorPage from './scenes/errorPage/ErrorPage';
 import HomePage from './scenes/homePage/main/HomePage';
 import Layout from './components/Layout/Layout';
 import SearchPage from './scenes/searchPage/main/SearchPage';
+import CategoriesPage from './scenes/categoriesPage/CategoriesPage';
 import './App.css';
 
 const router = createBrowserRouter([
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
             {
                 path: '/callPage/:callId',
                 element: <CallPage />
+            },
+            {
+            path: '/categories',
+            element: <CategoriesPage />,
             }
         ],
         errorElement: <ErrorPage />

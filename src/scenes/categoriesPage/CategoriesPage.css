@@ -1,0 +1,39 @@
+/* categoriesPage.css */
+
+/* Estilos para el contenedor de la categoría de libros */
+.book-category {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  /* Estilos para el enlace a la página de la categoría de libros */
+  .book-category__link {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  /* Estilos para el contenido de la categoría de libros */
+  .book-category__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Estilos para la imagen de la categoría de libros */
+  .book-category__image {
+    width: 150px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  /* Estilos para el nombre de la categoría */
+  .book-category__name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+  }
