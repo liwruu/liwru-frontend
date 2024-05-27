@@ -4,6 +4,7 @@ import ErrorPage from './scenes/errorPage/ErrorPage';
 import HomePage from './scenes/homePage/main/HomePage';
 import Layout from './components/Layout/Layout';
 import SearchPage from './scenes/searchPage/main/SearchPage';
+import AdminHomePage from './scenes/adminHomePage/AdminHomePage';
 import './App.css';
 import ConfigUser from './components/ConfigUser/ConfigUser';
 
@@ -34,14 +35,6 @@ const router = createBrowserRouter([
             {
                 path: '/callPage/:callId',
                 element: <CallPage />
-            },
-            {
-                path: '/reserved-list-admin/',
-                element: <ReservedListPage />
-            },
-            {
-                path: '/configUser/:username',
-                element:<ConfigUser />
             }
         ],
         errorElement: <ErrorPage />

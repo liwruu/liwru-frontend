@@ -1,0 +1,77 @@
+/* Estilo para el contenedor de la barra de navegación */
+.headeradmin {
+    background-color: red; /* Fondo rojo para el nav */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+/* Estilo para el logo */
+.nav__logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.nav__logo__icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.nav__logo__title {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Estilo para los botones de navegación */
+.nav_buttons button {
+    background-color: white; /* Botones blancos */
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Estilo para el contenedor de búsqueda */
+.nav__search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.nav__search-bar__input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    font-size: 16px;
+}
+
+.nav__search-bar__button {
+    background-color: white; /* Botón blanco */
+    border: none;
+    padding: 10px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.nav__search-bar__button__icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Estilo para el botón de cuenta */
+.AccountButton .myAccountButton {
+    background-color: white; /* Botón blanco */
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
