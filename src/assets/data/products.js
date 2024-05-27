@@ -5,6 +5,7 @@ const products = [
         category: "historia", 
         image: "https://www.planetadelibros.com.pe/usuaris/libros/fotos/293/m_libros/292053_portada_el-arte-de-la-guerra_sun-tzu_202310231045.jpg", 
         description: "Un antiguo tratado militar chino lleno de sabiduría sobre estrategia y táctica que ha influido en diversos campos durante siglos." ,
+        additionalDescription: " Una obra maestra del estratega militar Sun Tzu, se suma a una colección de valiosos libros, cada uno cargado de su propio poder e influencia. Este antiguo tratado chino, lleno de sabiduría sobre estrategia y táctica, ha resonado a lo largo de los siglos, trascendiendo el ámbito militar para convertirse en una guía fundamental en la toma de decisiones estratégicas en diversos aspectos de la vida. Su enfoque meticuloso y perspicaz en la planificación, la adaptación y el conocimiento del enemigo y de uno mismo, brinda lecciones atemporales que trascienden las batallas físicas para aplicarse en los desafíos cotidianos y las empresas más importantes.Sun Tzu, con su profunda comprensión de los principios fundamentales de la estrategia, nos invita a reflexionar sobre la naturaleza  de la competencia y la confrontación, y nos muestra el camino hacia la victoria con sabiduría y claridad.",
         available: true
     },
     { 
