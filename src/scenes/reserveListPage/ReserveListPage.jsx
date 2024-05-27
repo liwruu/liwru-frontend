@@ -1,6 +1,6 @@
 import ReservedList from "../../components/ReservedList/ReservedList";
 
-export default function ReservedList() {
+export default function ReservedListPage() {
     return(
         <div>
             <ReservedList />

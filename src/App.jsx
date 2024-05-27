@@ -6,6 +6,7 @@ import Layout from './components/Layout/Layout';
 import SearchPage from './scenes/searchPage/main/SearchPage';
 import ReservedListPage from './scenes/reserveListPage/ReserveListPage';
 import './App.css';
+import ConfigUser from './components/ConfigUser/ConfigUser';
 
 const router = createBrowserRouter([
     {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
             {
                 path: '/reserved-list-admin/',
                 element: <ReservedListPage />
+            },
+            {
+                path: '/configUser/:username',
+                element:<ConfigUser />
             }
         ],
         errorElement: <ErrorPage />
