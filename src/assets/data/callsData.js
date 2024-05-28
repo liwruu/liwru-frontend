@@ -29,7 +29,7 @@ export default [
                 Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
                 Curabitur est dolor, dapibus quis suscipit vitae, tincidunt ut leo. Mauris a risus ac lacus volutpat fringilla.
                 Nulla ac eros eu sem accumsan sollicitudin eu at lacus. Donec ultrices pellentesque rhoncus. Curabitur vehicula facilisis malesuada.
-                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Quisque placerat et mi in vehicula.
+                Vestibulum ante ipsum primis ian faucibus orci luctus et ultrices posuere cubilia curae; Quisque placerat et mi in vehicula.
                 Fusce volutpat bibendum ex, sed tincidunt arcu aliquam non. Nunc fermentum lacus ipsum, a posuere metus tempor nec.
                 Vestibulum id urna sed velit ultrices porta varius sed libero.`,
             deadline: '29 de febrero de 2024',
