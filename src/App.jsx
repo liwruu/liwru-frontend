@@ -10,6 +10,8 @@ import UpdatePwdPage from './scenes/updatePwdPage/UpdatePwdPage';
 import AdminHomePage from './scenes/adminHomePage/AdminHomePage';
 import './App.css';
 import ConfigUser from './components/ConfigUser/ConfigUser';
+import ReservationMadePage from './scenes/reservationMadePage/ReservationMadePage';
+import DescPage from './scenes/DescPage/DescPage';
 
 const router = createBrowserRouter([
     {
@@ -38,6 +40,14 @@ const router = createBrowserRouter([
             {
                 path: '/callPage/:callId',
                 element: <CallPage />
+            },
+            {
+                path: '/reservationMadePage/',
+                element: <ReservationMadePage />
+            },
+            {
+                path: '/DescPage/',
+                element: <DescPage />
             }
         ],
         errorElement: <ErrorPage />
