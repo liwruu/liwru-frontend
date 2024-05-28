@@ -15,7 +15,7 @@ import DescPage from './scenes/DescPage/DescPage';
 
 const router = createBrowserRouter([
     {
-        path: '/login',
+        path: '/',
         element: <LoginPage />,
     },
     {

@@ -30,8 +30,8 @@ export default function RegisterPage() {
                     placeholder='family name'
                 />
                 <span className='register-page__right-panel__label'>By signing up, you agree to out terms of service and privacy policy.</span>
-                <button className='register-page__right-panel__button' onClick={() => navigate('/login')}>sign up</button>
-                <Link className='register-page__right-panel__register' to='/login'>Log in instead</Link>
+                <button className='register-page__right-panel__button' onClick={() => navigate('/')}>sign up</button>
+                <Link className='register-page__right-panel__register' to='/'>Log in instead</Link>
             </div>
         </main>
     );

@@ -26,8 +26,8 @@ export default function UpdatePwdPage() {
                     placeholder='repeat password'
                 />
                 <span className='update-pwd-page__right-panel__label'>Your password should contain at least one capital letter and one number.</span>
-                <button className='update-pwd-page__right-panel__button' onClick={() => navigate('/login')}>update password</button>
-                <Link className='update-pwd-page__right-panel__register' to='/login'>Log in instead</Link>
+                <button className='update-pwd-page__right-panel__button' onClick={() => navigate('/')}>update password</button>
+                <Link className='update-pwd-page__right-panel__register' to='/'>Log in instead</Link>
             </div>
         </main>
     );
