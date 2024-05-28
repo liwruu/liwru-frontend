@@ -10,7 +10,7 @@ export default function ErrorPage() {
             </div>
             <p className='error-page__message'>¡Ups! Parece que algo salió mal. Estamos trabajando para solucionarlo.</p>
             <LinkButton
-                to='/'
+                to='/homePage'
                 linkClassName='error-page__link-button__link'
                 buttonClassName='error-page__link-button__button'
             >

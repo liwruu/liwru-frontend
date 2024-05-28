@@ -21,14 +21,14 @@ const router = createBrowserRouter([
         element: <RegisterPage />,
     },
     {
-        path: '/update_pwd',
+        path: '/updatePwd',
         element: <UpdatePwdPage />,
     },
     {
         element: <Layout />,
         children: [
             {
-                path: '/',
+                path: '/homePage',
                 element: <HomePage />,
             },
             {

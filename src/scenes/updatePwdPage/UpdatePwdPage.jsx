@@ -1,8 +1,10 @@
 import './UpdatePwdPage.css'
 import background from '../../assets/images/background.jpg'
 import logo from '../../assets/images/liwru-logo.png'
+import {Link, useNavigate} from 'react-router-dom';
 
 export default function UpdatePwdPage() {
+    const navigate = useNavigate();
     return (
         <main className='update-pwd-page'>
             <div className='update-pwd-page__left-panel'>
@@ -24,8 +26,8 @@ export default function UpdatePwdPage() {
                     placeholder='repeat password'
                 />
                 <span className='update-pwd-page__right-panel__label'>Your password should contain at least one capital letter and one number.</span>
-                <button className='update-pwd-page__right-panel__button'>update password</button>
-                <span className='update-pwd-page__right-panel__register'>Log in instead</span>
+                <button className='update-pwd-page__right-panel__button' onClick={() => navigate('/login')}>update password</button>
+                <Link className='update-pwd-page__right-panel__register' to='/login'>Log in instead</Link>
             </div>
         </main>
     );
