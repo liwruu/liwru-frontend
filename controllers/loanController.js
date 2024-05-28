@@ -7,9 +7,9 @@ exports.renewLoan = async (req, res) => {
         if (loan) {
             res.status(200).json(loan);
         } else {
-            res.status(404).json({ error: 'Loan not found' });
+            res.status(404).json({ error: 'Prestamo no encontrado' });
         }
     } catch (error) {
-        res.status(500).json({ error: 'An error occurred while renewing the loan' });
+        res.status(500).json({ error: 'Ocurrio un error en la renovacion del prestamo' });
     }
 };
