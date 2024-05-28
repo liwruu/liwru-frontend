@@ -27,6 +27,10 @@ export default function DetailPage() {
         </div>
         <div className="product-details">
           <h2 className="product-title">{product.name}</h2>
+<<<<<<< HEAD
+=======
+          <p className="product-author">Autor: {product.author}</p> {/* Mostrar el autor */}
+>>>>>>> feature/categories
           <span className="product-description">{product.description}</span>
           <span className="product-availability">
             {product.available ? 'Disponible' : 'No disponible'}

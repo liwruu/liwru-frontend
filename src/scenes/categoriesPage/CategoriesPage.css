@@ -120,7 +120,11 @@ body {
   margin: 0 10px; /* Añadir margen a los lados para separar los botones */
   padding: 8px 16px;
   font-size: 16px;
+<<<<<<< HEAD
   background-color: #dfac7d;
+=======
+  background-color: #cf8282;
+>>>>>>> feature/categories
   color: white;
   border: none;
   border-radius: 5px;
@@ -174,11 +178,20 @@ body {
 .products-list .product-item a {
   display: block;
   width: 100%;
+<<<<<<< HEAD
   padding: 20px 10px 16px;
   background: #ecad64;
   color: #fff;
   text-align: center;
   text-decoration: none;
+=======
+  padding: 18px 10px; /* Ajuste del padding */
+  background: #cf8282;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1.5; /* Centrar el texto verticalmente */
+>>>>>>> feature/categories
 }
 
 /* RESPONSIVE */

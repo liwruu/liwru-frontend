@@ -1,32 +1,29 @@
 export default [
     [
-        'Proyectos de investigación básica',
-        'Proyectos de investigación aplicada'
+        'Clásicos de la Literatura',
+        'Más Solicitados'
     ],
     [
         {
             id: 1,
-            type: 'Proyectos de investigación básica',
-            category: 'Arquitectura',
-            title: 'Prociencia básica 1',
+            type: 'Clásicos de la Literatura',
+            category: 'novela juvenil',
+            title: 'Capitán Fush',
             description: 
-                `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla hendrerit dignissim leo, in dictum neque tincidunt non.
-                Fusce venenatis pharetra turpis id congue. Suspendisse potenti. Sed vitae pulvinar sem, consequat consequat leo. Sed eget ex sapien.
-                Nullam vel maximus enim, eget mollis nisl. In pretium, quam pharetra tempus tempor, mi risus blandit eros, in interdum nunc tellus nec nisi.
-                Morbi blandit, ligula sit amet fringilla commodo, metus ligula aliquam justo, nec commodo lectus nisl sed lacus.
-                Sed vel leo quis odio porta auctor vel eget tellus. Sed tempus nunc ac dui faucibus, id condimentum urna pharetra.
-                Mauris fermentum rhoncus lectus, sed pretium quam iaculis vel. Sed venenatis elit libero, ut porttitor nisl bibendum vel.
-                Nulla ultrices lacus eget ipsum hendrerit, in interdum est vehicula. Donec luctus ornare tincidunt. Suspendisse potenti.
-                Ut et tristique felis, a dapibus lectus.`,
+                `Una novela de aventuras que sigue la historia de Toms Blasco, también conocido como
+                "Capitán Fush", un joven huérfano que ansía la libertad en alta mar. A bordo de su barco, el "Fush", Toms se
+                enfrenta a desafíos emocionantes y peligrosos mientras navega en busca de su destino. Con una mezcla de acción,
+                suspenso y momentos conmovedores, la historia ofrece una reflexión sobre la búsqueda de identidad, la lealtad
+                y el coraje, todo ello enmarcado en un emocionante viaje de autodescubrimiento y aventura marina.`,
             deadline: '31 de marzo de 2024',
             available: true,
-            image: 'https://www.ulima.edu.pe/sites/default/files/faculty/image/arquitectura_copy.jpg'
+            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzckyEgXgZ4-QwBuOyzfsFFZMfoVMhrzPX35i8a06VKA&s'
         },
         {
             id: 2,
-            type: 'Proyectos de investigación básica',
-            category: 'Comunicación',
-            title: 'Prociencia básica 2',
+            type: 'Clásicos de la Literatura',
+            category: 'historia',
+            title: 'Libro 2',
             description: 
                 `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed blandit massa leo, sed tempor est tincidunt vitae.
                 Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
@@ -37,13 +34,13 @@ export default [
                 Vestibulum id urna sed velit ultrices porta varius sed libero.`,
             deadline: '29 de febrero de 2024',
             available: false,
-            image: 'https://www.ulima.edu.pe/sites/default/files/faculty/image/_mg_7313a.png'
+            image: 'https://images.cdn1.buscalibre.com/fit-in/360x360/3b/7e/3b7ee2ebcdc03bedc4cc58a617f8a86b.jpg'
         },
         {
             id: 3,
-            type: 'Proyectos de investigación básica',
-            category: 'Derecho',
-            title: 'Prociencia básica 3',
+            type: 'Clásicos de la Literatura',
+            category: 'historia',
+            title: 'Libro 3',
             description: 
                 `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce euismod ex sit amet odio ornare suscipit. Etiam ac purus odio.
                 Cras sollicitudin metus ut augue accumsan, commodo egestas sapien cursus. Quisque orci sapien, convallis quis eleifend vitae, consectetur vel dolor.
@@ -55,13 +52,13 @@ export default [
                 Donec vestibulum.`,
             deadline: '31 de marzo de 2024',
             available: true,
-            image: 'https://www.ulima.edu.pe/sites/default/files/faculty/image/_mg_4222a.png'
+            image: 'https://www.loqueleo.com/pe/uploads/2017/10/resized/800_9786124039287.jpg'
         },
         {
             id: 4,
-            type: 'Proyectos de investigación básica',
+            type: 'Clásicos de la Literatura',
             category: 'Economía',
-            title: 'Prociencia básica 4',
+            title: 'Libro 4',
             description: 
                 `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in malesuada enim, id vehicula sem. Donec finibus finibus quam nec posuere.
                 Suspendisse et dignissim elit, ac porta tortor. Vivamus nec velit nec dui vestibulum mattis.
@@ -70,13 +67,13 @@ export default [
                 Donec rhoncus mollis purus. Morbi quis arcu id odio rutrum porttitor. Ut molestie turpis ac ex venenatis iaculis.`,
             deadline: '30 de abril de 2024',
             available: true,
-            image: 'https://www.ulima.edu.pe/sites/default/files/faculty/image/_mg_4006.png'
+            image: 'https://www.planetadelibros.com.pe/usuaris/libros/fotos/313/m_libros/312211_portada_habitos-atomicos-edicion-especial-tapa-dura_james-clear_202309151218.jpg'
         },
         {
             id: 5,
-            type: 'Proyectos de investigación básica',
+            type: 'Clásicos de la Literatura',
             category: 'Psicología',
-            title: 'Prociencia básica 5',
+            title: 'libro 5',
             description: 
                 `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut vehicula nibh, at vehicula diam. Sed dignissim suscipit justo ut mollis.
                 Nulla congue gravida nunc, faucibus semper magna vulputate sit amet. Nunc scelerisque sagittis nibh ac dapibus.
@@ -89,13 +86,13 @@ export default [
                 Suspendisse.`,
             deadline: '30 de abril de 2024',
             available: true,
-            image: 'https://www.ulima.edu.pe/sites/default/files/faculty/image/psicologia_copy_0.jpg'
+            image: 'https://images.cdn2.buscalibre.com/fit-in/360x360/be/e9/bee9773ea6aa90c80b9f0f5e1d99f648.jpg'
         },
         {
             id: 6,
-            type: 'Proyectos de investigación básica',
+            type: 'Clásicos de la Literatura',
             category: 'Ingeniería de Sistemas',
-            title: 'Prociencia básica 6',
+            title: 'Libro 6',
             description: 
                 `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc blandit malesuada nibh vitae aliquet. Quisque fringilla velit quis imperdiet egestas.
                 Donec feugiat fermentum nunc, non tincidunt arcu cursus vitae. Suspendisse a lectus eu ex faucibus semper a id urna.
@@ -108,13 +105,13 @@ export default [
                 Sed massa est, tincidunt ut dui non, laoreet luctus dolor. Interdum et.`,
             deadline: '29 de febrero de 2024',
             available: false,
-            image: 'https://www.ulima.edu.pe/sites/default/files/faculty/image/lab_sap_nex_copy.jpg'
+            image: 'https://images.cdn1.buscalibre.com/fit-in/360x360/42/0c/420cee763c2bab48635b5cd5f4ae2501.jpg'
         },
         {
             id: 7,
-            type: 'Proyectos de investigación aplicada',
+            type: 'Más Solicitados',
             category: 'Arquitectura',
-            title: 'Prociencia aplicada 1',
+            title: 'LIBRO 4',
             description: 
                 `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla hendrerit dignissim leo, in dictum neque tincidunt non.
                 Fusce venenatis pharetra turpis id congue. Suspendisse potenti. Sed vitae pulvinar sem, consequat consequat leo. Sed eget ex sapien.
@@ -126,13 +123,13 @@ export default [
                 Ut et tristique felis, a dapibus lectus.`,
             deadline: '31 de marzo de 2024',
             available: true,
-            image: 'https://www.ulima.edu.pe/sites/default/files/faculty/image/arquitectura_copy.jpg'
+            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzckyEgXgZ4-QwBuOyzfsFFZMfoVMhrzPX35i8a06VKA&s'
         },
         {
             id: 8,
-            type: 'Proyectos de investigación aplicada',
+            type: 'Más Solicitados',
             category: 'Comunicación',
-            title: 'Prociencia aplicada 2',
+            title: 'LIBRO 5',
             description: 
                 `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed blandit massa leo, sed tempor est tincidunt vitae.
                 Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
@@ -143,13 +140,13 @@ export default [
                 Vestibulum id urna sed velit ultrices porta varius sed libero.`,
             deadline: '31 de marzo de 2024',
             available: true,
-            image: 'https://www.ulima.edu.pe/sites/default/files/faculty/image/_mg_7313a.png'
+            image: 'https://www.infobae.com/new-resizer/gvtt1qXAS4BlGVE1pgPc02h4XVA=/1200x1800/filters:format(webp):quality(85)/s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2016/07/20201800/mejores-libros-Don-Quijote-sf.jpg'
         },
         {
             id: 9,
-            type: 'Proyectos de investigación aplicada',
+            type: 'Más Solicitados',
             category: 'Derecho',
-            title: 'Prociencia aplicada 3',
+            title: 'LIBRO 6',
             description: 
                 `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce euismod ex sit amet odio ornare suscipit. Etiam ac purus odio.
                 Cras sollicitudin metus ut augue accumsan, commodo egestas sapien cursus. Quisque orci sapien, convallis quis eleifend vitae, consectetur vel dolor.
@@ -161,13 +158,13 @@ export default [
                 Donec vestibulum.`,
             deadline: '30 de abril de 2024',
             available: true,
-            image: 'https://www.ulima.edu.pe/sites/default/files/faculty/image/_mg_4222a.png'
+            image: 'https://upload.wikimedia.org/wikipedia/commons/6/6b/Baldor.jpg'
         },
         {
             id: 10,
-            type: 'Proyectos de investigación aplicada',
+            type: 'Más Solicitados',
             category: 'Economía',
-            title: 'Prociencia aplicada 4',
+            title: 'LIBRO 7',
             description: 
                 `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in malesuada enim, id vehicula sem. Donec finibus finibus quam nec posuere.
                 Suspendisse et dignissim elit, ac porta tortor. Vivamus nec velit nec dui vestibulum mattis.
@@ -176,13 +173,13 @@ export default [
                 Donec rhoncus mollis purus. Morbi quis arcu id odio rutrum porttitor. Ut molestie turpis ac ex venenatis iaculis.`,
             deadline: '30 de abril de 2024',
             available: true,
-            image: 'https://www.ulima.edu.pe/sites/default/files/faculty/image/_mg_4006.png'
+            image: 'https://www.lavanguardia.com/files/content_image_mobile_filter/uploads/2023/04/21/6442a04fb5e7f.jpeg'
         },
         {
             id: 11,
-            type: 'Proyectos de investigación aplicada',
+            type: 'Más Solicitados',
             category: 'Psicología',
-            title: 'Prociencia aplicada 5',
+            title: 'LIBRO 8',
             description: 
                 `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut vehicula nibh, at vehicula diam. Sed dignissim suscipit justo ut mollis.
                 Nulla congue gravida nunc, faucibus semper magna vulputate sit amet. Nunc scelerisque sagittis nibh ac dapibus.
@@ -195,13 +192,13 @@ export default [
                 Suspendisse.`,
             deadline: '29 de febrero de 2024',
             available: false,
-            image: 'https://www.ulima.edu.pe/sites/default/files/faculty/image/psicologia_copy_0.jpg'
+            image: 'https://images.cdn1.buscalibre.com/fit-in/360x360/3b/7e/3b7ee2ebcdc03bedc4cc58a617f8a86b.jpg'
         },
         {
             id: 12,
-            type: 'Proyectos de investigación aplicada',
+            type: 'Más Solicitados',
             category: 'Ingeniería de Sistemas',
-            title: 'Prociencia aplicada 6',
+            title: 'LIBRO 9',
             description: 
                 `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc blandit malesuada nibh vitae aliquet. Quisque fringilla velit quis imperdiet egestas.
                 Donec feugiat fermentum nunc, non tincidunt arcu cursus vitae. Suspendisse a lectus eu ex faucibus semper a id urna.
@@ -214,7 +211,7 @@ export default [
                 Sed massa est, tincidunt ut dui non, laoreet luctus dolor. Interdum et.`,
             deadline: '30 de abril de 2024',
             available: true,
-            image: 'https://www.ulima.edu.pe/sites/default/files/faculty/image/lab_sap_nex_copy.jpg'
+            image: 'https://images.cdn1.buscalibre.com/fit-in/360x360/46/0c/460cf768bec27103e3d93791c2770ba5.jpg'
         }
     ]
 ]

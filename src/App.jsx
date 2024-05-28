@@ -4,10 +4,15 @@ import ErrorPage from './scenes/errorPage/ErrorPage';
 import HomePage from './scenes/homePage/main/HomePage';
 import Layout from './components/Layout/Layout';
 import SearchPage from './scenes/searchPage/main/SearchPage';
+<<<<<<< HEAD
 import LoginPage from './scenes/loginPage/LoginPage';
 import RegisterPage from './scenes/registerPage/RegisterPage';
 import UpdatePwdPage from './scenes/updatePwdPage/UpdatePwdPage';
 import AdminHomePage from './scenes/adminHomePage/AdminHomePage';
+=======
+import CategoriesPage from './scenes/categoriesPage/CategoriesPage';
+import DetailPage from "./scenes/detailsPage/DetailPage";
+>>>>>>> feature/categories
 import './App.css';
 import ConfigUser from './components/ConfigUser/ConfigUser';
 import ReservationMadePage from './scenes/reservationMadePage/ReservationMadePage';
@@ -42,13 +47,23 @@ const router = createBrowserRouter([
                 element: <CallPage />
             },
             {
+<<<<<<< HEAD
                 path: '/reservationMadePage/',
                 element: <ReservationMadePage />
             },
             {
                 path: '/DescPage/',
                 element: <DescPage />
+=======
+                path: '/categories',
+                element: <CategoriesPage />
+            },
+            {
+                path: '/products/:productName',
+                element: <DetailPage />
+>>>>>>> feature/categories
             }
+            
         ],
         errorElement: <ErrorPage />
     }
