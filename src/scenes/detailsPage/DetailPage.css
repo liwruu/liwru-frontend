@@ -34,7 +34,10 @@
     margin-bottom: 5px;
     text-align: center; /* Centra el texto */
   }
-  
+  .product-author {
+    text-align: center; /* Centra el autor */
+    margin-bottom: 5px; /* Agrega espacio inferior */
+  }
   .product-description,
   .product-additional-description{
     text-align: justify;
@@ -69,7 +72,7 @@
     font-size: 1rem;
     text-decoration: none;
     color: #fff;
-    background-color: #007bff;
+    background-color: #cf8282;
     border: none;
     border-radius: 5px;
     cursor: pointer;
