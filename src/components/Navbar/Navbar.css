@@ -1,17 +1,16 @@
 .nav {
     display: flex;
     align-items: center;
+    justify-content: space-between; 
     padding: 20px;
     height: 90px;
     box-shadow: 0 1px 4px rgba(0, 0 , 0, 0.25);
+    background-color: #cf8282;
 }
 
 .nav__logo {
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: 100px;
-    height: 100%;
     text-decoration: none;
     color: inherit;
 }
@@ -26,10 +25,30 @@
     font-size: 1.4rem;
 }
 
+.nav__links {
+    display: flex;
+    align-items: center;
+}
+
+.nav__link {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.nav__link:hover,
+.nav__link:focus {
+    color: #ff0000; 
+}
+
+.nav__link.selected {
+    color: #ff0000; 
+}
+
 .nav__search-bar {
     display: flex;
     align-items: center;
-    margin-left: auto;
     width: 30vw;
     height: 100%;
     box-shadow: 0 0 5px rgba(0, 0 , 0, 0.5);
@@ -53,6 +72,7 @@
     border: none;
     background: transparent;
 }
+
 
 .nav__search-bar__button__icon {
     max-width: 50%;

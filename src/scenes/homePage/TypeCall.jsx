@@ -1,26 +1,17 @@
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function TypeCall(props) {
-    const {id, category, title, description, deadline, available, image} = props.data;
+    const { id, image, title } = props.data; // Necesitamos el ID, la imagen y el título
 
     return (
         <Link className='type-call' to={`/callPage/${id}`}>
             <div className='type-call__container'>
-                <div className={available ?
-                    'type-call__container__card' :
-                    'type-call__container__card type-call__container__card--state-unavailable'
-                }>
+                <div className='type-call__container__card'>
                     <div className='type-call__container__card__left'>
-                        <img className='type-call__container__card__left__image' src={image} />
-                        <p className='type-call__container__card__left__category'>{category.toUpperCase()}</p>
-                    </div>
-                    <div className='type-call__container__card__right'>
-                        <h3 className='type-call__container__card__right__title'>{title.toUpperCase()}</h3>
-                        <p className='type-call__container__card__right__description'>{description}</p>
-                        <p className='type-call__container__card__right__deadline'>FECHA DE CIERRE: {deadline.toUpperCase()}</p>
+                        <img className='type-call__container__card__left__image' src={image} alt='' />
+                        <h3 className='type-call__container__card__title'>{title}</h3> {/* Agregamos el título aquí */}
                     </div>
                 </div>
-                {!available && <div className='type-call__container__tag'>Cerrada</div>}
             </div>
         </Link>
     );
