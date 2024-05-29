@@ -4,16 +4,33 @@ import ErrorPage from './scenes/errorPage/ErrorPage';
 import HomePage from './scenes/homePage/main/HomePage';
 import Layout from './components/Layout/Layout';
 import SearchPage from './scenes/searchPage/main/SearchPage';
-import CategoriesPage from './scenes/categoriesPage/CategoriesPage';
-import DetailPage from "./scenes/detailsPage/DetailPage";
+import LoginPage from './scenes/loginPage/LoginPage';
+import RegisterPage from './scenes/registerPage/RegisterPage';
+import UpdatePwdPage from './scenes/updatePwdPage/UpdatePwdPage';
+import AdminHomePage from './scenes/adminHomePage/AdminHomePage';
 import './App.css';
+import ConfigUser from './components/ConfigUser/ConfigUser';
+import ReservationMadePage from './scenes/reservationMadePage/ReservationMadePage';
+import DescPage from './scenes/DescPage/DescPage';
 
 const router = createBrowserRouter([
+    {
+        path: '/login',
+        element: <LoginPage />,
+    },
+    {
+        path: '/register',
+        element: <RegisterPage />,
+    },
+    {
+        path: '/updatePwd',
+        element: <UpdatePwdPage />,
+    },
     {
         element: <Layout />,
         children: [
             {
-                path: '/',
+                path: '/homePage',
                 element: <HomePage />,
             },
             {
@@ -25,14 +42,13 @@ const router = createBrowserRouter([
                 element: <CallPage />
             },
             {
-                path: '/categories',
-                element: <CategoriesPage />
+                path: '/reservationMadePage/',
+                element: <ReservationMadePage />
             },
             {
-                path: '/products/:productName',
-                element: <DetailPage />
+                path: '/DescPage/',
+                element: <DescPage />
             }
-            
         ],
         errorElement: <ErrorPage />
     }

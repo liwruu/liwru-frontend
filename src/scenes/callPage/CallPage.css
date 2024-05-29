@@ -5,18 +5,16 @@
 
 .call-page__call__image {
     width: 100%;
-    height: 400px;
-    object-fit: contain;
+    height: 200px;
+    object-fit: cover;
     object-position: center;
 }
 
 .call-page__call__category {
     font-size: 0.8rem;
-    text-align: center;
 }
 
 .call-page__call__title {
-    text-align: center;
     margin-top: 15px;
     font-size: 1.1rem;
     font-weight: 600;
@@ -27,16 +25,13 @@
     font-size: 0.9rem;
 }
 
-.call-page__call__availability {
+.call-page__call__deadline {
     margin-top: 10px;
     font-size: 0.9rem;
-    text-align: center; /* Para centrar el texto horizontalmente */
-    display: flex; /* Para usar flexbox */
-    justify-content: center; /* Para alinear el texto horizontalmente */
-    align-items: center; /* Para alinear el texto verticalmente */
 }
 
-.call-page__call--state-unavailable .call-page__call__availability {
+.call-page__call--state-unavailable
+.call-page__call__deadline {
     color: red;
 }
 
