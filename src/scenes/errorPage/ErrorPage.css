@@ -2,16 +2,16 @@
 
 .error-page {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
-    min-height: 100vh;
+    min-height: 90vh;
     position: relative;
     background: #FFD1CE;
     overflow: hidden;
     font-family: 'Crimson Text', serif;
     color: #FE7F7E;
+    text-align: center;
+    padding: 20px;
 }
 
 .error-page::before {
@@ -27,32 +27,89 @@
 }
 
 .error-page__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
     position: relative;
     z-index: 1;
-    text-align: right;
-    padding-right: 50px;
 }
 
-.error-page__error__code {
-    display: inline-block;
-    font-size: 8rem;
+.error-page__error {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.error-page__icon {
+    width: 300px;
+    max-width: 100%;
+}
+
+.error-page__error__description {
+    font-size: 3.8rem;
     margin: 0;
 }
 
 .error-page__message {
-    font-size: 4rem;
+    font-size: 2rem;
     margin: 20px 0;
 }
 
-.error-page__number {
-    font-size: 2.5rem;
+.error-page__code {
+    font-size: 1.5rem;
 }
 
 .error-page__link-button__link {
+    display: inline-block;
     width: 235px;
     height: 45px;
 }
 
 .error-page__link-button__button {
-    font-size: 0.9rem;
+    font-size: 1rem;
+    background-color: #FFFF;
+    color: #FE7F7E;
+    border: none;
+    border-radius: 5%;
+
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .error-page__error__description {
+        font-size: 4rem;
+    }
+
+    .error-page__message {
+        font-size: 1.6rem;
+    }
+
+    .error-page__code {
+        font-size: 1rem;
+    }
+
+    .error-page__icon {
+        width: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .error-page__error__description {
+        font-size: 3rem;
+    }
+
+    .error-page__message {
+        font-size: 1.4rem;
+    }
+
+    .error-page__code {
+        font-size: 0.8rem;
+    }
+
+    .error-page__icon {
+        width: 100px;
+    }
 }
