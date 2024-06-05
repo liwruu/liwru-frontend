@@ -2,15 +2,15 @@ import React, { useState, useEffect } from 'react';
 
 const ConfigUser = ({ username }) => {
     const [user, setUser] = useState({
-        fullName: '',
-        phoneNumber: '',
+        name:' ',
+        lastname:' ',
         email: ''
     });
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
 
     useEffect(() => {
-        fetch(`/getUser/users/${username}`)
+        fetch(`/users/:${username}`)
             .then(response => response.json())
             .then(data => {
                 setUser(data);
@@ -40,8 +40,8 @@ const ConfigUser = ({ username }) => {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                fullName: user.fullName,
-                phoneNumber: user.phoneNumber,
+                name: user.name,
+                lastname: user.lastname,
                 email: user.email,
                 password: password ? password : undefined,
             })
@@ -61,24 +61,21 @@ const ConfigUser = ({ username }) => {
             <form onSubmit={handleSubmit}>
                 <div>
                     <label>
-                        Full Name:
+                        Nombre
                         <input 
                             type="text" 
-                            name="fullName" 
-                            value={user.fullName} 
+                            name="name" 
+                            value={user.name} 
                             onChange={handleChange} 
                         />
                     </label>
-                </div>
-                <div>
                     <label>
-                        Phone Number:
+                        Apellido
                         <input 
-                            type="text" 
-                            name="phoneNumber" 
-                            value={user.phoneNumber} 
-                            onChange={handleChange} 
-                        />
+                            type="text"
+                            name = 'lastname'
+                            value = {user.lastname}
+                            onChange={handleChange} />
                     </label>
                 </div>
                 <div>
@@ -99,11 +96,12 @@ const ConfigUser = ({ username }) => {
                             type="password" 
                             name="password" 
                             value={password} 
+                            
                             onChange={handlePasswordChange} 
                         />
                     </label>
                 </div>
-                <button type="submit">Save Changes</button>
+                <button type="submit">Guardar Cambios</button>
             </form>
         </div>
     );
