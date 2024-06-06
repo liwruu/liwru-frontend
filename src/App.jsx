@@ -7,11 +7,12 @@ import SearchPage from './scenes/searchPage/main/SearchPage';
 import LoginPage from './scenes/loginPage/LoginPage';
 import RegisterPage from './scenes/registerPage/RegisterPage';
 import UpdatePwdPage from './scenes/updatePwdPage/UpdatePwdPage';
-import AdminHomePage from './scenes/adminHomePage/AdminHomePage';
+//import AdminHomePage from './scenes/adminHomePage/AdminHomePage';
 import './App.css';
-import ConfigUser from './components/ConfigUser/ConfigUser';
+//import ConfigUser from './components/ConfigUser/ConfigUser';
 import ReservationMadePage from './scenes/reservationMadePage/ReservationMadePage';
 import DescPage from './scenes/DescPage/DescPage';
+import Test from './scenes/test';
 
 const router = createBrowserRouter([
     {
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
             {
                 path: '/DescPage/',
                 element: <DescPage />
+            },
+            {
+                path: '/Test/',
+                element: <Test />
             }
         ],
         errorElement: <ErrorPage />

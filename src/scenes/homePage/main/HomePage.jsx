@@ -6,6 +6,7 @@ import image_1 from '../../../assets/images/slider/image_1.jpg';
 import image_2 from '../../../assets/images/slider/image_2.jpg';
 import image_3 from '../../../assets/images/slider/image_3.jpg';
 import './HomePage.css';
+import SomeComponent from '../../../components/SomeComponent/SomeComponent';
 
 export default function HomePage() {
     const [data, setData] = useState(callsData);
