@@ -4,8 +4,15 @@ import ErrorPage from './scenes/errorPage/ErrorPage';
 import HomePage from './scenes/homePage/main/HomePage';
 import Layout from './components/Layout/Layout';
 import SearchPage from './scenes/searchPage/main/SearchPage';
+import LoginPage from './scenes/loginPage/LoginPage';
+import RegisterPage from './scenes/registerPage/RegisterPage';
+import UpdatePwdPage from './scenes/updatePwdPage/UpdatePwdPage';
+//import AdminHomePage from './scenes/adminHomePage/AdminHomePage';
 import './App.css';
-import ConfigUser from './components/ConfigUser/ConfigUser';
+//import ConfigUser from './components/ConfigUser/ConfigUser';
+import ReservationMadePage from './scenes/reservationMadePage/ReservationMadePage';
+import DescPage from './scenes/DescPage/DescPage';
+import Test from './scenes/test';
 
 const router = createBrowserRouter([
     {
@@ -17,7 +24,7 @@ const router = createBrowserRouter([
         element: <RegisterPage />,
     },
     {
-        path: '/update_pwd',
+        path: '/updatePwd',
         element: <UpdatePwdPage />,
     },
     {
@@ -36,12 +43,16 @@ const router = createBrowserRouter([
                 element: <CallPage />
             },
             {
-                path: '/reserved-list-admin/',
-                element: <ReservedListPage />
+                path: '/reservationMadePage/',
+                element: <ReservationMadePage />
             },
             {
-                path: '/configUser/:username',
-                element:<ConfigUser />
+                path: '/DescPage/',
+                element: <DescPage />
+            },
+            {
+                path: '/Test/',
+                element: <Test />
             }
         ],
         errorElement: <ErrorPage />

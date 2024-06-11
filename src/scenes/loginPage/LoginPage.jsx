@@ -1,8 +1,10 @@
 import './LoginPage.css'
 import background from '../../assets/images/background.jpg'
 import logo from '../../assets/images/liwru-logo.png'
+import {Link, useNavigate} from 'react-router-dom';
 
 export default function LoginPage() {
+    const navigate = useNavigate();
     return (
         <main className='login-page'>
             <div className='login-page__left-panel'>
@@ -19,9 +21,9 @@ export default function LoginPage() {
                     className='login-page__right-panel__input'
                     placeholder='password'
                 />
-                <span className='login-page__right-panel__forgot'>forgot your password?</span>
-                <button className='login-page__right-panel__button'>log in</button>
-                <span className='login-page__right-panel__register'>Register now</span>
+                <Link className='login-page__right-panel__forgot' to='/updatePwd'>forgot your password?</Link>
+                <button className='login-page__right-panel__button' onClick={() => navigate('/homePage')}>log in</button>
+                <Link className='login-page__right-panel__register' to='/register'>Register now</Link>
             </div>
         </main>
     );
