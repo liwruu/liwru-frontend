@@ -10,10 +10,9 @@ const ConfigUser = ({ username }) => {
     const [error, setError] = useState('');
 
     useEffect(() => {
-        fetch(`/users/:${username}`)
-            .then(response => response.json())
-            .then(data => {
-                setUser(data);
+        axios.get(`/users/${username}`)
+            .then(response => {
+                setUser(response.data);
             })
             .catch(err => {
                 setError('Error fetching user data');
@@ -32,28 +31,23 @@ const ConfigUser = ({ username }) => {
         setPassword(e.target.value);
     };
 
+    
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch(``, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                name: user.name,
-                lastname: user.lastname,
-                email: user.email,
-                password: password ? password : undefined,
-            })
+        axios.put(`/users/${username}`, {
+            name: user.name,
+            lastname: user.lastname,
+            email: user.email,
+            password: password ? password : undefined,
         })
-        .then(response => response.json())
-        .then(data => {
+        .then(response => {
             alert('Perfil actualizado correctamente');
         })
         .catch(err => {
             setError('Error actualizando perfil');
         });
     };
+
 
     return (
         <div>
