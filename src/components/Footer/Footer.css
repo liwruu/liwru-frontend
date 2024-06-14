@@ -1,20 +1,91 @@
 .footer {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    gap: 30px;
     padding: 20px;
-    height: 90px;
-    box-shadow: 0 -1px 4px rgba(0, 0 , 0, 0.25);
+    background-color: #d38a8a;
+    color: white;
+    font-family: 'Arial', sans-serif;
 }
 
-.footer__ulima-logo {
-    width: 183.5px; /* (imageWidth/imageHeight) * desiredHeight */
-    height: 100%;
+.footer__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
 }
 
-.footer__sap-logo {
-    padding: 0 9px;
-    width: 128px; /* (imageWidth/imageHeight) * desiredHeight */
-    height: 100%;
+.footer__logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 40px;
+}
+
+.footer__logo__icon {
+    width: 100px;  /* Tamaño original del contenedor del logo */
+    height: auto;
+    transform: scale(2);  /* Escala la imagen del logo */
+    transform-origin: center;  /* Mantiene el logo centrado al escalar */
+}
+
+.footer__tagline {
+    font-size: 1rem;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+.footer__links {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+}
+
+.footer__section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 20px;
+}
+
+.footer__section-title {
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.footer__link {
+    color: white;
+    text-decoration: none;
+    margin-bottom: 5px;
+}
+
+.footer__link:hover {
+    text-decoration: underline;
+}
+
+.footer__social-media {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+    margin-left: 40px;
+}
+
+.footer__social-icon__image {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+.footer__social-icon__image:hover {
+    transform: scale(1.2);
+}
+
+.footer__text {
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
 }

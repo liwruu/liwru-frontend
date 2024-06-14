@@ -1,4 +1,4 @@
-import {createBrowserRouter, RouterProvider} from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import CallPage from './scenes/callPage/CallPage';
 import ErrorPage from './scenes/errorPage/ErrorPage';
 import HomePage from './scenes/homePage/main/HomePage';
@@ -8,6 +8,7 @@ import LoginPage from './scenes/loginPage/LoginPage';
 import RegisterPage from './scenes/registerPage/RegisterPage';
 import UpdatePwdPage from './scenes/updatePwdPage/UpdatePwdPage';
 import AdminHomePage from './scenes/adminHomePage/AdminHomePage';
+import CategoriesPage from './scenes/categoriesPage/CategoriesPage'; 
 import './App.css';
 import ConfigUser from './components/ConfigUser/ConfigUser';
 import ReservationMadePage from './scenes/reservationMadePage/ReservationMadePage';
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
             {
                 path: '/DescPage/',
                 element: <DescPage />
+            },
+            {
+                path: '/categories', 
+                element: <CategoriesPage />
             }
         ],
         errorElement: <ErrorPage />

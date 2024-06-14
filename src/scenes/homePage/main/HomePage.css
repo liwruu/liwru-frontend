@@ -38,6 +38,7 @@
 }
 
 .type-call__container {
+    margin: 0; /* Añade esta línea para eliminar los márgenes */
     position: relative;
     padding: 20px;
     width: 330px;
@@ -51,63 +52,33 @@
     opacity: 50%;
     transition: opacity 400ms ease-in;
 }
-
+.type-call__container__card__left {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Para centrar verticalmente los elementos */
+    text-align: center; /* Para centrar el texto horizontalmente */
+}
+.type-call__container__card__title {
+    font-size: 1rem; /* Tamaño de fuente del título */
+    font-weight: 600; /* Peso de fuente del título */
+    margin-top: 10px; /* Margen superior de 10px */
+    text-align: center; /* Para centrar el texto horizontalmente */
+    margin-bottom: 10px;
+}
+.type-call__container__card__left__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
 .type-call:hover .type-call__container__card--state-unavailable,
 .type-call:focus .type-call__container__card--state-unavailable {
     opacity: 100%;
 }
 
 .type-call__container__card__left__image {
-    object-fit: cover;
-    object-position: 58%;
     width: 100%;
-    height: 190px;
-    border-radius: 8px;
-}
-
-.type-call__container__card__left__category {
-    font-size: 0.8rem;
-}
-
-.type-call__container__card__right__title {
-    margin-top: 15px;
-    font-size: 1.1rem;
-    font-weight: 600;
-}
-
-.type-call__container__card__right__description {
-    margin-top: 10px;
-    height: 150px;
-    mask-image: linear-gradient(180deg, black 50%, transparent 100%);
-    font-size: 0.9rem;
-}
-
-.type-call__container__card__right__deadline {
-    margin-top: 10px;
-    font-size: 0.9rem;
-}
-
-.type-call__container__card--state-unavailable
-.type-call__container__card__right__deadline {
-    color: red;
-}
-
-.type-call__container__tag {
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40%;
-    height: 8%;
-    border-radius: 0 8px;
-    background: red;
-    color: white;
-    transition: transform 400ms ease-in;
-}
-
-.type-call:hover .type-call__container__tag,
-.type-call:focus .type-call__container__tag {
-    transform: translateY(-102%);
+    height: 100%; /* Cambiado de 190px a 100% */
+    object-fit: cover;
+    border-radius: 8px; /* Movido de .type-call__container__card__left__image a .type-call__container */
 }
