@@ -1,7 +1,6 @@
-// src/scenes/reservationFormPage/ReservationFormPage.jsx
 
 import React, { useState } from 'react';
-import './ReservationFormPage.css'; // Importa el archivo CSS
+import './ReservationFormPage.css'; 
 
 function ReservationFormPage() {
     const [formData, setFormData] = useState({
@@ -17,7 +16,6 @@ function ReservationFormPage() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Lógica para manejar la reserva del libro, por ejemplo, enviar los datos a una API
         console.log('Reserva realizada:', formData);
     };
 
