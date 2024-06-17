@@ -1,11 +1,11 @@
-
 import React, { useState } from 'react';
-import './ReservationFormPage.css'; 
+import './ReservationFormPage.css';
 
 function ReservationFormPage() {
     const [formData, setFormData] = useState({
         name: '',
         bookTitle: '',
+        isbn: '',
         date: '',
     });
 
@@ -42,6 +42,17 @@ function ReservationFormPage() {
                             id="bookTitle"
                             name="bookTitle"
                             value={formData.bookTitle}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="isbn">Código ISBN:</label>
+                        <input
+                            type="text"
+                            id="isbn"
+                            name="isbn"
+                            value={formData.isbn}
                             onChange={handleChange}
                             required
                         />
