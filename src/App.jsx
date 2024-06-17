@@ -8,11 +8,12 @@ import LoginPage from './scenes/loginPage/LoginPage';
 import RegisterPage from './scenes/registerPage/RegisterPage';
 import UpdatePwdPage from './scenes/updatePwdPage/UpdatePwdPage';
 import AdminHomePage from './scenes/adminHomePage/AdminHomePage';
-import CategoriesPage from './scenes/categoriesPage/CategoriesPage'; 
+import CategoriesPage from './scenes/categoriesPage/CategoriesPage';
 import './App.css';
 import ConfigUser from './components/ConfigUser/ConfigUser';
 import ReservationMadePage from './scenes/reservationMadePage/ReservationMadePage';
 import DescPage from './scenes/DescPage/DescPage';
+import ReservationFormPage from './scenes/reservationFormPage/ReservationFormPage'; // Importar el nuevo componente
 
 const router = createBrowserRouter([
     {
@@ -51,8 +52,12 @@ const router = createBrowserRouter([
                 element: <DescPage />
             },
             {
-                path: '/categories', 
+                path: '/categories',
                 element: <CategoriesPage />
+            },
+            {
+                path: '/reservationForm', // Nueva ruta para el formulario de reserva
+                element: <ReservationFormPage />
             }
         ],
         errorElement: <ErrorPage />

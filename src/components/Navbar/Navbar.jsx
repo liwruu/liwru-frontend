@@ -31,6 +31,7 @@ export default function Navbar() {
                 <Link className={`nav__link ${location.pathname === '/categories' ? 'selected' : ''}`} to='/categories'>categories</Link>
                 <Link className={`nav__link ${location.pathname === '/services' ? 'selected' : ''}`} to='/services'>services</Link>
                 <Link className={`nav__link ${location.pathname === '/events' ? 'selected' : ''}`} to='/events'>events</Link>
+                <Link className={`nav__link ${location.pathname === '/reservationForm' ? 'selected' : ''}`} to='/reservationForm'>reservar libro</Link>
             </div>
             <div className='nav__search-bar-container'>
                 <div className='nav__search-bar'>
