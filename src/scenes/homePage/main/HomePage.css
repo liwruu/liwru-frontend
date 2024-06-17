@@ -12,8 +12,7 @@
 
 /* Type */
 .type__title {
-    font-size: 1.2rem;
-    font-weight: 600;
+    display: none; /* Removed title styling */
 }
 
 .type__calls {
@@ -38,13 +37,12 @@
 }
 
 .type-call__container {
-    margin: 0; /* Añade esta línea para eliminar los márgenes */
+    margin: 0;
     position: relative;
-    padding: 20px;
     width: 330px;
     height: 490px;
     border-radius: 8px;
-    box-shadow: 0 0 5px rgba(0, 0 , 0, 0.4);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
     overflow: hidden;
 }
 
@@ -52,33 +50,27 @@
     opacity: 50%;
     transition: opacity 400ms ease-in;
 }
+
 .type-call__container__card__left {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Para centrar verticalmente los elementos */
-    text-align: center; /* Para centrar el texto horizontalmente */
+    align-items: center;
+    text-align: center;
+    height: calc(100% - 40px); /* Ajustar la altura del contenedor de la imagen */
 }
+
 .type-call__container__card__title {
-    font-size: 1rem; /* Tamaño de fuente del título */
-    font-weight: 600; /* Peso de fuente del título */
-    margin-top: 10px; /* Margen superior de 10px */
-    text-align: center; /* Para centrar el texto horizontalmente */
-    margin-bottom: 10px;
+    display: none; /* Ocultamos el título */
 }
+
 .type-call__container__card__left__image {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 8px;
 }
+
 .type-call:hover .type-call__container__card--state-unavailable,
 .type-call:focus .type-call__container__card--state-unavailable {
     opacity: 100%;
-}
-
-.type-call__container__card__left__image {
-    width: 100%;
-    height: 100%; /* Cambiado de 190px a 100% */
-    object-fit: cover;
-    border-radius: 8px; /* Movido de .type-call__container__card__left__image a .type-call__container */
 }

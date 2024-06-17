@@ -27,7 +27,7 @@ export default function DetailPage() {
         </div>
         <div className="product-details">
           <h2 className="product-title">{product.name}</h2>
-          <p className="product-author">Autor: {product.author}</p> {/* Mostrar el autor */}
+          <p className="product-author">Autor: {product.author}</p>
           <span className="product-description">{product.description}</span>
           <span className="product-availability">
             {product.available ? 'Disponible' : 'No disponible'}
@@ -37,6 +37,7 @@ export default function DetailPage() {
       </div>
       <div className="buttons-container">
         <Link to="/categories" className="button">Volver a Categorías</Link>
+        <Link to="/" className="button">Volver al Inicio</Link> {/* Nuevo botón añadido */}
         <button className="button" onClick={handleReservation}>
           Realizar Reserva
         </button>
