@@ -1,18 +1,19 @@
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import BackIcon from '../../assets/icons/BackIcon';
 import ForwardIcon from '../../assets/icons/ForwardIcon';
 import './Slider.css';
 
-export default function Slider({images}) {
-    const [slides, setSlides] = useState(images);
-    const [activeIndex, setactiveIndex] = useState(0);
+export default function Slider({ images = [], items = [] }) {
+    const slides = items.length > 0 ? items : images.map((image, index) => ({ image, id: index }));
+    const [activeIndex, setActiveIndex] = useState(0);
 
     function handleBack() {
-        setactiveIndex(prevIndex => (prevIndex===0) ? slides.length-1 : prevIndex-1);
+        setActiveIndex(prevIndex => (prevIndex === 0) ? slides.length - 1 : prevIndex - 1);
     }
 
     function handleForward() {
-        setactiveIndex(prevIndex => (prevIndex===slides.length-1) ? 0 : prevIndex+1);
+        setActiveIndex(prevIndex => (prevIndex === slides.length - 1) ? 0 : prevIndex + 1);
     }
 
     useEffect(() => {
@@ -23,15 +24,9 @@ export default function Slider({images}) {
     return (
         <div className='slider'>
             {slides.map((slide, index) => (
-                <div
-                    key={index}
-                    className={index===activeIndex ?
-                        'slider__slide slider__slide--active' :
-                        'slider__slide'
-                    }
-                >
-                    <img className='slider__slide__image' src={slide} />
-                </div>
+                <Link to={`/details/${slide.id}`} key={index} className={index === activeIndex ? 'slider__slide slider__slide--active' : 'slider__slide'}>
+                    <img className='slider__slide__image' src={slide.image} alt={slide.title || `Slide ${index}`} />
+                </Link>
             ))}
 
             <button

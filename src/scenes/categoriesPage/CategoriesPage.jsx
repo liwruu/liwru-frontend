@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import products from '../../assets/data/products'; 
+import detail from '../../assets/data/detail'; 
 import './CategoriesPage.css'; 
 
 export default function CategoriesPage() {
@@ -9,6 +9,8 @@ export default function CategoriesPage() {
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
   };
+
+  const products = detail[1]; // Suponiendo que el segundo elemento del array detail contiene la lista de productos
 
   const filteredProducts = selectedCategory === "all" ? products : products.filter(product => product.category === selectedCategory);
 
@@ -25,9 +27,9 @@ export default function CategoriesPage() {
       <section className="products-list">
         {filteredProducts.map((product, index) => (
           <div className="product-item" key={index}>
-            <Link to={`/products/${product.name}`} className="product-link">
-              <img src={product.image} alt={product.name} className="product-image" />
-              <h2 className="product-title">{product.name}</h2>
+            <Link to={`/details/${product.id}`} className="product-link">
+              <img src={product.image} alt={product.title} className="product-image" />
+              <h2 className="product-title">{product.title}</h2>
               <span className="product-description">{product.description}</span>
               <span className={`product-availability ${product.available ? 'available' : 'not-available'}`}>
                 {product.available ? 'Disponible' : 'No disponible'}
