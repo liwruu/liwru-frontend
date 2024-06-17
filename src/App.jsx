@@ -56,7 +56,7 @@ const router = createBrowserRouter([
                 element: <CategoriesPage />
             },
             {
-                path: '/reservationForm', // Nueva ruta para el formulario de reserva
+                path: '/reservationForm', 
                 element: <ReservationFormPage />
             }
         ],

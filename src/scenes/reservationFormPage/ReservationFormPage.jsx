@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import './ReservationFormPage.css';
 
 function ReservationFormPage() {
@@ -9,6 +10,8 @@ function ReservationFormPage() {
         date: '',
     });
 
+    const history = useHistory();
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
@@ -17,6 +20,8 @@ function ReservationFormPage() {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log('Reserva realizada:', formData);
+
+        history.push('/reservation-made');
     };
 
     return (
