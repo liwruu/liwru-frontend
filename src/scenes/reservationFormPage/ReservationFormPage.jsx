@@ -17,9 +17,7 @@ function ReservationFormPage() {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log('Reserva realizada:', formData);
-        // Aquí podrías añadir lógica adicional si deseas procesar los datos
-
-        // Limpiar el formulario después de enviar (opcional)
+        
         setFormData({
             name: '',
             bookTitle: '',
