@@ -27,12 +27,12 @@ export default function Navbar() {
                 <img className='nav__logo__icon' src={logoImage} alt="Logo" />
             </Link>
             <div className='nav__links'>
-                <Link className={`nav__link ${location.pathname === '/' ? 'selected' : ''}`} to='/'>home page</Link>
+                <Link className={`nav__link ${location.pathname === '/' ? 'selected' : ''}`} to='/'>Home page</Link>
                 <Link className={`nav__link ${location.pathname === '/categories' ? 'selected' : ''}`} to='/categories'>categories</Link>
                 <Link className={`nav__link ${location.pathname === '/services' ? 'selected' : ''}`} to='/services'>services</Link>
                 <Link className={`nav__link ${location.pathname === '/events' ? 'selected' : ''}`} to='/events'>events</Link>
-                <Link className={`nav__link ${location.pathname === '/reservationForm' ? 'selected' : ''}`} to='/reservationForm'>reservar libro</Link>
-                <Link className={`nav__link ${location.pathname === '/infoUsuario' ? 'selected' : ''}`} to='/infoUsuario'>Usuario</Link>
+                <Link className={`nav__link ${location.pathname === '/reservationForm' ? 'selected' : ''}`} to='/reservationForm'>Reserve Books</Link>
+                <Link className={`nav__link ${location.pathname === '/infoUsuario' ? 'selected' : ''}`} to='/infoUsuario'>User</Link>
             </div>
             <div className='nav__search-bar-container'>
                 <div className='nav__search-bar'>
