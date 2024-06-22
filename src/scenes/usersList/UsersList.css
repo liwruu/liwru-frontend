@@ -1,0 +1,80 @@
+.users-container {
+  max-width: 1200px; /* Ajustar según sea necesario */
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #F6B6B9; /* Color de fondo similar al de ConfirmationPage */
+  color: #3A3A3A; /* Color de texto similar al de ConfirmationPage */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.users-container h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffffff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.users-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.user-item {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.user-item:hover {
+  transform: translateY(-5px);
+}
+
+.user-item .user-link {
+  text-decoration: none;
+  color: #3A3A3A;
+}
+
+.user-name {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.user-fullname {
+  font-size: 1.4rem;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.user-email {
+  font-size: 1.2rem;
+  color: #888;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.user-status {
+  font-size: 1rem;
+  padding: 8px 15px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.user-status.Active {
+  background-color: #5cb85c;
+  color: #ffffff;
+}
+
+.user-status.Inactive {
+  background-color: #d9534f;
+  color: #ffffff;
+}
+
+.user-status.Unknown {
+  background-color: #777777;
+  color: #ffffff;
+}

@@ -11,6 +11,7 @@ import CategoriesPage from './scenes/categoriesPage/CategoriesPage';
 import ReservationMadePage from './scenes/reservationMadePage/ReservationMadePage';
 import DescPage from './scenes/DescPage/DescPage';
 import DetailPage from './scenes/detailsPage/DetailPage';
+import UsersList from './scenes/usersList/UsersList';
 import './App.css';
 
 const router = createBrowserRouter([
@@ -27,6 +28,18 @@ const router = createBrowserRouter([
         element: <UpdatePwdPage />,
     },
     {
+        path: '/descPage',
+        element: <DescPage />, 
+    },
+    {
+        path: '/reservationMadePage',
+        element: <ReservationMadePage />, 
+    },
+    {
+        path: '/usersList',
+        element: <UsersList />, 
+    },
+    {
         element: <Layout />,
         children: [
             {
@@ -36,14 +49,6 @@ const router = createBrowserRouter([
             {
                 path: '/searchPage/:searchQuery',
                 element: <SearchPage />
-            },
-            {
-                path: '/reservationMadePage/',
-                element: <ReservationMadePage />
-            },
-            {
-                path: '/DescPage/',
-                element: <DescPage />
             },
             {
                 path: '/categories', 
