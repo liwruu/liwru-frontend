@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
 import './ReservationFormPage.css';
 
 function ReservationFormPage() {
@@ -10,8 +9,6 @@ function ReservationFormPage() {
         date: '',
     });
 
-    const history = useHistory();
-
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
@@ -20,62 +17,67 @@ function ReservationFormPage() {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log('Reserva realizada:', formData);
+        // Aquí podrías añadir lógica adicional si deseas procesar los datos
 
-        history.push('/reservation-made');
+        // Limpiar el formulario después de enviar (opcional)
+        setFormData({
+            name: '',
+            bookTitle: '',
+            isbn: '',
+            date: '',
+        });
     };
 
     return (
-        <div className="container">
-            <div className="form-wrapper">
-                <h1>Reserva de Libros</h1>
-                <form onSubmit={handleSubmit}>
-                    <div>
-                        <label htmlFor="name">Nombre:</label>
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            value={formData.name}
-                            onChange={handleChange}
-                            required
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="bookTitle">Título del Libro:</label>
-                        <input
-                            type="text"
-                            id="bookTitle"
-                            name="bookTitle"
-                            value={formData.bookTitle}
-                            onChange={handleChange}
-                            required
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="isbn">Código ISBN:</label>
-                        <input
-                            type="text"
-                            id="isbn"
-                            name="isbn"
-                            value={formData.isbn}
-                            onChange={handleChange}
-                            required
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="date">Fecha de Reserva:</label>
-                        <input
-                            type="date"
-                            id="date"
-                            name="date"
-                            value={formData.date}
-                            onChange={handleChange}
-                            required
-                        />
-                    </div>
-                    <button type="submit">Reservar</button>
-                </form>
-            </div>
+        <div className="form-wrapper">
+            <h1>Reserva de Libros</h1>
+            <form onSubmit={handleSubmit}>
+                <div>
+                    <label htmlFor="name">Nombre:</label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <div>
+                    <label htmlFor="bookTitle">Título del Libro:</label>
+                    <input
+                        type="text"
+                        id="bookTitle"
+                        name="bookTitle"
+                        value={formData.bookTitle}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <div>
+                    <label htmlFor="isbn">Código ISBN:</label>
+                    <input
+                        type="text"
+                        id="isbn"
+                        name="isbn"
+                        value={formData.isbn}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <div>
+                    <label htmlFor="date">Fecha de Reserva:</label>
+                    <input
+                        type="date"
+                        id="date"
+                        name="date"
+                        value={formData.date}
+                        onChange={handleChange}
+                        required
+                    />
+                </div>
+                <button type="submit">Reservar</button>
+            </form>
         </div>
     );
 }

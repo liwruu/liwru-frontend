@@ -1,5 +1,5 @@
+import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import CallPage from './scenes/callPage/CallPage';
 import ErrorPage from './scenes/errorPage/ErrorPage';
 import HomePage from './scenes/homePage/main/HomePage';
 import Layout from './components/Layout/Layout';
@@ -9,11 +9,12 @@ import RegisterPage from './scenes/registerPage/RegisterPage';
 import UpdatePwdPage from './scenes/updatePwdPage/UpdatePwdPage';
 import AdminHomePage from './scenes/adminHomePage/AdminHomePage';
 import CategoriesPage from './scenes/categoriesPage/CategoriesPage';
-import './App.css';
-import ConfigUser from './components/ConfigUser/ConfigUser';
 import ReservationMadePage from './scenes/reservationMadePage/ReservationMadePage';
 import DescPage from './scenes/DescPage/DescPage';
-import ReservationFormPage from './scenes/reservationFormPage/ReservationFormPage'; // Importar el nuevo componente
+import DetailPage from './scenes/detailsPage/DetailPage';
+import InfoUsuarioPage from './scenes/infoUsuarioPage/InfoUsuarioPage'; 
+import ReservationFormPage from './scenes/reservationFormPage/ReservationFormPage';
+import './App.css';
 
 const router = createBrowserRouter([
     {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
         element: <UpdatePwdPage />,
     },
     {
+        path: '/infoUsuario', // Nueva ruta para InfoUsuario
+        element: <InfoUsuarioPage />,
+    },
+    {
         element: <Layout />,
         children: [
             {
@@ -38,10 +43,6 @@ const router = createBrowserRouter([
             {
                 path: '/searchPage/:searchQuery',
                 element: <SearchPage />
-            },
-            {
-                path: '/callPage/:callId',
-                element: <CallPage />
             },
             {
                 path: '/reservationMadePage/',
@@ -56,8 +57,12 @@ const router = createBrowserRouter([
                 element: <CategoriesPage />
             },
             {
-                path: '/reservationForm', 
+                path: '/ReservationForm',
                 element: <ReservationFormPage />
+            },
+            {
+                path: '/details/:detailId',
+                element: <DetailPage />
             }
         ],
         errorElement: <ErrorPage />
