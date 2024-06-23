@@ -10,8 +10,9 @@ import UpdatePwdPage from './scenes/updatePwdPage/UpdatePwdPage';
 //import AdminHomePage from './scenes/adminHomePage/AdminHomePage';
 import './App.css';
 //import ConfigUser from './components/ConfigUser/ConfigUser';
-import ReservationMadePage from './scenes/reservationMadePage/ReservationMadePage';
 import DescPage from './scenes/DescPage/DescPage';
+import UsersList from './scenes/usersList/UsersList';
+import UserDetails from './scenes/usersDetails/usersDetails';
 import Test from './scenes/test';
 
 const router = createBrowserRouter([
@@ -26,6 +27,22 @@ const router = createBrowserRouter([
     {
         path: '/updatePwd',
         element: <UpdatePwdPage />,
+    },
+    {
+      path: '/descPage',
+      element: <DescPage />,
+    },
+    {
+      path: '/reservationMadePage',
+      element: <ReservationMadePage />,
+    },
+    {
+      path: '/usersList',
+      element: <UsersList />,
+    },
+    {
+      path: '/users/:username',
+      element: <UserDetails />,
     },
     {
         element: <Layout />,
