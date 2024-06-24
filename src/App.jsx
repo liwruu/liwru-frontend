@@ -17,7 +17,6 @@ import Test from './scenes/test';
 import AdminHomePage from './scenes/adminHomePage/AdminHomePage';
 import CategoriesPage from './scenes/categoriesPage/CategoriesPage';
 import ReservationMadePage from './scenes/reservationMadePage/ReservationMadePage';
-import DescPage from './scenes/DescPage/DescPage';
 import DetailPage from './scenes/detailsPage/DetailPage';
 import InfoUsuarioPage from './scenes/infoUsuarioPage/InfoUsuarioPage'; 
 import ReservationFormPage from './scenes/reservationFormPage/ReservationFormPage';
