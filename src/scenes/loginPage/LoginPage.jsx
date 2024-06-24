@@ -11,14 +11,28 @@ export default function LoginPage() {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
 
-    const handleLogin = async () => {
+    async function handleLoginWithCookies() {
+        const jsonData = {
+            username: username,
+            password: password
+        };
+
         try {
-            const response = await axiosInstance.post('auth/login', { username, password });
-                navigate('/');
+            const response = await fetch('http://localhost:4000/auth/login', {
+                method: 'POST',
+                credentials: 'include',
+                headers: {
+                    "Content-Type": 'application/json'
+                },
+                body: JSON.stringify(jsonData)
+            });
+
+            if (response.status === 200) navigate('/');
+            else alert('Wrong username and/or password. Try again or click forgot your password? to reset it.')
         } catch (error) {
-            setError('Invalid username or password.');
+            console.log('An error occurred: ' + error);
         }
-    };
+    }
 
     return (
         <main className='login-page'>
@@ -43,7 +57,7 @@ export default function LoginPage() {
                 />
                 {error && <p className='login-page__right-panel__error'>{error}</p>}
                 <Link className='login-page__right-panel__forgot' to='/updatePwd'>forgot your password?</Link>
-                <button className='login-page__right-panel__button' onClick={handleLogin}>log in</button>
+                <button className='login-page__right-panel__button' onClick={handleLoginWithCookies}>log in</button>
                 <Link className='login-page__right-panel__register' to='/register'>Register now</Link>
             </div>
         </main>

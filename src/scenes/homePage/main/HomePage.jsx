@@ -13,22 +13,6 @@ export default function HomePage() {
     const [Data, setData] = useState(callsData);
     const images = [image_1, image_2, image_3];
 
-    useEffect(() => {
-        const fetchUser = async () => {
-            try {
-                const response = await axiosInstance.get('/user'). then(response => {
-                // Manejar los datos de respuesta
-                const userData = response.data;
-                console.log(userData);
-            })} catch (error) {
-                // Manejar errores
-                console.error('Error al obtener los datos:', error);
-            }
-        };
-
-        fetchUser();
-    }, []);
-
     const types = Data[0].map(type => (
         <Type
             key={type}
