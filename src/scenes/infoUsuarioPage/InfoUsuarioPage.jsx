@@ -24,7 +24,7 @@ const InfoUsuarioPage = () => {
 
     return (
         <div className="page-container">
-            <Navbar /> {/* Aquí incluimos el Navbar */}
+            <Navbar /> {}
             <div className="info-container">
                 <div className="info-form">
                     <h1>Información del Usuario</h1>
