@@ -1,22 +1,42 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import detail from '../../assets/data/detail';
 import Navbar from '../../components/Navbar/Navbar';  
 import './InfoUsuarioPage.css';
 
 const InfoUsuarioPage = () => {
+    const [usuario, setUsuario] = useState({
+        nombreCompleto: '',
+        codigo: '',
+        tieneLibroPrestado: false
+    });
     const [selectedCategory, setSelectedCategory] = useState("all");
 
     const handleCategoryClick = (category) => {
         setSelectedCategory(category);
     };
 
-   
-    const usuario = {
-        nombreCompleto: 'Juan Pérez',
-        codigoAlumno: '12345678',
-        tieneLibroPrestado: true,
-    };
+    useEffect(() => {
+        async function fetchUserSession() {
+            try {
+                const response = await fetch('http://localhost:4000/user', {
+                    method: 'GET',
+                    credentials: 'include'
+                });
+                const jsonData = await response.json();
+                const {name, id} = jsonData;
+                setUsuario({
+                    nombreCompleto: name,
+                    codigo: id,
+                    tieneLibroPrestado: false
+                });
+            } catch (error) {
+                console.log('An error occurred: ' + error);
+            }
+        }
+
+        fetchUserSession();
+    }, []);
 
     const products = detail[1]; 
 
@@ -29,7 +49,7 @@ const InfoUsuarioPage = () => {
                 <div className="info-form">
                     <h1>Información del Usuario</h1>
                     <p><strong>Nombre completo:</strong> {usuario.nombreCompleto}</p>
-                    <p><strong>Código de alumno:</strong> {usuario.codigoAlumno}</p>
+                    <p><strong>Código:</strong> {usuario.codigo}</p>
                     <p><strong>Libro prestado:</strong> {usuario.tieneLibroPrestado ? 'Sí' : 'No'}</p>
 
                     <h2>Mi historial de préstamos</h2>
