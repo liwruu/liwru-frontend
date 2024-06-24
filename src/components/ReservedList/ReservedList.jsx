@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from "../../api/axios"
 import './ReservedList.css';
 
+
 export default function ReservedList() {
     const [searchId, setSearchId] = useState('');
     const [reservas, setReservas] = useState([]);
@@ -128,6 +129,8 @@ export default function ReservedList() {
                     reservasPasadas.map(reserva => (
                         <div key={reserva.ID}>
                             <p>ID: {reserva.ID}</p>
+                            <p>Book ID:{reserva.bibliographicMaterialId}</p>
+                            <p>User ID:{reserva.userID}</p>
                             <p>Loan Date: {reserva.loanDate}</p>
                             <p>Return Date: {reserva.returnDate}</p>
                         </div>
