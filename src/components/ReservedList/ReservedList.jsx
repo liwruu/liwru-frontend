@@ -75,9 +75,10 @@ export default function ReservedList() {
             // Calcular la nueva fecha de retorno (añadir 1 semana a la fecha de retorno actual)
             const returnDate = new Date(reserva.returnDate);
             returnDate.setDate(returnDate.getDate() + 7);
+            loanExtension = true
 
             // Realizar la petición para actualizar la reserva
-            const response = await axios.put(`${api_url}/${id}`, { returnDate });
+            const response = await axios.put(`${api_url}/${id}`, { returnDate , loanExtension});
 
             if (response.status === 200) {
                 // Actualizar la lista de reservas en el estado
@@ -108,6 +109,8 @@ export default function ReservedList() {
                     reservasActivas.map(reserva => (
                         <div key={reserva.ID}>
                             <p>ID: {reserva.ID}</p>
+                            <p>Book ID:{reserva.bibliographicMaterialId}</p>
+                            <p>User ID:{reserva.userID}</p>
                             <p>Loan Date: {reserva.loanDate}</p>
                             <p>Return Date: {reserva.returnDate}</p>
                             <button onClick={() => handleExtendReservation(reserva.ID)}>

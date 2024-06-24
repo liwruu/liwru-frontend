@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from '../../api/axios';
+import './ConfigUser.css/';
 
 const ConfigUser = ({ username }) => {
     const [user, setUser] = useState({
@@ -52,7 +53,7 @@ const ConfigUser = ({ username }) => {
 
     return (
         <div>
-            <h2>Profile Settings</h2>
+            <h2>Configuracion de Usuario</h2>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label>
