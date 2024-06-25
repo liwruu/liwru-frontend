@@ -1,19 +1,24 @@
 import React, { useState, useEffect } from 'react';
+import axios from '../../api/axios';
+import './ConfigUser.css/';
+import { useParams } from 'react-router-dom';
 
-const ConfigUser = ({ username }) => {
+
+const ConfigUser = () => {
+    const {username} = useParams();
     const [user, setUser] = useState({
-        fullName: '',
-        phoneNumber: '',
+        name: '',
+        lastname: '',
         email: ''
     });
     const [password, setPassword] = useState('');
+    const [newPassword, setNewPassword] = useState('');
     const [error, setError] = useState('');
 
     useEffect(() => {
-        fetch(`/getUser/users/${username}`)
-            .then(response => response.json())
-            .then(data => {
-                setUser(data);
+        axios.get(`/users/${username}`)
+            .then(response => {
+                setUser(response.data);
             })
             .catch(err => {
                 setError('Error fetching user data');
@@ -32,22 +37,18 @@ const ConfigUser = ({ username }) => {
         setPassword(e.target.value);
     };
 
+    const handleNewPasswordChange = (e) => {
+        setNewPassword(e.target.value);
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch(``, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                fullName: user.fullName,
-                phoneNumber: user.phoneNumber,
-                email: user.email,
-                password: password ? password : undefined,
-            })
+        axios.put(`/users/${username}`, {
+            name: user.name,
+            lastname: user.lastname,
+            email: user.email,
         })
-        .then(response => response.json())
-        .then(data => {
+        .then(response => {
             alert('Perfil actualizado correctamente');
         })
         .catch(err => {
@@ -55,28 +56,39 @@ const ConfigUser = ({ username }) => {
         });
     };
 
+    const handlePasswordSubmit = (e) => {
+        e.preventDefault();
+        axios.put(`/users/newpassword/${username}`, {
+            Password: newPassword,
+        })
+        .then(response => {
+            alert('Contraseña actualizada correctamente');
+        })
+        .catch(err => {
+            setError('Error actualizando la contraseña');
+        });
+    };
+
     return (
         <div>
-            <h2>Profile Settings</h2>
+            <h2>Configuración de Usuario</h2>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label>
-                        Full Name:
+                        Nombre
                         <input 
                             type="text" 
-                            name="fullName" 
-                            value={user.fullName} 
+                            name="name" 
+                            value={user.name} 
                             onChange={handleChange} 
                         />
                     </label>
-                </div>
-                <div>
                     <label>
-                        Phone Number:
+                        Apellido
                         <input 
-                            type="text" 
-                            name="phoneNumber" 
-                            value={user.phoneNumber} 
+                            type="text"
+                            name='lastname'
+                            value={user.lastname}
                             onChange={handleChange} 
                         />
                     </label>
@@ -92,19 +104,26 @@ const ConfigUser = ({ username }) => {
                         />
                     </label>
                 </div>
+                <button type="submit">Guardar Cambios</button>
+            </form>
+
+            <h2>Cambiar Contraseña</h2>
+            <form onSubmit={handlePasswordSubmit}>
                 <div>
                     <label>
-                        New Password:
+                        Nueva Contraseña:
                         <input 
                             type="password" 
-                            name="password" 
-                            value={password} 
-                            onChange={handlePasswordChange} 
+                            name="newPassword" 
+                            value={newPassword} 
+                            onChange={handleNewPasswordChange} 
                         />
                     </label>
                 </div>
-                <button type="submit">Save Changes</button>
+                <button type="submit">Cambiar Contraseña</button>
             </form>
+
+            {error && <p>{error}</p>}
         </div>
     );
 };

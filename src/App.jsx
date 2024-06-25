@@ -7,6 +7,8 @@ import SearchPage from './scenes/searchPage/main/SearchPage';
 import LoginPage from './scenes/loginPage/LoginPage';
 import RegisterPage from './scenes/registerPage/RegisterPage';
 import UpdatePwdPage from './scenes/updatePwdPage/UpdatePwdPage';
+import ReservedList from './components/ReservedList/ReservedList';
+import ConfigUser from './components/ConfigUser/ConfigUser';
 //import AdminHomePage from './scenes/adminHomePage/AdminHomePage';
 import './App.css';
 //import ConfigUser from './components/ConfigUser/ConfigUser';
@@ -36,6 +38,12 @@ const router = createBrowserRouter([
         element: <UpdatePwdPage />,
     },
     {
+        path: '/reservedListAdmin',
+        element:<ReservedList />
+    },
+    {
+        path:'/configUser/:username',
+        element:<ConfigUser />
       path: '/descPage',
       element: <DescPage />,
     },
