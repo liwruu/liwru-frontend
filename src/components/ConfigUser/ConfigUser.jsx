@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import axios from '../../api/axios';
 import './ConfigUser.css/';
+import { useParams } from 'react-router-dom';
 
 
-const ConfigUser = ({ username }) => {
+const ConfigUser = () => {
+    const {username} = useParams();
     const [user, setUser] = useState({
-        name:' ',
-        lastname:' ',
+        name: '',
+        lastname: '',
         email: ''
     });
     const [password, setPassword] = useState('');
+    const [newPassword, setNewPassword] = useState('');
     const [error, setError] = useState('');
 
     useEffect(() => {
@@ -34,14 +37,16 @@ const ConfigUser = ({ username }) => {
         setPassword(e.target.value);
     };
 
-    
+    const handleNewPasswordChange = (e) => {
+        setNewPassword(e.target.value);
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
         axios.put(`/users/${username}`, {
             name: user.name,
             lastname: user.lastname,
             email: user.email,
-            password: password ? password : undefined,
         })
         .then(response => {
             alert('Perfil actualizado correctamente');
@@ -51,10 +56,22 @@ const ConfigUser = ({ username }) => {
         });
     };
 
+    const handlePasswordSubmit = (e) => {
+        e.preventDefault();
+        axios.put(`/users/newpassword/${username}`, {
+            Password: newPassword,
+        })
+        .then(response => {
+            alert('Contraseña actualizada correctamente');
+        })
+        .catch(err => {
+            setError('Error actualizando la contraseña');
+        });
+    };
 
     return (
         <div>
-            <h2>Configuracion de Usuario</h2>
+            <h2>Configuración de Usuario</h2>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label>
@@ -70,9 +87,10 @@ const ConfigUser = ({ username }) => {
                         Apellido
                         <input 
                             type="text"
-                            name = 'lastname'
-                            value = {user.lastname}
-                            onChange={handleChange} />
+                            name='lastname'
+                            value={user.lastname}
+                            onChange={handleChange} 
+                        />
                     </label>
                 </div>
                 <div>
@@ -86,20 +104,26 @@ const ConfigUser = ({ username }) => {
                         />
                     </label>
                 </div>
+                <button type="submit">Guardar Cambios</button>
+            </form>
+
+            <h2>Cambiar Contraseña</h2>
+            <form onSubmit={handlePasswordSubmit}>
                 <div>
                     <label>
-                        New Password:
+                        Nueva Contraseña:
                         <input 
                             type="password" 
-                            name="password" 
-                            value={password} 
-                            
-                            onChange={handlePasswordChange} 
+                            name="newPassword" 
+                            value={newPassword} 
+                            onChange={handleNewPasswordChange} 
                         />
                     </label>
                 </div>
-                <button type="submit">Guardar Cambios</button>
+                <button type="submit">Cambiar Contraseña</button>
             </form>
+
+            {error && <p>{error}</p>}
         </div>
     );
 };
