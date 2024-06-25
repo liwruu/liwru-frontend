@@ -1,7 +1,7 @@
 export default [
     [
-        'Proyectos de investigación básica',
-        'Proyectos de investigación aplicada'
+        'Clásicos de la Literatura',
+        'Más Solicitados'
     ],
     [
         {
@@ -29,7 +29,7 @@ export default [
                 Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
                 Curabitur est dolor, dapibus quis suscipit vitae, tincidunt ut leo. Mauris a risus ac lacus volutpat fringilla.
                 Nulla ac eros eu sem accumsan sollicitudin eu at lacus. Donec ultrices pellentesque rhoncus. Curabitur vehicula facilisis malesuada.
-                Vestibulum ante ipsum primis ian faucibus orci luctus et ultrices posuere cubilia curae; Quisque placerat et mi in vehicula.
+                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Quisque placerat et mi in vehicula.
                 Fusce volutpat bibendum ex, sed tincidunt arcu aliquam non. Nunc fermentum lacus ipsum, a posuere metus tempor nec.
                 Vestibulum id urna sed velit ultrices porta varius sed libero.`,
             deadline: '29 de febrero de 2024',
@@ -123,13 +123,13 @@ export default [
                 Ut et tristique felis, a dapibus lectus.`,
             deadline: '31 de marzo de 2024',
             available: true,
-            image: 'https://www.ulima.edu.pe/sites/default/files/faculty/image/arquitectura_copy.jpg'
+            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzckyEgXgZ4-QwBuOyzfsFFZMfoVMhrzPX35i8a06VKA&s'
         },
         {
             id: 8,
-            type: 'Proyectos de investigación aplicada',
+            type: 'Más Solicitados',
             category: 'Comunicación',
-            title: 'Prociencia aplicada 2',
+            title: 'LIBRO 5',
             description: 
                 `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed blandit massa leo, sed tempor est tincidunt vitae.
                 Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
@@ -140,13 +140,13 @@ export default [
                 Vestibulum id urna sed velit ultrices porta varius sed libero.`,
             deadline: '31 de marzo de 2024',
             available: true,
-            image: 'https://www.ulima.edu.pe/sites/default/files/faculty/image/_mg_7313a.png'
+            image: 'https://www.infobae.com/new-resizer/gvtt1qXAS4BlGVE1pgPc02h4XVA=/1200x1800/filters:format(webp):quality(85)/s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2016/07/20201800/mejores-libros-Don-Quijote-sf.jpg'
         },
         {
             id: 9,
-            type: 'Proyectos de investigación aplicada',
+            type: 'Más Solicitados',
             category: 'Derecho',
-            title: 'Prociencia aplicada 3',
+            title: 'LIBRO 6',
             description: 
                 `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce euismod ex sit amet odio ornare suscipit. Etiam ac purus odio.
                 Cras sollicitudin metus ut augue accumsan, commodo egestas sapien cursus. Quisque orci sapien, convallis quis eleifend vitae, consectetur vel dolor.
@@ -158,13 +158,13 @@ export default [
                 Donec vestibulum.`,
             deadline: '30 de abril de 2024',
             available: true,
-            image: 'https://www.ulima.edu.pe/sites/default/files/faculty/image/_mg_4222a.png'
+            image: 'https://upload.wikimedia.org/wikipedia/commons/6/6b/Baldor.jpg'
         },
         {
             id: 10,
-            type: 'Proyectos de investigación aplicada',
+            type: 'Más Solicitados',
             category: 'Economía',
-            title: 'Prociencia aplicada 4',
+            title: 'LIBRO 7',
             description: 
                 `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in malesuada enim, id vehicula sem. Donec finibus finibus quam nec posuere.
                 Suspendisse et dignissim elit, ac porta tortor. Vivamus nec velit nec dui vestibulum mattis.
@@ -173,13 +173,13 @@ export default [
                 Donec rhoncus mollis purus. Morbi quis arcu id odio rutrum porttitor. Ut molestie turpis ac ex venenatis iaculis.`,
             deadline: '30 de abril de 2024',
             available: true,
-            image: 'https://www.ulima.edu.pe/sites/default/files/faculty/image/_mg_4006.png'
+            image: 'https://www.lavanguardia.com/files/content_image_mobile_filter/uploads/2023/04/21/6442a04fb5e7f.jpeg'
         },
         {
             id: 11,
-            type: 'Proyectos de investigación aplicada',
+            type: 'Más Solicitados',
             category: 'Psicología',
-            title: 'Prociencia aplicada 5',
+            title: 'LIBRO 8',
             description: 
                 `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut vehicula nibh, at vehicula diam. Sed dignissim suscipit justo ut mollis.
                 Nulla congue gravida nunc, faucibus semper magna vulputate sit amet. Nunc scelerisque sagittis nibh ac dapibus.
@@ -192,13 +192,13 @@ export default [
                 Suspendisse.`,
             deadline: '29 de febrero de 2024',
             available: false,
-            image: 'https://www.ulima.edu.pe/sites/default/files/faculty/image/psicologia_copy_0.jpg'
+            image: 'https://images.cdn1.buscalibre.com/fit-in/360x360/3b/7e/3b7ee2ebcdc03bedc4cc58a617f8a86b.jpg'
         },
         {
             id: 12,
-            type: 'Proyectos de investigación aplicada',
+            type: 'Más Solicitados',
             category: 'Ingeniería de Sistemas',
-            title: 'Prociencia aplicada 6',
+            title: 'LIBRO 9',
             description: 
                 `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc blandit malesuada nibh vitae aliquet. Quisque fringilla velit quis imperdiet egestas.
                 Donec feugiat fermentum nunc, non tincidunt arcu cursus vitae. Suspendisse a lectus eu ex faucibus semper a id urna.
@@ -211,7 +211,7 @@ export default [
                 Sed massa est, tincidunt ut dui non, laoreet luctus dolor. Interdum et.`,
             deadline: '30 de abril de 2024',
             available: true,
-            image: 'https://www.ulima.edu.pe/sites/default/files/faculty/image/lab_sap_nex_copy.jpg'
+            image: 'https://images.cdn1.buscalibre.com/fit-in/360x360/46/0c/460cf768bec27103e3d93791c2770ba5.jpg'
         }
     ]
 ]
