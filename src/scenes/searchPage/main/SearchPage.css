@@ -1,6 +1,7 @@
 /* SearchPage */
 .search-page {
     padding: 20px;
+    background-color: #f9f9f9;
 }
 
 .search-page__results {
@@ -14,6 +15,61 @@
 .search-page__search-query {
     padding: 10px 0;
     font-size: 1.1rem;
+    color: #333;
+    text-align: center;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-buttons button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.filter-buttons button.active,
+.filter-buttons button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.filter-buttons button:nth-child(1) {
+    background-color: #2196F3;
+}
+
+.filter-buttons button:nth-child(1).active,
+.filter-buttons button:nth-child(1):hover {
+    background-color: #1976D2;
+}
+
+.filter-buttons button:nth-child(2) {
+    background-color: #FF5722;
+}
+
+.filter-buttons button:nth-child(2).active,
+.filter-buttons button:nth-child(2):hover {
+    background-color: #E64A19;
+}
+
+.filter-buttons button:nth-child(3) {
+    background-color: #4CAF50;
+}
+
+.filter-buttons button:nth-child(3).active,
+.filter-buttons button:nth-child(3):hover {
+    background-color: #45a049;
 }
 
 /* SearchResult */
@@ -35,7 +91,8 @@
     padding: 20px;
     height: 500px;
     border-radius: 8px;
-    box-shadow: 0 0 5px rgba(0, 0 , 0, 0.4);
+    box-shadow: 0 0 10px rgba(0, 0 , 0, 0.2);
+    background-color: #fff;
     overflow: hidden;
 }
 
@@ -59,12 +116,14 @@
 
 .search-result__container__card__left__category {
     font-size: 0.8rem;
+    color: #555;
 }
 
 .search-result__container__card__right__title {
     margin-top: 15px;
     font-size: 1.1rem;
     font-weight: 600;
+    color: #222;
 }
 
 .search-result__container__card__right__description {
@@ -72,15 +131,17 @@
     height: 150px;
     mask-image: linear-gradient(180deg, black 50%, transparent 100%);
     font-size: 0.9rem;
+    color: #666;
 }
 
-.search-result__container__card__right__deadline {
+.search-result__container__card__right__availability {
     margin-top: 10px;
     font-size: 0.9rem;
+    color: #888;
 }
 
 .search-result__container__card--state-unavailable
-.search-result__container__card__right__deadline {
+.search-result__container__card__right__availability {
     color: red;
 }
 
