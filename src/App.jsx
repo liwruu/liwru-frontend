@@ -44,6 +44,8 @@ const router = createBrowserRouter([
     {
         path:'/configUser/:username',
         element:<ConfigUser />
+    },
+    {
       path: '/descPage',
       element: <DescPage />,
     },
