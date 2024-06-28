@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
-import './ReservedList.css'
+import React, { useState, useEffect } from 'react';
+import axios from "../../api/axios"
+import './ReservedList.css';
+
 
 export default function ReservedList() {
     const [searchId, setSearchId] = useState('');
@@ -7,15 +9,14 @@ export default function ReservedList() {
     const [reservasActivas, setReservasActivas] = useState([]);
     const [reservasPasadas, setReservasPasadas] = useState([]);
 
-    //const api_url = "";
+    useEffect(() => {
+        fetchReservas();
+    }, []);
 
     const fetchReservas = async () => {
         try {
-            const response = await fetch(api_url);
-            if (!response.ok) {
-                throw new Error(`Error al obtener datos del API: ${response.statusText}`);
-            }
-            const data = await response.json();
+            const response = await axios.get('/loans');
+            const data = response.data;
             setReservas(data);
             clasificarReservas(data);
         } catch (error) {
@@ -63,6 +64,35 @@ export default function ReservedList() {
         }
     };
 
+    const handleExtendReservation = async (id) => {
+        try {
+            // Encontrar la reserva a extender
+            const reserva = reservas.find(r => r.ID === id);
+            if (!reserva) {
+                console.error(`Reserva con ID: ${id} no encontrada`);
+                return;
+            }
+
+            // Calcular la nueva fecha de retorno (añadir 1 semana a la fecha de retorno actual)
+            const returnDate = new Date(reserva.returnDate);
+            returnDate.setDate(returnDate.getDate() + 7);
+            loanExtension = true
+
+            // Realizar la petición para actualizar la reserva
+            const response = await axios.put(`${api_url}/${id}`, { returnDate , loanExtension});
+
+            if (response.status === 200) {
+                // Actualizar la lista de reservas en el estado
+                fetchReservas();
+                console.log(`Reserva con ID: ${id} ha sido extendida`);
+            } else {
+                console.error(`Error al extender la reserva con ID: ${id}`);
+            }
+        } catch (error) {
+            console.error(`Error al extender la reserva con ID: ${id}`, error);
+        }
+    };
+
     return (
         <div className="reservas-principal">
             <div className="busqueda-reservas">
@@ -80,8 +110,13 @@ export default function ReservedList() {
                     reservasActivas.map(reserva => (
                         <div key={reserva.ID}>
                             <p>ID: {reserva.ID}</p>
+                            <p>Book ID:{reserva.bibliographicMaterialId}</p>
+                            <p>User ID:{reserva.userID}</p>
                             <p>Loan Date: {reserva.loanDate}</p>
                             <p>Return Date: {reserva.returnDate}</p>
+                            <button onClick={() => handleExtendReservation(reserva.ID)}>
+                                Extender Reserva
+                            </button>
                         </div>
                     ))
                 ) : (
@@ -94,6 +129,8 @@ export default function ReservedList() {
                     reservasPasadas.map(reserva => (
                         <div key={reserva.ID}>
                             <p>ID: {reserva.ID}</p>
+                            <p>Book ID:{reserva.bibliographicMaterialId}</p>
+                            <p>User ID:{reserva.userID}</p>
                             <p>Loan Date: {reserva.loanDate}</p>
                             <p>Return Date: {reserva.returnDate}</p>
                         </div>

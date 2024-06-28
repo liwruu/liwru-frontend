@@ -7,14 +7,22 @@ import SearchPage from './scenes/searchPage/main/SearchPage';
 import LoginPage from './scenes/loginPage/LoginPage';
 import RegisterPage from './scenes/registerPage/RegisterPage';
 import UpdatePwdPage from './scenes/updatePwdPage/UpdatePwdPage';
+import ReservedList from './components/ReservedList/ReservedList';
+import ConfigUser from './components/ConfigUser/ConfigUser';
+//import AdminHomePage from './scenes/adminHomePage/AdminHomePage';
+import './App.css';
+//import ConfigUser from './components/ConfigUser/ConfigUser';
+import DescPage from './scenes/DescPage/DescPage';
+import UsersList from './scenes/usersList/UsersList';
+import UserDetails from './scenes/usersDetails/usersDetails';
+import Test from './scenes/test';
 import AdminHomePage from './scenes/adminHomePage/AdminHomePage';
 import CategoriesPage from './scenes/categoriesPage/CategoriesPage';
 import ReservationMadePage from './scenes/reservationMadePage/ReservationMadePage';
-import DescPage from './scenes/DescPage/DescPage';
 import DetailPage from './scenes/detailsPage/DetailPage';
 import InfoUsuarioPage from './scenes/infoUsuarioPage/InfoUsuarioPage'; 
 import ReservationFormPage from './scenes/reservationFormPage/ReservationFormPage';
-import './App.css';
+
 
 const router = createBrowserRouter([
     {
@@ -30,6 +38,28 @@ const router = createBrowserRouter([
         element: <UpdatePwdPage />,
     },
     {
+        path: '/reservedListAdmin',
+        element:<ReservedList />
+    },
+    {
+        path:'/configUser/:username',
+        element:<ConfigUser />
+    },
+    {
+      path: '/descPage',
+      element: <DescPage />,
+    },
+    {
+      path: '/reservationMadePage',
+      element: <ReservationMadePage />,
+    },
+    {
+      path: '/usersList',
+      element: <UsersList />,
+    },
+    {
+      path: '/users/:username',
+      element: <UserDetails />,
         path: '/infoUsuario', // Nueva ruta para InfoUsuario
         element: <InfoUsuarioPage />,
     },
@@ -51,6 +81,10 @@ const router = createBrowserRouter([
             {
                 path: '/DescPage/',
                 element: <DescPage />
+            },
+            {
+                path: '/Test/',
+                element: <Test />
             },
             {
                 path: '/categories',
