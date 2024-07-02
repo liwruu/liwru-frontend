@@ -73,14 +73,8 @@ export default function ReservedList() {
                 return;
             }
 
-            // Calcular la nueva fecha de retorno (añadir 1 semana a la fecha de retorno actual)
-            const returnDate = new Date(reserva.returnDate);
-            returnDate.setDate(returnDate.getDate() + 7);
-            loanExtension = true
-
             // Realizar la petición para actualizar la reserva
-            const response = await axios.put(`${api_url}/${id}`, { returnDate , loanExtension});
-
+            const response = await axios.put(`${api_url}/${id}`);
             if (response.status === 200) {
                 // Actualizar la lista de reservas en el estado
                 fetchReservas();
@@ -114,6 +108,8 @@ export default function ReservedList() {
                             <p>User ID:{reserva.userID}</p>
                             <p>Loan Date: {reserva.loanDate}</p>
                             <p>Return Date: {reserva.returnDate}</p>
+                            <p>Return Extension Date: {reserva.returnExtensionDate}</p>
+                            <p>State: {reserva.state}</p>
                             <button onClick={() => handleExtendReservation(reserva.ID)}>
                                 Extender Reserva
                             </button>
