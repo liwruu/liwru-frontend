@@ -60,6 +60,7 @@
 
 .register-page__right-panel__input {
     padding: 10px;
+    padding-left: 20px;
     border: none;
     border-radius: 20px;
     width: 100%;
@@ -72,7 +73,7 @@
 }
 
 .register-page__right-panel__label {
-    color: white;
+    color: #E59A9C;
     font-size: 0.9rem;
     text-align: center;
 }
