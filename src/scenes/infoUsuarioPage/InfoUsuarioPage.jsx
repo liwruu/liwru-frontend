@@ -53,6 +53,29 @@ const InfoUsuarioPage = () => {
         fetchUserLoans();
     }, []);
 
+    const handleExtendReservation = async (id) => {
+        try {
+            // Encontrar la reserva a extender
+            const reserva = reservas.find(r => r.ID === id);
+            if (!reserva) {
+                console.error(`Reserva con ID: ${id} no encontrada`);
+                return;
+            }
+
+            // Realizar la petición para actualizar la reserva
+            const response = await axios.put(`extend/loands/${id}`);
+            if (response.status === 200) {
+                // Actualizar la lista de reservas en el estado
+                fetchUserLoans();
+                console.log(`Reserva con ID: ${id} ha sido extendida`);
+            } else {
+                console.error(`Error al extender la reserva con ID: ${id}`);
+            }
+        } catch (error) {
+            console.error(`Error al extender la reserva con ID: ${id}`, error);
+        }
+    };
+
     const clasificarReservas = (reservas) => {
         const fechaActual = new Date();
         const activas = [];
@@ -84,34 +107,73 @@ const InfoUsuarioPage = () => {
                     <h2>Mis Prestamos Activos</h2>
                     <section className="reservas-activas">
                         {reservasActivas.length > 0 ? (
-                        reservasActivas.map(reserva => (
-                            <div key={reserva.ID}>
-                                <p>ID: {reserva.ID}</p>
-                                <p>Book ID:{reserva.bibliographicMaterialId}</p>
-                                <p>User ID:{reserva.userID}</p>
-                                <p>Loan Date: {reserva.loanDate}</p>
-                                <p>Return Date: {reserva.returnDate}</p>
-                                <button onClick={() => handleExtendReservation(reserva.ID)}>
-                                    Extender Reserva
-                                </button>
-                            </div>
-                        ))
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Book ID</th>
+                                        <th>User ID</th>
+                                        <th>Loan Date</th>
+                                        <th>Return Date</th>
+                                        <th>Extension</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {reservasActivas.map(reserva => (
+                                        <tr key={reserva.ID}>
+                                            <td>{reserva.ID}</td>
+                                            <td>{reserva.bibliographicMaterialId}</td>
+                                            <td>{reserva.userID}</td>
+                                            <td>{reserva.loanDate}</td>
+                                            <td>{reserva.returnDate}</td>
+                                            <td>
+                                                {(() => {
+                                                    if (reserva.returnExtensionDate == null && reserva.loanExtension === true) {
+                                                        return <p>No se puede extender la reserva</p>;
+                                                    } else if (reserva.returnExtensionDate == null && reserva.loanExtension !== true) {
+                                                        return (
+                                                            <div id="reserva-link" onClick={() => handleExtendReservation(reserva.ID)}>
+                                                                Extender Reserva
+                                                            </div>
+                                                        );
+                                                    } else {
+                                                        return <p>{reserva.returnExtensionDate}</p>;
+                                                    }
+                                                })()}
+                                            </td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
                         ) : (
                             <p>No hay reservas activas.</p>
                         )}
                     </section>
-                    <h2>Mis Prestamos Anteriores</h2>
-                    <section className = "reservas-pasadas">
+                    <h2>Reservas Pasadas</h2>
+                    <section className="reservas-pasadas">
                         {reservasPasadas.length > 0 ? (
-                        reservasPasadas.map(reserva => (
-                            <div key={reserva.ID}>
-                                <p>ID: {reserva.ID}</p>
-                                <p>Book ID:{reserva.bibliographicMaterialId}</p>
-                                <p>User ID:{reserva.userID}</p>
-                                <p>Loan Date: {reserva.loanDate}</p>
-                                <p>Return Date: {reserva.returnDate}</p>
-                            </div>
-                        ))
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Book ID</th>
+                                        <th>User ID</th>
+                                        <th>Loan Date</th>
+                                        <th>Return Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {reservasPasadas.map(reserva => (
+                                        <tr key={reserva.ID}>
+                                            <td>{reserva.ID}</td>
+                                            <td>{reserva.bibliographicMaterialId}</td>
+                                            <td>{reserva.userID}</td>
+                                            <td>{reserva.loanDate}</td>
+                                            <td>{reserva.returnDate}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
                         ) : (
                             <p>No hay reservas pasadas.</p>
                         )}

@@ -74,7 +74,7 @@ export default function ReservedList() {
             }
 
             // Realizar la petición para actualizar la reserva
-            const response = await axios.put(`${api_url}/${id}`);
+            const response = await axios.put(`extend/loands/${id}`);
             if (response.status === 200) {
                 // Actualizar la lista de reservas en el estado
                 fetchReservas();
