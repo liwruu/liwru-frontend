@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import axios from '../../api/axios';
 import './ConfigUser.css/';
 import { useParams } from 'react-router-dom';
-
+import Navbar from '../../components/Navbar/Navbar';
 
 const ConfigUser = () => {
-    const {username} = useParams();
+    const { username } = useParams();
     const [user, setUser] = useState({
         name: '',
         lastname: '',
@@ -13,8 +13,10 @@ const ConfigUser = () => {
     });
     const [password, setPassword] = useState('');
     const [newPassword, setNewPassword] = useState('');
+    const [newPasswordConfirm, setNewPasswordConfirm] = useState('');
     const [error, setError] = useState('');
 
+<<<<<<< HEAD
     /* useEffect(() => {
         axios.get(`/users/${username}`)
             .then(response => {
@@ -25,6 +27,8 @@ const ConfigUser = () => {
             });
     }, [username]); */
 
+=======
+>>>>>>> feature/reservas-usuario
     useEffect(() => {
         async function fetchUserSession() {
             try {
@@ -63,8 +67,17 @@ const ConfigUser = () => {
         setNewPassword(e.target.value);
     };
 
+<<<<<<< HEAD
     const handleSubmit = async (e) => {
         /* e.preventDefault();
+=======
+    const handleNewPasswordConfirmChange = (e) => {
+        setNewPasswordConfirm(e.target.value);
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+>>>>>>> feature/reservas-usuario
         axios.put(`/users/${username}`, {
             name: user.name,
             lastname: user.lastname,
@@ -104,6 +117,10 @@ const ConfigUser = () => {
 
     const handlePasswordSubmit = (e) => {
         e.preventDefault();
+        if (newPassword !== newPasswordConfirm) {
+            setError('Las contraseñas no coinciden');
+            return;
+        }
         axios.put(`/users/newpassword/${username}`, {
             Password: newPassword,
         })
@@ -117,59 +134,71 @@ const ConfigUser = () => {
 
     return (
         <div>
-            <h2>Configuración de Usuario</h2>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label>
-                        Nombre
-                        <input 
-                            type="text" 
-                            name="name" 
-                            value={user.name} 
-                            onChange={handleChange} 
-                        />
-                    </label>
-                    <label>
-                        Apellido
-                        <input 
-                            type="text"
-                            name='lastname'
-                            value={user.lastname}
-                            onChange={handleChange} 
-                        />
-                    </label>
-                </div>
-                <div>
-                    <label>
-                        Email:
-                        <input 
-                            type="email" 
-                            name="email" 
-                            value={user.email} 
-                            onChange={handleChange} 
-                        />
-                    </label>
-                </div>
-                <button type="submit">Guardar Cambios</button>
-            </form>
+            <Navbar />
+            <div>
+                <h2>Configuración de Usuario</h2>
+                <form onSubmit={handleSubmit}>
+                    <div>
+                        <label>
+                            Nombre
+                            <input 
+                                type="text" 
+                                name="name" 
+                                value={user.name} 
+                                onChange={handleChange} 
+                            />
+                        </label>
+                        <label>
+                            Apellido
+                            <input 
+                                type="text"
+                                name="lastname"
+                                value={user.lastname}
+                                onChange={handleChange} 
+                            />
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            Email:
+                            <input 
+                                type="email" 
+                                name="email" 
+                                value={user.email} 
+                                onChange={handleChange} 
+                            />
+                        </label>
+                    </div>
+                    <button type="submit">Guardar Cambios</button>
+                </form>
 
-            <h2>Cambiar Contraseña</h2>
-            <form onSubmit={handlePasswordSubmit}>
-                <div>
-                    <label>
-                        Nueva Contraseña:
-                        <input 
-                            type="password" 
-                            name="newPassword" 
-                            value={newPassword} 
-                            onChange={handleNewPasswordChange} 
-                        />
-                    </label>
-                </div>
-                <button type="submit">Cambiar Contraseña</button>
-            </form>
+                <h2>Cambiar Contraseña</h2>
+                <form onSubmit={handlePasswordSubmit}>
+                    <div>
+                        <label>
+                            Nueva Contraseña:
+                            <input 
+                                type="password" 
+                                name="newPassword" 
+                                value={newPassword} 
+                                onChange={handleNewPasswordChange} 
+                            />
+                        </label>
+                        <label>
+                            Confirmar Contraseña:
+                            <input
+                                type="password"
+                                name="newPasswordConfirm"
+                                value={newPasswordConfirm}
+                                onChange={handleNewPasswordConfirmChange}
+                            />
+                        </label>
+                    </div>
+                    <button type="submit">Cambiar Contraseña</button>
+                </form>
 
-            {error && <p>{error}</p>}
+                {error && <p>{error}</p>}
+            </div>
         </div>
     );
 };
