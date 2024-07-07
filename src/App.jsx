@@ -42,7 +42,7 @@ const router = createBrowserRouter([
         element:<ReservedList />
     },
     {
-        path:'/configUser/:username',
+        path:'/configUser',
         element:<ConfigUser />
     },
     {

@@ -103,7 +103,7 @@ const InfoUsuarioPage = () => {
                     <p><strong>Nombre completo:</strong> {usuario.nombreCompleto}</p>
                     <p><strong>Código:</strong> {usuario.codigo}</p>
                     <p><strong>Libro prestado:</strong> {usuario.tieneLibroPrestado ? 'Sí' : 'No'}</p>
-
+                    <Link to="/configUser"> Configurar Usuario </Link>
 
                     <h2>Mis Prestamos Activos</h2>
                     <section className="reservas-activas">
