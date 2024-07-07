@@ -83,7 +83,7 @@ const InfoUsuarioPage = () => {
 
         reservas.forEach(reserva => {
             const returnDate = new Date(reserva.returnDate);
-            if (returnDate >= fechaActual) {
+            if (returnDate >= fechaActual || returnExtensionDate>= fechaActual) {
                 activas.push(reserva);
             } else {
                 pasadas.push(reserva);
@@ -103,6 +103,7 @@ const InfoUsuarioPage = () => {
                     <p><strong>Nombre completo:</strong> {usuario.nombreCompleto}</p>
                     <p><strong>Código:</strong> {usuario.codigo}</p>
                     <p><strong>Libro prestado:</strong> {usuario.tieneLibroPrestado ? 'Sí' : 'No'}</p>
+
 
                     <h2>Mis Prestamos Activos</h2>
                     <section className="reservas-activas">
@@ -129,17 +130,22 @@ const InfoUsuarioPage = () => {
                                             <td>{reserva.returnDate}</td>
                                             <td>
                                                 {(() => {
-                                                    if (reserva.returnExtensionDate == null && reserva.loanExtension === true) {
-                                                        return <p>No se puede extender la reserva</p>;
-                                                    } else if (reserva.returnExtensionDate == null && reserva.loanExtension !== true) {
-                                                        return (
+                                                    if (reserva.returnExtensionDate == null ) {
+                                                        if(reserva.loanExtension == true){
+                                                            return (<p>No se puede extender la reserva</p>)
+                                                        }else{
+                                                            return (
                                                             <div id="reserva-link" onClick={() => handleExtendReservation(reserva.ID)}>
-                                                                Extender Reserva
+                                                            Extender Reserva
                                                             </div>
-                                                        );
-                                                    } else {
-                                                        return <p>{reserva.returnExtensionDate}</p>;
+                                                            )
+                                                        }
+                                                    }else{
+                                                        return (
+                                                            <p>{reserva.returnExtensionDate}</p>
+                                                        )
                                                     }
+                                                     
                                                 })()}
                                             </td>
                                             <td>{reserva.state}</td>

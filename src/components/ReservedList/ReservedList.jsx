@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from "../../api/axios"
 import './ReservedList.css';
+import Navbar from '../../components/Navbar/Navbar';
 
 
 export default function ReservedList() {

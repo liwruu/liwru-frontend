@@ -115,10 +115,6 @@ table tbody tr:last-of-type {
     color: darkred;
 }
 
-/* Estilos para las secciones */
-.reservas-activas, .reservas-pasadas {
-    margin: 20px 0;
-}
 
 h2 {
     color: #de0000;
