@@ -23,6 +23,7 @@ import DetailPage from './scenes/detailsPage/DetailPage';
 import InfoUsuarioPage from './scenes/infoUsuarioPage/InfoUsuarioPage'; 
 import ReservationFormPage from './scenes/reservationFormPage/ReservationFormPage';
 import AboutPage from './scenes/aboutPage/AboutPage';
+import NotificationsPage from './scenes/notificationsPage/NotificationsPage';
 
 
 const router = createBrowserRouter([
@@ -69,6 +70,10 @@ const router = createBrowserRouter([
     {
         path: '/infoUsuario',
         element: <InfoUsuarioPage />,
+    },
+    {
+        path: '/notifications',
+        element: <NotificationsPage />,
     },
     {
         element: <Layout />,
