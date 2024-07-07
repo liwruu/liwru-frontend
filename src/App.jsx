@@ -22,6 +22,7 @@ import ReservationMadePage from './scenes/reservationMadePage/ReservationMadePag
 import DetailPage from './scenes/detailsPage/DetailPage';
 import InfoUsuarioPage from './scenes/infoUsuarioPage/InfoUsuarioPage'; 
 import ReservationFormPage from './scenes/reservationFormPage/ReservationFormPage';
+import AboutPage from './scenes/aboutPage/AboutPage';
 
 
 const router = createBrowserRouter([
@@ -58,9 +59,15 @@ const router = createBrowserRouter([
       element: <UsersList />,
     },
     {
+        path: '/aboutPage',
+        element: <AboutPage />,
+    },
+    {
       path: '/users/:username',
       element: <UserDetails />,
-        path: '/infoUsuario', // Nueva ruta para InfoUsuario
+    },
+    {
+        path: '/infoUsuario',
         element: <InfoUsuarioPage />,
     },
     {

@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&display=swap');
+
+.about-us {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    position: relative;
+    background: #FFD1CE;
+    overflow: hidden;
+    font-family: 'Crimson Text', serif;
+    color: #FE7F7E;
+    text-align: center;
+    padding: 20px;
+}
+
+
+.about-us-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+
+.head-about {
+    font-size: 3.8rem;
+    margin: 0;
+}
+
+.message-about {
+    font-size: 1.5rem ;
+    margin: 15px 0;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .error-page__error__description {
+        font-size: 4rem;
+    }
+
+    .error-page__message {
+        font-size: 1.6rem;
+    }
+
+    .error-page__code {
+        font-size: 1rem;
+    }
+
+    .error-page__icon {
+        width: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .error-page__error__description {
+        font-size: 3rem;
+    }
+
+    .error-page__message {
+        font-size: 1.4rem;
+    }
+
+    .error-page__code {
+        font-size: 0.8rem;
+    }
+
+    .error-page__icon {
+        width: 100px;
+    }
+}
