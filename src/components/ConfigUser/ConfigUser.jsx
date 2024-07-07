@@ -17,14 +17,26 @@ const ConfigUser = () => {
     const [error, setError] = useState('');
 
     useEffect(() => {
-        axios.get(`/users/${username}`)
-            .then(response => {
-                setUser(response.data);
-            })
-            .catch(err => {
-                setError('Error fetching user data');
-            });
-    }, [username]);
+        async function fetchUserSession() {
+            try {
+                const response = await fetch('http://localhost:4000/user', {
+                    method: 'GET',
+                    credentials: 'include'
+                });
+                const jsonData = await response.json();
+                const {name, lastname, email} = jsonData;
+                setUser({
+                    name: name,
+                    lastname: lastname,
+                    email: email
+                });
+            } catch (error) {
+                console.log('An error occurred: ' + error);
+            }
+        }
+
+        fetchUserSession();
+    }, []);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
