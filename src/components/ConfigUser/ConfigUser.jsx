@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from '../../api/axios';
 import './ConfigUser.css/';
 import { useParams } from 'react-router-dom';
+import Navbar from '../../components/Navbar/Navbar';
 
 
 const ConfigUser = () => {
@@ -71,6 +72,8 @@ const ConfigUser = () => {
 
     return (
         <div>
+            <Navbar />{}
+        <div>
             <h2>Configuración de Usuario</h2>
             <form onSubmit={handleSubmit}>
                 <div>
@@ -124,6 +127,7 @@ const ConfigUser = () => {
             </form>
 
             {error && <p>{error}</p>}
+        </div>
         </div>
     );
 };

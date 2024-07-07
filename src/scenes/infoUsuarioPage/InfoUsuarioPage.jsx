@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from "../../api/axios"
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import detail from '../../assets/data/detail';
-import Navbar from '../../components/Navbar/Navbar';  
 import './InfoUsuarioPage.css';
+import Navbar from '../../components/Navbar/Navbar';
 
 const InfoUsuarioPage = () => {
     const [usuario, setUsuario] = useState({
@@ -76,7 +76,7 @@ const InfoUsuarioPage = () => {
         }
     };
 
-    const clasificarReservas = (reservas) => {
+    async function clasificarReservas(reservas) {
         const fechaActual = new Date();
         const activas = [];
         const pasadas = [];
@@ -113,9 +113,10 @@ const InfoUsuarioPage = () => {
                                         <th>ID</th>
                                         <th>Book ID</th>
                                         <th>User ID</th>
-                                        <th>Loan Date</th>
-                                        <th>Return Date</th>
+                                        <th>Fecha de Prestamo</th>
+                                        <th>Fecha de Retorno</th>
                                         <th>Extension</th>
+                                        <th>Estado</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -141,6 +142,7 @@ const InfoUsuarioPage = () => {
                                                     }
                                                 })()}
                                             </td>
+                                            <td>{reserva.state}</td>
                                         </tr>
                                     ))}
                                 </tbody>

@@ -73,3 +73,53 @@
     font-size: 16px;
     color: #666;
 }
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1em;
+    text-align: left;
+}
+
+table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+table th, table td {
+    padding: 12px 15px;
+    border: 1px solid #dddddd;
+}
+
+table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+/* Estilos para el div reserva-link */
+#reserva-link {
+    color: red;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#reserva-link:hover {
+    color: darkred;
+}
+
+/* Estilos para las secciones */
+.reservas-activas, .reservas-pasadas {
+    margin: 20px 0;
+}
+
+h2 {
+    color: #de0000;
+}
