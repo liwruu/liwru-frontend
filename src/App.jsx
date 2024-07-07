@@ -42,22 +42,26 @@ const router = createBrowserRouter([
         element:<ReservedList />
     },
     {
-        path:'/configUser/:username',
+        path:'/configUser',
         element:<ConfigUser />
-      path: '/descPage',
-      element: <DescPage />,
     },
     {
-      path: '/reservationMadePage',
-      element: <ReservationMadePage />,
+        path: '/descPage',
+        element: <DescPage />,
     },
     {
-      path: '/usersList',
-      element: <UsersList />,
+        path: '/reservationMadePage',
+        element: <ReservationMadePage />,
     },
     {
-      path: '/users/:username',
-      element: <UserDetails />,
+        path: '/usersList',
+        element: <UsersList />,
+    },
+    {
+        path: '/users/:username',
+        element: <UserDetails />,
+    },
+    {
         path: '/infoUsuario', // Nueva ruta para InfoUsuario
         element: <InfoUsuarioPage />,
     },

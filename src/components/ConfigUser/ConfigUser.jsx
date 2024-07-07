@@ -15,7 +15,7 @@ const ConfigUser = () => {
     const [newPassword, setNewPassword] = useState('');
     const [error, setError] = useState('');
 
-    useEffect(() => {
+    /* useEffect(() => {
         axios.get(`/users/${username}`)
             .then(response => {
                 setUser(response.data);
@@ -23,7 +23,29 @@ const ConfigUser = () => {
             .catch(err => {
                 setError('Error fetching user data');
             });
-    }, [username]);
+    }, [username]); */
+
+    useEffect(() => {
+        async function fetchUserSession() {
+            try {
+                const response = await fetch('http://localhost:4000/user', {
+                    method: 'GET',
+                    credentials: 'include'
+                });
+                const jsonData = await response.json();
+                const {name, lastname, email} = jsonData;
+                setUser({
+                    name: name,
+                    lastname: lastname,
+                    email: email
+                });
+            } catch (error) {
+                console.log('An error occurred: ' + error);
+            }
+        }
+
+        fetchUserSession();
+    }, []);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -41,8 +63,8 @@ const ConfigUser = () => {
         setNewPassword(e.target.value);
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    const handleSubmit = async (e) => {
+        /* e.preventDefault();
         axios.put(`/users/${username}`, {
             name: user.name,
             lastname: user.lastname,
@@ -53,7 +75,31 @@ const ConfigUser = () => {
         })
         .catch(err => {
             setError('Error actualizando perfil');
-        });
+        }); */
+
+        //  NEW 
+        e.preventDefault();
+
+        const jsonData = {
+            name: user.name,
+            lastname: user.lastname,
+            email: user.email
+        };
+
+        try {
+            await fetch('http://localhost:4000/users/update', {
+                method: 'PUT',
+                credentials: 'include',
+                headers: {
+                    "Content-Type": 'application/json'
+                },
+                body: JSON.stringify(jsonData)
+            });
+
+            alert('Perfil actualizado correctamente');
+        } catch (error) {
+            console.log('An error occurred: ' + error);
+        }
     };
 
     const handlePasswordSubmit = (e) => {
