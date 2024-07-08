@@ -40,14 +40,12 @@ const NotificationsPage = () => {
 
         async function fetchUserLoans(userId) {
             try {
-                const response = await fetch(`http://localhost:4000/loans/${userId}`, {
+                const response = await fetch(`http://localhost:4000/user/loans/${usuario.codigo}`, {
                     method: 'GET',
                     credentials: 'include'
                 });
                 const jsonData = await response.json();
-                // Filtrar préstamos que están atrasados
-                const overdueLoans = jsonData.loans.filter(loan => new Date(loan.dueDate) < new Date());
-                setLibrosPrestados(overdueLoans);
+                setLibrosPrestados(jsonData);
             } catch (error) {
                 console.log('An error occurred: ' + error);
             }
