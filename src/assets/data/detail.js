@@ -1,12 +1,12 @@
 export default [
     [
-        'Clásicos de la Literatura',
-        'Más Solicitados'
+        'Classics of literature',
+        'Most Requested'
     ],
     [
         {
             id: 1,
-            type: 'Clásicos de la Literatura',
+            type: 'Classics of literature',
             category: 'historia',
             isbn: "120839712903",
             pages: "200",
@@ -24,7 +24,7 @@ export default [
         },
         {
             id: 2,
-            type: 'Clásicos de la Literatura',
+            type: 'Classics of literature',
             category: "historia",
             isbn: "120839712903",
             pages: "200",
@@ -42,7 +42,7 @@ export default [
         },
         {
             id: 3,
-            type: 'Clásicos de la Literatura',
+            type: 'Classics of literature',
             category: "literatura",
             isbn: "120839712903",
             pages: "200",
@@ -60,7 +60,7 @@ export default [
         },
         {
             id: 4,
-            type: 'Clásicos de la Literatura',
+            type: 'Classics of literature',
             category: "literatura", 
             isbn: "120839712903",
             pages: "200",
@@ -78,7 +78,7 @@ export default [
         },
         {
             id: 5,
-            type: 'Clásicos de la Literatura',
+            type: 'Classics of literature',
             category: 'cienciaficcion',
             isbn: "120839712903",
             pages: "200",
@@ -96,7 +96,7 @@ export default [
         },
         {
             id: 6,
-            type: 'Clásicos de la Literatura',
+            type: 'Classics of literature',
             category: "cienciaficcion",
             isbn: "120839712903",
             pages: "200",
@@ -114,7 +114,7 @@ export default [
         },
         {
             id: 7,
-            type: 'Más Solicitados',
+            type: 'Most Requested',
             category: "clasicos", 
             isbn: "120839712903",
             pages: "200",
@@ -132,7 +132,7 @@ export default [
         },
         {
             id: 8,
-            type: 'Más Solicitados',
+            type: 'Most Requested',
             category: "clasicos", 
             isbn: "120839712903",
             pages: "200",
@@ -150,7 +150,7 @@ export default [
         },
         {
             id: 9,
-            type: 'Más Solicitados',
+            type: 'Most Requested',
             isbn: "120839712903",
             pages: "200",
             category: "materialuniversitario", 
@@ -168,7 +168,7 @@ export default [
         },
         {
             id: 10,
-            type: 'Más Solicitados',
+            type: 'Most Requested',
             category: "materialuniversitario",
             isbn: "120839712903",
             pages: "200",
@@ -186,7 +186,7 @@ export default [
         },
         {
             id: 11,
-            type: 'Más Solicitados',
+            type: 'Most Requested',
             category: "materialuniversitario",
             isbn: "120839712903",
             pages: "200",
@@ -204,7 +204,7 @@ export default [
         },
         {
             id: 12,
-            type: 'Más Solicitados',
+            type: 'Most Requested',
             category: "materialuniversitario",
             isbn: "120839712903",
             pages: "200",

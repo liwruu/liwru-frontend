@@ -3,7 +3,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import ErrorPage from './scenes/errorPage/ErrorPage';
 import HomePage from './scenes/homePage/main/HomePage';
 import Layout from './components/Layout/Layout';
-import SearchPage from './scenes/searchPage/main/SearchPage';
+import SearchPage from './components/SearchPage/main/SearchPage';
 import LoginPage from './scenes/loginPage/LoginPage';
 import RegisterPage from './scenes/registerPage/RegisterPage';
 import UpdatePwdPage from './scenes/updatePwdPage/UpdatePwdPage';

@@ -17,12 +17,12 @@ export default function CategoriesPage() {
   return (
     <div className="categories-container">
       <div className="category_list">
-        <button className="category-item" onClick={() => handleCategoryClick("all")}>Todo</button>
-        <button className="category-item" onClick={() => handleCategoryClick("historia")}>Historia</button>
-        <button className="category-item" onClick={() => handleCategoryClick("literatura")}>Literatura</button>
-        <button className="category-item" onClick={() => handleCategoryClick("cienciaficcion")}>Ciencia Ficción</button>
-        <button className="category-item" onClick={() => handleCategoryClick("clasicos")}>Clásicos</button>
-        <button className="category-item" onClick={() => handleCategoryClick("materialuniversitario")}>Material Universitario</button>
+        <button className="category-item" onClick={() => handleCategoryClick("all")}>All</button>
+        <button className="category-item" onClick={() => handleCategoryClick("historia")}>History</button>
+        <button className="category-item" onClick={() => handleCategoryClick("literatura")}>Literature</button>
+        <button className="category-item" onClick={() => handleCategoryClick("cienciaficcion")}>Science Fiction</button>
+        <button className="category-item" onClick={() => handleCategoryClick("clasicos")}>Classics</button>
+        <button className="category-item" onClick={() => handleCategoryClick("materialuniversitario")}>University Material</button>
       </div>
       <section className="products-list">
         {filteredProducts.map((product, index) => (
@@ -32,7 +32,7 @@ export default function CategoriesPage() {
               <h2 className="product-title">{product.title}</h2>
               <p className="product-description">{product.description}</p>
               <span className={`product-availability ${product.available ? 'available' : 'not-available'}`}>
-                {product.available ? 'Disponible' : 'No disponible'}
+                {product.available ? 'Available' : 'Not available'}
               </span>
             </Link>
           </div>
