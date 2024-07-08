@@ -66,6 +66,10 @@ const router = createBrowserRouter([
         element: <InfoUsuarioPage />,
     },
     {
+        path: '/administratoPage',
+        element:<AdminHomePage />
+    },
+    {
         element: <Layout />,
         children: [
             {
