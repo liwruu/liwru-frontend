@@ -16,19 +16,7 @@ const ConfigUser = () => {
     const [newPasswordConfirm, setNewPasswordConfirm] = useState('');
     const [error, setError] = useState('');
 
-<<<<<<< HEAD
-    /* useEffect(() => {
-        axios.get(`/users/${username}`)
-            .then(response => {
-                setUser(response.data);
-            })
-            .catch(err => {
-                setError('Error fetching user data');
-            });
-    }, [username]); */
 
-=======
->>>>>>> feature/reservas-usuario
     useEffect(() => {
         async function fetchUserSession() {
             try {
@@ -67,30 +55,11 @@ const ConfigUser = () => {
         setNewPassword(e.target.value);
     };
 
-<<<<<<< HEAD
-    const handleSubmit = async (e) => {
-        /* e.preventDefault();
-=======
     const handleNewPasswordConfirmChange = (e) => {
         setNewPasswordConfirm(e.target.value);
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
->>>>>>> feature/reservas-usuario
-        axios.put(`/users/${username}`, {
-            name: user.name,
-            lastname: user.lastname,
-            email: user.email,
-        })
-        .then(response => {
-            alert('Perfil actualizado correctamente');
-        })
-        .catch(err => {
-            setError('Error actualizando perfil');
-        }); */
-
-        //  NEW 
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         const jsonData = {
