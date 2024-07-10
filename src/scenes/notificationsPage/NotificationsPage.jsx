@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '../../components/Navbar/Navbar';
 import './NotificationsPage.css';
+import { getUserLoan } from '../../../../../LIWRU BACKEND/liwru-backend/src/controllers/users.controller';
 
 const NotificationsPage = () => {
     const [notifications, setNotifications] = useState([]);
@@ -40,7 +41,7 @@ const NotificationsPage = () => {
 
         async function fetchUserLoans(userId) {
             try {
-                const response = await fetch(`http://localhost:4000/user/loans/${usuario.codigo}`, {
+                const response = await fetch(`http://localhost:4000/user/loans/${getUserLoan}`, {
                     method: 'GET',
                     credentials: 'include'
                 });
@@ -53,24 +54,6 @@ const NotificationsPage = () => {
 
         fetchUserSession();
     }, []);
-
-    const handleAddNotification = async () => {
-        try {
-            const response = await fetch(`http://localhost:4000/notifications/${usuario.codigo}`, {
-                method: 'POST',
-                credentials: 'include',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ notification: newNotification })
-            });
-            const jsonData = await response.json();
-            setNotifications([...notifications, jsonData.notification]);
-            setNewNotification('');
-        } catch (error) {
-            console.log('An error occurred: ' + error);
-        }
-    };
 
     return (
         <div className="page-container">
