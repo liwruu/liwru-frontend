@@ -7,6 +7,8 @@ import SearchPage from './components/SearchPage/main/SearchPage';
 import LoginPage from './scenes/loginPage/LoginPage';
 import RegisterPage from './scenes/registerPage/RegisterPage';
 import UpdatePwdPage from './scenes/updatePwdPage/UpdatePwdPage';
+import UpdatePwdPage2 from './scenes/updatePwdPage2/UpdatePwdPage2';
+import UpdatePwdPage3 from './scenes/updatePwdPage3/UpdatePwdPage3';
 import ReservedList from './components/ReservedList/ReservedList';
 import ConfigUser from './components/ConfigUser/ConfigUser';
 //import AdminHomePage from './scenes/adminHomePage/AdminHomePage';
@@ -38,6 +40,14 @@ const router = createBrowserRouter([
         element: <UpdatePwdPage />,
     },
     {
+        path: '/updatePwd2',
+        element: <UpdatePwdPage2 />,
+    },
+    {
+        path: '/updatePwd3',
+        element: <UpdatePwdPage3 />,
+    },
+    {
         path: '/reservedListAdmin',
         element:<ReservedList />
     },
@@ -62,7 +72,7 @@ const router = createBrowserRouter([
         element: <UserDetails />,
     },
     {
-        path: '/infoUsuario', // Nueva ruta para InfoUsuario
+        path: '/infoUsuario',
         element: <InfoUsuarioPage />,
     },
     {
