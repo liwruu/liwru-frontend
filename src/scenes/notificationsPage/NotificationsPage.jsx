@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '../../components/Navbar/Navbar';
 import './NotificationsPage.css';
-import { getUserLoan } from '../../../../../LIWRU BACKEND/liwru-backend/src/controllers/users.controller';
 
 const NotificationsPage = () => {
     const [notifications, setNotifications] = useState([]);
-    const [newNotification, setNewNotification] = useState('');
     const [usuario, setUsuario] = useState({ nombreCompleto: '', codigo: '' });
     const [librosPrestados, setLibrosPrestados] = useState([]);
 
@@ -22,7 +20,7 @@ const NotificationsPage = () => {
                 fetchUserNotifications(id);
                 fetchUserLoans(id);
             } catch (error) {
-                console.log('An error occurred: ' + error);
+                console.error('Ocurrio un error obteniendo la sesion: ', error);
             }
         }
 
@@ -35,20 +33,20 @@ const NotificationsPage = () => {
                 const jsonData = await response.json();
                 setNotifications(jsonData.notifications);
             } catch (error) {
-                console.log('An error occurred: ' + error);
+                console.error('Ocurrio un error obteniendo la sesion: ', error);
             }
         }
 
         async function fetchUserLoans(userId) {
             try {
-                const response = await fetch(`http://localhost:4000/user/loans/${getUserLoan}`, {
+                const response = await fetch(`http://localhost:4000/user/loans/${userId}`, {
                     method: 'GET',
                     credentials: 'include'
                 });
                 const jsonData = await response.json();
                 setLibrosPrestados(jsonData);
             } catch (error) {
-                console.log('An error occurred: ' + error);
+                console.error('An error occurred while fetching user loans: ', error);
             }
         }
 
