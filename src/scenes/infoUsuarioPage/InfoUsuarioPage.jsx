@@ -63,7 +63,7 @@ const InfoUsuarioPage = () => {
             }
 
             // Realizar la petición para actualizar la reserva
-            const response = await axios.put(`extend/loands/${id}`);
+            const response = await axios.put(`extend/loans/${id}`);
             if (response.status === 200) {
                 // Actualizar la lista de reservas en el estado
                 fetchUserLoans();
