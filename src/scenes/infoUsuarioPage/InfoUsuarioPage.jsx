@@ -1,49 +1,108 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import detail from '../../assets/data/detail';
-import Navbar from '../../components/Navbar/Navbar';  
 import './InfoUsuarioPage.css';
+import Navbar from '../../components/Navbar/Navbar';
+import AdminComponent from '../../components/AdminComponent/admin-component.jsx';
+import LoanListComponent from '../../components/loanlist-component/LoanListComponent.jsx';
+import Footer from '../../components/Footer/Footer.jsx';
 
 const InfoUsuarioPage = () => {
-    const [selectedCategory, setSelectedCategory] = useState("all");
+    const [user, setUser] = useState({
+        name: '',
+        username: '',
+        loanBook: false
+    });
+    const [loans, setLoans] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-    const handleCategoryClick = (category) => {
-        setSelectedCategory(category);
+    useEffect(() => {
+        async function fetchUserSession() {
+            try {
+                const response = await fetch('http://localhost:4000/user', {
+                    method: 'GET',
+                    credentials: 'include'
+                });
+                const jsonData = await response.json();
+                const { name, username } = jsonData;
+                setUser({
+                    name: name,
+                    username: username,
+                    loanBook: false
+                });
+                await fetchUserLoans(username);
+            } catch (error) {
+                console.log('An error occurred: ' + error);
+            }
+        }
+
+        async function fetchUserLoans(username) {
+            try {
+                const response = await fetch(`http://localhost:4000/users/${username}/loans`, {
+                    method: 'GET',
+                    credentials: 'include'
+                });
+                const data = await response.json();
+                setLoans(data);
+            } catch (error) {
+                console.error("Error al obtener datos del API", error);
+            } finally {
+                setLoading(false);
+            }
+        }
+
+        fetchUserSession();
+        fetchUserLoans();
+    }, []);
+
+    const handleExtendReservation = async (id) => {
+        try {
+            const reserva = loans.find(r => r.id === id);
+            if (!reserva) {
+                console.error(`Reserva con ID: ${id} no encontrada`);
+                return;
+            }
+
+            const response = await fetch(`http://localhost:4000/extend/loans/${id}`, {
+                method: 'PUT',
+                credentials: 'include'
+            });
+
+            if (response.ok) {
+                await fetchUserLoans(user.id);
+                console.log(`Reserva con ID: ${id} ha sido extendida`);
+            } else {
+                console.error(`Error al extender la reserva con ID: ${id}`);
+            }
+        } catch (error) {
+            console.error(`Error al extender la reserva con ID: ${id}`, error);
+        }
     };
-
-   
-    const usuario = {
-        nombreCompleto: 'Juan Pérez',
-        codigoAlumno: '12345678',
-        tieneLibroPrestado: true,
-    };
-
-    const products = detail[1]; 
-
-    const filteredProducts = selectedCategory === "all" ? products : products.filter(product => product.category === selectedCategory);
 
     return (
-        <div className="page-container">
-            <Navbar /> {}
-            <div className="info-container">
-                <div className="info-form">
-                    <h1>Información del Usuario</h1>
-                    <p><strong>Nombre completo:</strong> {usuario.nombreCompleto}</p>
-                    <p><strong>Código de alumno:</strong> {usuario.codigoAlumno}</p>
-                    <p><strong>Libro prestado:</strong> {usuario.tieneLibroPrestado ? 'Sí' : 'No'}</p>
-
-                    <h2>Mi historial de préstamos</h2>
-                    <section className="products-list">
-                        {filteredProducts.map((product, index) => (
-                            <div className="product-item" key={index}>
-                                <Link to={`/details/${product.id}`} className="product-link">
-                                    <img src={product.image} alt={product.title} className="product-image" />
-                                </Link>
-                            </div>
-                        ))}
-                    </section>
+        <div id='userlistcontaniner'>
+            <Navbar />
+            <div className="main-content">
+                <div className='ul-admincomp'>
+                <AdminComponent />
+                <div className='user-list'>
+                    <div id='urh1'>
+                        <h1>Welcome {user.name} :D </h1>
+                    </div>
+                    <div id='uls'>
+                        <p>{user.loanBook ? 'You have loans :D' : 'You have not loans D:'} </p>
+                        <Link />
+                    </div>
+                    <div id='ulsc'>
+                        {loading ? (
+                            <p>Cargando préstamos...</p>
+                        ) : (
+                            <LoanListComponent loans={loans} onAction={handleExtendReservation} />
+                        )}
+                    </div>
+                    </div>
                 </div>
             </div>
+            <Footer />
         </div>
     );
 };

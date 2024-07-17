@@ -1,0 +1,84 @@
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #ffe4e1; 
+}
+
+.table-header,
+.table-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; 
+  align-items: center; 
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: center; 
+}
+
+.table-header {
+  background-color: #ffb6c1; 
+  color: black; 
+  font-weight: bold;
+}
+
+.table-header p,
+.table-row p {
+  flex: 1;
+  margin: 0;
+  padding: 10px; 
+  text-align: center; 
+}
+
+.table-row {
+  background-color: #ffffff; 
+  transition: background-color 0.3s; 
+}
+
+.table-row:nth-child(even) {
+  background-color: #ffe4e1; 
+}
+
+.table-row:hover {
+  background-color: #ffccd5; 
+}
+
+.table-row p {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center; 
+}
+
+.table-row button {
+  flex: 0 0 auto;
+  margin-left: 10px;
+  padding: 5px 10px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s; 
+}
+
+.table-row button:hover {
+  background-color: #0056b3; 
+}
+
+.message {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #28a745;
+  background-color: #d4edda;
+  color: #155724;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.center-text {
+  text-align: center;
+  width: 100%;
+}

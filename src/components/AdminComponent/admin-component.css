@@ -1,0 +1,41 @@
+.admin-container {
+    width: 228px;
+    height: 624px;
+    background: rgb(175, 175, 175);
+    border: 2px solid rgba(255, 255, 255, .2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    backdrop-filter: blur(30px);
+    color: #fff;
+    border-radius: 10px;
+    padding: 30px 0px 30px 0px;
+}
+
+li{
+    list-style-type: none;
+}
+
+.admin-list{
+    font-size: 16px;
+    padding: 20px 40px 0px 40px;
+}
+
+#admin-component-title{
+    font-size: 20px;
+    padding: 0px 30px 0px 30px;
+}
+
+a{
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #fff;
+    text-decoration: none;
+}
+
+a:active{
+    border-radius: 10px;
+    background: purple;
+    color: #ddd;
+}

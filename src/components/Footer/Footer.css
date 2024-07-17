@@ -1,3 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #E0E4E5;
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
 .footer {
     display: flex;
     flex-direction: column;
@@ -6,28 +32,30 @@
     background-color: #d38a8a;
     color: white;
     font-family: 'Arial', sans-serif;
+    width: 100%;
+    margin-top: auto;
 }
 
 .footer__content {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     max-width: 1200px;
+    padding: 20px 0;
 }
 
 .footer__logo {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-right: 40px;
+    margin-bottom: 20px;
 }
 
 .footer__logo__icon {
-    width: 100px;  /* Tamaño original del contenedor del logo */
+    width: 400px;
     height: auto;
-    transform: scale(2);  /* Escala la imagen del logo */
-    transform-origin: center;  /* Mantiene el logo centrado al escalar */
 }
 
 .footer__tagline {
@@ -38,15 +66,17 @@
 
 .footer__links {
     display: flex;
-    justify-content: space-between;
-    width: 60%;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
 }
 
 .footer__section {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    margin: 0 20px;
+    align-items: center;
+    margin: 10px 0;
 }
 
 .footer__section-title {
@@ -67,10 +97,10 @@
 
 .footer__social-media {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     gap: 15px;
-    margin-left: 40px;
+    margin-top: 20px;
 }
 
 .footer__social-icon__image {
@@ -88,4 +118,40 @@
     text-align: center;
     margin-top: 20px;
     width: 100%;
+}
+
+@media (min-width: 768px) {
+    .footer__content {
+        flex-direction: row;
+        padding: 20px;
+    }
+
+    .footer__logo {
+        align-items: flex-start;
+        margin-bottom: 0;
+    }
+
+    .footer__links {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 60%;
+    }
+
+    .footer__section {
+        align-items: flex-start;
+        margin: 0 20px;
+    }
+
+    .footer__social-media {
+        justify-content: flex-end;
+        margin-left: 40px;
+        margin-top: 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    .footer__logo__icon {
+        width: 100px;
+        height: auto;
+    }
 }
