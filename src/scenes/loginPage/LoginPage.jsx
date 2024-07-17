@@ -1,8 +1,8 @@
 import './LoginPage.css';
-import background from '../../assets/images/background.jpg';
 import logo from '../../assets/images/liwru-logo.png';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import { FaUser, FaLock } from 'react-icons/fa';
 
 export default function LoginPage({ onLogin }) {
     const navigate = useNavigate();
@@ -27,7 +27,7 @@ export default function LoginPage({ onLogin }) {
             });
 
             if (response.status === 200) {
-                onLogin(); // Llamar a la función onLogin cuando el inicio de sesión sea exitoso
+                onLogin();
                 navigate('/');
             } else {
                 alert('Wrong username and/or password. Try again or click forgot your password? to reset it.');
@@ -37,32 +37,47 @@ export default function LoginPage({ onLogin }) {
         }
     }
 
+    const handleSignUp = () => {
+        navigate('/register');
+    };
+
+    const handleUpdatePassword = () => {
+        navigate('/updatePwd');
+    };
+
     return (
         <main className='login-page'>
-            <div className='login-page__left-panel'>
-                <img className='login-page__left-panel__background' src={background} />
-                <div className='login-page__left-panel__transparency' />
-                <img className='login-page__left-panel__logo' src={logo} />
+            <div className='login-card'>
+                <div className='login-card__left-panel'>
+                    <div className='login-card__left-panel__transparency' />
+                    <img className='login-card__left-panel__logo' src={logo} alt='liwru logo'/>
+                </div>
+                <div className='login-card__right-panel'>
+                    <button className='login-card__right-panel__signup-button' onClick={handleSignUp}>
+                        sign up
+                    </button>
+                    <div className='login-card__right-panel__input-container'>
+                        <FaUser className='login-card__right-panel__input-icon'/>
+                        <input
+                            className='login-card__right-panel__input'
+                            placeholder='username'
+                            onChange={(e) => setUsername(e.target.value)}
+                            />
+                    </div>
+                    <div className='login-card__right-panel__input-container'>
+                        <FaLock className='login-card__right-panel__input-icon' />
+                        <input
+                            className='login-card__right-panel__input'
+                            placeholder='password'
+                            type='password'
+                            onChange={(e) => setPassword(e.target.value)}
+                            />
+                    </div>
+                    {error && <p className='login-card__right-panel__error'>{error}</p>}
+                    <button className='login-card__right-panel__forgot' onClick={handleUpdatePassword}>forgot your password?</button>
+                    <button className='login-card__right-panel__button' onClick={handleLoginWithCookies}>log in</button>
+                </div>
             </div>
-            <div className='login-page__right-panel'>
-                <input
-                    className='login-page__right-panel__input'
-                    placeholder='user id / email'
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                />
-                <input
-                    className='login-page__right-panel__input'
-                    placeholder='password'
-                    type='password'
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                />
-                {error && <p className='login-page__right-panel__error'>{error}</p>}
-                <Link className='login-page__right-panel__forgot' to='/updatePwd'>forgot your password?</Link>
-                <button className='login-page__right-panel__button' onClick={handleLoginWithCookies}>log in</button>
-                <Link className='login-page__right-panel__register' to='/register'>Register now</Link>
-            </div>
-        </main>
+            </main>
     );
 }
