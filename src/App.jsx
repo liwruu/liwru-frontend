@@ -61,13 +61,10 @@ function App() {
                     element: <DescPage />,
                 },
                 {
-<<<<<<< HEAD
                     path: '/userlist',
                     element: <UserList />,
                 },
                 {
-=======
->>>>>>> 0d9237ba6b3fed79a2d1136a938087dbddd8de88
                     path: '/categories',
                     element: <CategoriesPage />,
                 },
