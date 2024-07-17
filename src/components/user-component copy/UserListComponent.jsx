@@ -1,5 +1,5 @@
 import React from 'react';
-import LoanTable from './LoanTable.jsx';
+import LoanTable from './UserTable.jsx';
 
 function LoanListComponent({ users, onAction }) {
   return (

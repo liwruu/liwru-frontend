@@ -1,29 +1,13 @@
 import React from 'react';
 
-function UserListComponent({ user, onAction }) {
-  const handleAction = () => {
-    const action = user.state === 'Activo' ? 'Desactivar' : 'Activar';
-    onAction(user.id, action);
-  };
+const UserRow = ({ user }) => {
+    return (
+        <div className="table-row">
+            <p>{user.name}</p>
+            <p className="email-cell">{user.email}</p>
+            <p>{user.role}</p>
+        </div>
+    );
+};
 
-  return (
-    <div className="table-row" key={user.id}>
-      <p>{user.id}</p>
-      <p>{new Date(user.userDate).toLocaleDateString()}</p>
-      <p>{new Date(user.returnDate).toLocaleDateString()}</p>
-      <p>{user.loanExtension ? 'Sí' : 'No'}</p>
-      <p>{user.state}</p>
-      <p>{user.bibliographicMaterialId}</p>
-      <p>
-        {user.returnExtensionDate 
-          ? new Date(user.returnExtensionDate).toLocaleDateString() 
-          : 'N/A'}
-      </p>
-      <button onClick={handleAction}>
-        {user.state === 'Activo' ? 'Desactivar' : 'Activar'}
-      </button>
-    </div>
-  );
-}
-
-export default UserListComponent;
+export default UserRow;
