@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import axios from "../../api/axios"
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import detail from '../../assets/data/detail';
 import './InfoUsuarioPage.css';
 import Navbar from '../../components/Navbar/Navbar';
+import LoanListComponent from '../../components/loanlist-component/LoanListComponent.jsx';
 
 const InfoUsuarioPage = () => {
     const [usuario, setUsuario] = useState({
@@ -28,7 +27,7 @@ const InfoUsuarioPage = () => {
                     credentials: 'include'
                 });
                 const jsonData = await response.json();
-                const {name, id} = jsonData;
+                const { name, id } = jsonData;
                 setUsuario({
                     nombreCompleto: name,
                     codigo: id,
@@ -37,35 +36,40 @@ const InfoUsuarioPage = () => {
             } catch (error) {
                 console.log('An error occurred: ' + error);
             }
-        };
-        async function fetchUserLoans(){
+        }
+    
+        async function fetchUserLoans() {
             try {
-                const response = await axios.get(`/loans/${usuario.id}`)
-                const data = response.data;
-                setReservas(data)
-                clasificarReservas = (data)
+                const response = await fetch(`/loans/${user.id}`, {
+                    method: 'GET',
+                    credentials: 'include'
+                });
+                const data = await response.json();
+                setReservas(data);
+                clasificarReservas(data);
             } catch (error) {
                 console.error("Error al obtener datos del API", error);
             }
-        };
-
+        }
+    
         fetchUserSession();
         fetchUserLoans();
     }, []);
-
+    
     const handleExtendReservation = async (id) => {
         try {
-            // Encontrar la reserva a extender
             const reserva = reservas.find(r => r.ID === id);
             if (!reserva) {
                 console.error(`Reserva con ID: ${id} no encontrada`);
                 return;
             }
-
-            // Realizar la petición para actualizar la reserva
-            const response = await axios.put(`extend/loans/${id}`);
-            if (response.status === 200) {
-                // Actualizar la lista de reservas en el estado
+    
+            const response = await fetch(`extend/loans/${id}`, {
+                method: 'PUT',
+                credentials: 'include'
+            });
+            
+            if (response.ok) {
                 fetchUserLoans();
                 console.log(`Reserva con ID: ${id} ha sido extendida`);
             } else {
@@ -75,118 +79,42 @@ const InfoUsuarioPage = () => {
             console.error(`Error al extender la reserva con ID: ${id}`, error);
         }
     };
-
-    async function clasificarReservas(reservas) {
-        const fechaActual = new Date();
-        const activas = [];
-        const pasadas = [];
-
-        reservas.forEach(reserva => {
-            const returnDate = new Date(reserva.returnDate);
-            if (returnDate >= fechaActual || returnExtensionDate>= fechaActual) {
-                activas.push(reserva);
-            } else {
-                pasadas.push(reserva);
-            }
-        });
-
-        setReservasActivas(activas);
-        setReservasPasadas(pasadas);
-    };
+    
+    // async function clasificarReservas(reservas) {
+    //     const fechaActual = new Date();
+    //     const activas = [];
+    //     const pasadas = [];
+    
+    //     reservas.forEach(reserva => {
+    //         const returnDate = new Date(reserva.returnDate);
+    //         const returnExtensionDate = reserva.returnExtensionDate ? new Date(reserva.returnExtensionDate) : null;
+            
+    //         if (returnDate >= fechaActual || (returnExtensionDate && returnExtensionDate >= fechaActual)) {
+    //             activas.push(reserva);
+    //         } else {
+    //             pasadas.push(reserva);
+    //         }
+    //     });
+    
+    //     setReservasActivas(activas);
+    //     setReservasPasadas(pasadas);
+    // } 
   
     return (
         <div className="page-container">
-            <Navbar /> {}
+            <Navbar/>
             <div className="info-container">
                 <div className="info-form">
-                    <h1>Información del Usuario</h1>
-                    <p><strong>Nombre completo:</strong> {usuario.nombreCompleto}</p>
+                    <h1>Bienvenido {usuario.nombreCompleto} :D </h1>
                     <p><strong>Código:</strong> {usuario.codigo}</p>
-                    <p><strong>Libro prestado:</strong> {usuario.tieneLibroPrestado ? 'Sí' : 'No'}</p>
+                    <p>{usuario.tieneLibroPrestado ? 'Tienes' : 'No tienes'} libros prestados D: </p>
                     <Link to="/configUser"> Configurar Usuario </Link>
 
                     <h2>Mis Prestamos Activos</h2>
-                    <section className="reservas-activas">
-                        {reservasActivas.length > 0 ? (
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Book ID</th>
-                                        <th>User ID</th>
-                                        <th>Fecha de Prestamo</th>
-                                        <th>Fecha de Retorno</th>
-                                        <th>Extension</th>
-                                        <th>Estado</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {reservasActivas.map(reserva => (
-                                        <tr key={reserva.ID}>
-                                            <td>{reserva.ID}</td>
-                                            <td>{reserva.bibliographicMaterialId}</td>
-                                            <td>{reserva.userID}</td>
-                                            <td>{reserva.loanDate}</td>
-                                            <td>{reserva.returnDate}</td>
-                                            <td>
-                                                {(() => {
-                                                    if (reserva.returnExtensionDate == null ) {
-                                                        if(reserva.loanExtension == true){
-                                                            return (<p>No se puede extender la reserva</p>)
-                                                        }else{
-                                                            return (
-                                                            <div id="reserva-link" onClick={() => handleExtendReservation(reserva.ID)}>
-                                                            Extender Reserva
-                                                            </div>
-                                                            )
-                                                        }
-                                                    }else{
-                                                        return (
-                                                            <p>{reserva.returnExtensionDate}</p>
-                                                        )
-                                                    }
-                                                     
-                                                })()}
-                                            </td>
-                                            <td>{reserva.state}</td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
-                        ) : (
-                            <p>No hay reservas activas.</p>
-                        )}
-                    </section>
-                    <h2>Reservas Pasadas</h2>
-                    <section className="reservas-pasadas">
-                        {reservasPasadas.length > 0 ? (
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Book ID</th>
-                                        <th>User ID</th>
-                                        <th>Loan Date</th>
-                                        <th>Return Date</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {reservasPasadas.map(reserva => (
-                                        <tr key={reserva.ID}>
-                                            <td>{reserva.ID}</td>
-                                            <td>{reserva.bibliographicMaterialId}</td>
-                                            <td>{reserva.userID}</td>
-                                            <td>{reserva.loanDate}</td>
-                                            <td>{reserva.returnDate}</td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
-                        ) : (
-                            <p>No hay reservas pasadas.</p>
-                        )}
-                    </section>
                 </div>
+                <section className="reservas-activas">
+                        <LoanListComponent/>
+                </section>
             </div>
         </div>
     );
