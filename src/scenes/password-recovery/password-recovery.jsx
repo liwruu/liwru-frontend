@@ -1,51 +1,35 @@
 import React, { useState, useEffect } from 'react';
-import axios from '../../api/axios';
-import { Link, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate, Link } from 'react-router-dom';
 import background from '../../assets/images/background.jpg';
 import logo from '../../assets/images/liwru-logo.png';
-import './UpdatePwdPage.css';
+import './password-recovery.css';
 
-const UpdatePwdPage = () => {
+const PasswordRecovery = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
-  const [users, setUsers] = useState([]);
   const [message, setMessage] = useState('');
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    const fetchUsers = async () => {
-      try {
-        const response = await axios.get('/users');
-        setUsers(response.data);
-        setLoading(false);
-      } catch (error) {
-        setError('Error fetching users');
-        setLoading(false);
-      }
-    };
-
-    fetchUsers();
-  }, []);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const userExists = users.some(user => user.email.toLowerCase() === email.toLowerCase());
+    try {
+      const response = await fetch('http://localhost:4000/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
 
-    if (userExists) {
-      navigate('/updatePwd2', { state: { email } });
-    } else {
-      setMessage('This email does not exist.');
+      if (response.ok) {
+        setMessage('Email sent successfully. Check your inbox for further instructions.');
+      } else {
+        setMessage('Failed to send email. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      setMessage('An error occurred. Please try again.');
     }
   };
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return <div>{error}</div>;
-  }
 
   return (
     <main className='update-pwd-page'>
@@ -76,4 +60,4 @@ const UpdatePwdPage = () => {
   );
 };
 
-export default UpdatePwdPage;
+export default PasswordRecovery;
