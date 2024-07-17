@@ -84,7 +84,6 @@ const InfoUsuarioPage = () => {
             <div className="main-content">
                 <div className='ul-admincomp'>
                 <AdminComponent />
-                </div>
                 <div className='user-list'>
                     <div id='urh1'>
                         <h1>Welcome {user.name} :D </h1>
@@ -99,6 +98,7 @@ const InfoUsuarioPage = () => {
                         ) : (
                             <LoanListComponent loans={loans} onAction={handleExtendReservation} />
                         )}
+                    </div>
                     </div>
                 </div>
             </div>

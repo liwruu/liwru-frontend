@@ -7,7 +7,7 @@
   
   .main-content {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       width: 100%;
       padding: 20px;
     }
@@ -32,8 +32,11 @@
       text-align: left;
     }
   
-    .us-admincomp{
+    .ul-admincomp{
       margin: 20px;
+      display: flex;
+      flex-direction: row;
+
     }
   
     .user-list #uls{
