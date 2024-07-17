@@ -101,7 +101,7 @@ const ConfigUser = () => {
             <Navbar />
             <div>
                 <h2>Configuración de Usuario</h2>
-                <form onSubmit={handleSubmit}>
+                <form id='config_user' onSubmit={handleSubmit}>
                     <div>
                         <label>
                             Nombre

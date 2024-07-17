@@ -1,92 +1,109 @@
 .login-page {
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     min-height: 100vh;
+    background: url('../../assets/images/liwru-login.png') no-repeat center center;
+    background-size: cover;
+    position: relative;
 }
 
-.login-page__left-panel {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
+.login-card {
+    display: flex;
+    flex-direction: row;
     width: 50%;
+    max-width: 1200px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.login-page__left-panel__background {
-    display: block;
-    object-fit: cover;
-    object-position: 45%;
-    width: 100%;
-    height: 100%;
+.login-card__left-panel {
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('../../assets/images/background.jpg') no-repeat center center;
+    background-size: cover;
 }
 
-.login-page__left-panel__logo {
+.login-card__left-panel__transparency {
     position: absolute;
     top: 0;
-    bottom: 0;
     left: 0;
     right: 0;
-    margin: auto;
-    width: 30%;
-    height: auto;
+    bottom: 0;
+    background: rgba(225, 138, 143, 0.9);
 }
 
-.login-page__left-panel__transparency {
-    background: #E18A8F;
-    opacity: 90%;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-}
-
-.login-page__right-panel {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
+.login-card__left-panel__logo {
+    position: relative;
+    z-index: 1;
     width: 50%;
+    max-width: 200px;
+}
 
-    padding: 45vh 10% 0 10%;
-    background: #E59A9C;
-
+.login-card__right-panel {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    text-align: right;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px 40px;
+    background: #e59a9c;
+    text-align: left;
 }
 
-.login-page__right-panel__input {
-    padding: 10px;
+.login-card__right-panel__signup-button {
+    align-self: flex-end;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    background: rgba(255, 0, 0, 0.7);
+    color: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.login-card__right-panel__input-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.login-card__right-panel__input-icon {
+    margin-right: 10px;
+    color: rgba(255, 0, 0, 0.7);
+}
+
+.login-card__right-panel__input {
+    padding: 12px 20px;
     border: none;
     border-radius: 20px;
     width: 100%;
-    height: 35px;
-    box-shadow: 0 3px 5px rgba(255, 0, 0, 70%);;
+    font-size: 1rem;
+    box-shadow: 0 3px 5px rgba(255, 0, 0, 0.7);
 }
 
-.login-page__right-panel__input:focus {
+.login-card__right-panel__input:focus {
     outline: none;
 }
 
-.login-page__right-panel__forgot {
+.login-card__right-panel__forgot {
     color: white;
     font-size: 0.9rem;
+    align-self: flex-end;
+    text-decoration: none;
 }
 
-.login-page__right-panel__button {
-    padding: 10px;
+.login-card__right-panel__button {
     border: none;
-    border-radius: 20px;
+    border-radius: 25px;
     width: 100%;
-    height: 35px;
-    background: rgba(255, 0, 0, 70%);
+    background: rgba(255, 0, 0, 0.7);
     color: white;
-}
-
-.login-page__right-panel__register {
-    margin: 30px 0 0 0;
-    color: black;
-    font-size: 0.9rem;
-    text-align: center;
+    font-size: 1rem;
+    cursor: pointer;
 }
