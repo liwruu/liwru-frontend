@@ -42,7 +42,7 @@ export default function LoginPage({ onLogin }) {
     };
 
     const handleUpdatePassword = () => {
-        navigate('/updatePwd');
+        navigate('/password/recovery');
     };
 
     return (

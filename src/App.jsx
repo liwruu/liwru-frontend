@@ -5,13 +5,11 @@ import HomePage from './scenes/homePage/main/HomePage';
 import SearchPage from './components/SearchPage/main/SearchPage';
 import LoginPage from './scenes/loginPage/LoginPage';
 import RegisterPage from './scenes/registerPage/RegisterPage';
-import UpdatePwdPage from './scenes/updatePwdPage/UpdatePwdPage';
 import ReservedList from './components/ReservedList/ReservedList';
 import ConfigUser from './components/ConfigUser/ConfigUser';
 import DescPage from './scenes/DescPage/DescPage';
 import UsersList from './scenes/usersList/UsersList';
 import UserDetails from './scenes/usersDetails/usersDetails';
-import Test from './scenes/test';
 import AdminHomePage from './scenes/adminHomePage/AdminHomePage';
 import CategoriesPage from './scenes/categoriesPage/CategoriesPage';
 import ReservationMadePage from './scenes/reservationMadePage/ReservationMadePage';
@@ -21,6 +19,7 @@ import Footer from './components/Footer/Footer';
 import ReservationFormPage from './scenes/reservationFormPage/ReservationFormPage';
 import Navbar from './components/Navbar/Navbar'; 
 import './App.css';
+import PasswordRecovery from './scenes/password-recovery/password-recovery';
 
 function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -62,10 +61,6 @@ function App() {
                     element: <DescPage />,
                 },
                 {
-                    path: '/Test/',
-                    element: <Test />,
-                },
-                {
                     path: '/categories',
                     element: <CategoriesPage />,
                 },
@@ -86,10 +81,6 @@ function App() {
         {
             path: '/register',
             element: <RegisterPage />,
-        },
-        {
-            path: '/updatePwd',
-            element: <UpdatePwdPage />,
         },
         {
             path: '/reservedListAdmin',
@@ -123,6 +114,10 @@ function App() {
             path: '/administratoPage',
             element: <AdminHomePage />,
         },
+        {
+            path: '/password/recovery',
+            element: <PasswordRecovery />
+        }
     ]);
 
     return <RouterProvider router={router} />;
