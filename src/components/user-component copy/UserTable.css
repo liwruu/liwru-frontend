@@ -1,0 +1,42 @@
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.table-header,
+.table-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.table-header {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.table-header p,
+.table-row p {
+  flex: 1;
+  text-align: left;
+  margin: 0;
+  padding: 5px;
+}
+
+.table-row {
+  background-color: #fff; /* Color de fondo para las filas de la tabla */
+}
+
+.table-row p.email-cell {
+  flex: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+link {
+  color: black;
+}
