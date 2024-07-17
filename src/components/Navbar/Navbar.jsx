@@ -36,6 +36,14 @@ export default function Navbar({ isLoggedIn, onLogout }) {
         alert('Your session has been closed.');
     }
 
+    function handleAccountClick() {
+        if (isLoggedIn) {
+            navigate('/infoUsuario');
+        } else {
+            navigate('/login');
+        }
+    }
+
     return (
         <nav className='nav'>
             <Link className='nav__logo' onClick={handleClear} to='/'>
@@ -58,7 +66,7 @@ export default function Navbar({ isLoggedIn, onLogout }) {
                     <Link className={`nav__link ${location.pathname === '/administrate' ? 'selected' : ''}`} to='/'>Administrate</Link>
                 )}
                 <div className='nav__link nav__link--dropdown' onClick={toggleAccountDropdown}>
-                    My account
+                    <span onClick={handleAccountClick}>My account</span>
                     {isAccountDropdownVisible && (
                         <div className='nav__dropdown-menu'>
                             {isLoggedIn ? (
