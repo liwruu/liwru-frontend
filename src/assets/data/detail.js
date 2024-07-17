@@ -156,7 +156,7 @@ export default [
             category: "materialuniversitario", 
             title: 'Baldor',
             author: "Rosa Maria Bedoya",
-            description: "Un libro de álgebra escrito por el matemático cubano Aurelio Baldor, que ha sido una herramienta fundamental en la enseñanza de las matemáticas en América Latina.",
+            description: "Un libro de álgebra escrito por el matemático cubano Aurelio Baldor, que ha sido una herramienta fundamental en la enseñanza de las matemáticas",
             additionalDescription: 
                 `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in malesuada enim, id vehicula sem. Donec finibus finibus quam nec posuere.
                 Suspendisse et dignissim elit, ac porta tortor. Vivamus nec velit nec dui vestibulum mattis.
@@ -210,7 +210,7 @@ export default [
             pages: "200",
             title: 'Psicologia en la Sociedad',
             author: "Rosa Maria Bedoya",
-            description: "Un libro de programación orientada a objetos que cubre los fundamentos de la programación y el desarrollo de software utilizando el lenguaje ATS.",
+            description: "Un libro de programación orientada a objetos que cubre los fundamentos de la programación y el desarrollo ",
             additionalDescription: 
                 `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in malesuada enim, id vehicula sem. Donec finibus finibus quam nec posuere.
                 Suspendisse et dignissim elit, ac porta tortor. Vivamus nec velit nec dui vestibulum mattis.

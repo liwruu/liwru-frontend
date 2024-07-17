@@ -12,9 +12,9 @@ export default function Footer() {
                 <div className='footer__links'>
                     <div className='footer__section'>
                         <h4 className='footer__section-title'>account</h4>
-                        <Link className='footer__link' to='/account'>login</Link>
-                        <Link className='footer__link' to='/signup'>sign up</Link>
-                        <Link className='footer__link' to='/profile'>my profile</Link>
+                        <Link className='footer__link' to='/login'>login</Link>
+                        <Link className='footer__link' to='/register'>sign up</Link>
+                        <Link className='footer__link' to='/infoUsuario'>my profile</Link>
                     </div>
                     <div className='footer__section'>
                         <h4 className='footer__section-title'>books</h4>
