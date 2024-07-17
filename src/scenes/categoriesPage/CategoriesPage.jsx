@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import detail from '../../assets/data/detail'; 
+import detail from '../../assets/data/detail'; 
 import './CategoriesPage.css'; 
 
+export default function CategoriesPage() {
 export default function CategoriesPage() {
   const [selectedCategory, setSelectedCategory] = useState("all");
 

@@ -2,12 +2,16 @@ import { useState, useEffect } from 'react';
 import Slider from '../../../components/Slider/Slider';
 import Type from '../Type';
 import detail from '../../../assets/data/detail'; 
+import detail from '../../../assets/data/detail'; 
 import image_1 from '../../../assets/images/slider/image_1.jpg';
 import image_2 from '../../../assets/images/slider/image_2.jpg';
 import image_3 from '../../../assets/images/slider/image_3.jpg';
 import './HomePage.css';
 
 export default function HomePage() {
+    const [data, setData] = useState(detail); 
+    const staticImages = [image_1, image_2, image_3];
+    const bookItems = data[1];
     const [data, setData] = useState(detail); 
     const staticImages = [image_1, image_2, image_3];
     const bookItems = data[1];
@@ -22,6 +26,7 @@ export default function HomePage() {
 
     return (
         <main className='home-page'>
+            <Slider images={staticImages} />
             <Slider images={staticImages} />
             <section className='home-page__types'>
                 {types}

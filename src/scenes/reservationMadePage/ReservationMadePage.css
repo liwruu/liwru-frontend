@@ -6,6 +6,8 @@
     gap: 20px;
     min-height: 100vh;
     padding: 20px;
+    background-color: #E59A9C;
+    color: #302e2e;
 }
 
 .confirmation-page__header {
@@ -14,11 +16,10 @@
 
 .confirmation-page__header__title {
     font-size: 2.5rem;
-    color: #333;
+    color: #ffffff;
 }
 
 .confirmation-page__content__message {
     font-size: 1.2rem;
     color: #666;
 }
-

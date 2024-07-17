@@ -1,4 +1,5 @@
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import BackIcon from '../../assets/icons/BackIcon';
 import ForwardIcon from '../../assets/icons/ForwardIcon';
 import './Slider.css';

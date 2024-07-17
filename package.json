@@ -11,7 +11,10 @@
   },
   "dependencies": {
     "axios": "^1.7.2",
+<<<<<<< HEAD
     "bcrypt": "^5.1.1",
+=======
+>>>>>>> ecd6bfd610331ee9e21a1f603581608615433a26
     "react": "^18.2.0",
     "react-csv": "^2.2.2",
     "react-dom": "^18.2.0",

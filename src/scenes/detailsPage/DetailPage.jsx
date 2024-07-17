@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import detail from '../../assets/data/detail';
+import detail from '../../assets/data/detail';
 import './DetailPage.css';
 
 export default function DetailPage() {

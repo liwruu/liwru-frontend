@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function SearchResult(props) {
     const { id, category, title, additionalDescription, available, image } = props.data;
 
     return (
+        <Link className='search-result' to={`/details/${id}`}>
         <Link className='search-result' to={`/details/${id}`}>
             <div className='search-result__container'>
                 <div className={available ?
