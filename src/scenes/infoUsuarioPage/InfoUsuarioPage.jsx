@@ -83,7 +83,6 @@ const InfoUsuarioPage = () => {
             <Navbar />
             <div className="main-content">
                 <div className='ul-admincomp'>
-                    <AdminComponent />
                 </div>
                 <div className='user-list'>
                     <div id='urh1'>
@@ -91,6 +90,7 @@ const InfoUsuarioPage = () => {
                     </div>
                     <div id='uls'>
                         <p>{user.loanBook ? 'You have loans :D' : 'You have not loans D:'} </p>
+                        <Link />
                     </div>
                     <div id='ulsc'>
                         {loading ? (
