@@ -57,7 +57,7 @@ export default function Navbar({ isLoggedIn, onLogout }) {
                         Administrate
                         {isAdministrateDropdownVisible && (
                             <div className='nav__dropdown-menu'>
-                                <Link className='nav__dropdown-item' to='/test'>User List</Link>
+                                <Link className='nav__dropdown-item' to='/userlist'>User List</Link>
                                 <Link className='nav__dropdown-item' to='/administratoPage'>Information</Link>
                             </div>
                         )}
@@ -66,12 +66,11 @@ export default function Navbar({ isLoggedIn, onLogout }) {
                     <Link className={`nav__link ${location.pathname === '/administrate' ? 'selected' : ''}`} to='/'>Administrate</Link>
                 )}
                 <div className='nav__link nav__link--dropdown' onClick={toggleAccountDropdown}>
-                    <span onClick={handleAccountClick}>My account</span>
+                    <span>My account</span>
                     {isAccountDropdownVisible && (
                         <div className='nav__dropdown-menu'>
                             {isLoggedIn ? (
                                 <>
-                                    <Link className='nav__dropdown-item' to='/descPage'>My reservation</Link>
                                     <Link className='nav__dropdown-item' to='/infoUsuario'>User Information</Link>
                                     <button className='nav__dropdown-item' onClick={handleLogout}>Logout</button>
                                 </>

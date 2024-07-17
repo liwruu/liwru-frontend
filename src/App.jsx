@@ -9,9 +9,8 @@ import UpdatePwdPage from './scenes/updatePwdPage/UpdatePwdPage';
 import ReservedList from './components/ReservedList/ReservedList';
 import ConfigUser from './components/ConfigUser/ConfigUser';
 import DescPage from './scenes/DescPage/DescPage';
-import UsersList from './scenes/usersList/UsersList';
+import UserList from './components/userList/UserList'; 
 import UserDetails from './scenes/usersDetails/usersDetails';
-import Test from './scenes/test';
 import AdminHomePage from './scenes/adminHomePage/AdminHomePage';
 import CategoriesPage from './scenes/categoriesPage/CategoriesPage';
 import ReservationMadePage from './scenes/reservationMadePage/ReservationMadePage';
@@ -62,8 +61,8 @@ function App() {
                     element: <DescPage />,
                 },
                 {
-                    path: '/Test/',
-                    element: <Test />,
+                    path: '/userlist',
+                    element: <UserList />,
                 },
                 {
                     path: '/categories',
@@ -109,7 +108,7 @@ function App() {
         },
         {
             path: '/usersList',
-            element: <UsersList />,
+            element: <UserList />, // Corrected import path
         },
         {
             path: '/users/:username',

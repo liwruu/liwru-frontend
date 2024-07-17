@@ -219,6 +219,150 @@ export default [
                 Donec rhoncus mollis purus. Morbi quis arcu id odio rutrum porttitor. Ut molestie turpis ac ex venenatis iaculis.`,
             available: true,
             image: "https://images.cdn3.buscalibre.com/fit-in/360x360/45/9f/459f8b4d52994beb836b5eeddcdac3b0.jpg", 
+        },
+        {
+            id: 13,
+            type: 'Most Requested',
+            category: "clasicos",
+            isbn: "120839712903",
+            pages: "200",
+            title: 'Ana Frank',
+            author: "Rosa Maria Bedoya",
+            description: "Un libro de programación orientada a objetos que cubre los fundamentos de la programación y el desarrollo ",
+            additionalDescription: 
+                `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in malesuada enim, id vehicula sem. Donec finibus finibus quam nec posuere.
+                Suspendisse et dignissim elit, ac porta tortor. Vivamus nec velit nec dui vestibulum mattis.
+                Vivamus ipsum dui, aliquet auctor commodo quis, pellentesque ut nisl. Nulla cursus malesuada dolor vel luctus. Donec quis finibus dolor.
+                Curabitur ante turpis, cursus id rhoncus at, viverra ornare ipsum. Donec consectetur est non justo tempor, in pellentesque elit iaculis.
+                Donec rhoncus mollis purus. Morbi quis arcu id odio rutrum porttitor. Ut molestie turpis ac ex venenatis iaculis.`,
+            available: true,
+            image: "https://www.planetadelibros.com.pe/usuaris/libros/fotos/324/m_libros/323135_313463_portada_ana-frank_david-r-gillham_201908230016.jpg", 
+        },
+        {
+            id: 14,
+            type: 'Most Requested',
+            category: "historia",
+            isbn: "120839712903",
+            pages: "200",
+            title: 'La Ilíada',
+            author: "Rosa Maria Bedoya",
+            description: "Un libro de programación orientada a objetos que cubre los fundamentos de la programación y el desarrollo ",
+            additionalDescription: 
+                `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in malesuada enim, id vehicula sem. Donec finibus finibus quam nec posuere.
+                Suspendisse et dignissim elit, ac porta tortor. Vivamus nec velit nec dui vestibulum mattis.
+                Vivamus ipsum dui, aliquet auctor commodo quis, pellentesque ut nisl. Nulla cursus malesuada dolor vel luctus. Donec quis finibus dolor.
+                Curabitur ante turpis, cursus id rhoncus at, viverra ornare ipsum. Donec consectetur est non justo tempor, in pellentesque elit iaculis.
+                Donec rhoncus mollis purus. Morbi quis arcu id odio rutrum porttitor. Ut molestie turpis ac ex venenatis iaculis.`,
+            available: true,
+            image: "https://cdn.prod.website-files.com/6034d7d1f3e0f52c50b2adee/62542902e650b33bf6b7a912_60e710db1c3ed16b7bfff0df_9788418008962_Cub.jpeg", 
+        },
+        {
+            id: 15,
+            type: 'Most Requested',
+            category: "literatura",
+            isbn: "120839712903",
+            pages: "200",
+            title: 'Codigo da vinci',
+            author: "Rosa Maria Bedoya",
+            description: "Un libro de programación orientada a objetos que cubre los fundamentos de la programación y el desarrollo ",
+            additionalDescription: 
+                `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in malesuada enim, id vehicula sem. Donec finibus finibus quam nec posuere.
+                Suspendisse et dignissim elit, ac porta tortor. Vivamus nec velit nec dui vestibulum mattis.
+                Vivamus ipsum dui, aliquet auctor commodo quis, pellentesque ut nisl. Nulla cursus malesuada dolor vel luctus. Donec quis finibus dolor.
+                Curabitur ante turpis, cursus id rhoncus at, viverra ornare ipsum. Donec consectetur est non justo tempor, in pellentesque elit iaculis.
+                Donec rhoncus mollis purus. Morbi quis arcu id odio rutrum porttitor. Ut molestie turpis ac ex venenatis iaculis.`,
+            available: true,
+            image: "https://www.crisol.com.pe/media/catalog/product/cache/f6d2c62455a42b0d712f6c919e880845/9/7/9786124181337_fllp3eeowrjlqtt2.jpg", 
+        },
+        {
+            id: 16,
+            type: 'Most Requested',
+            category: "literatura",
+            isbn: "120839712903",
+            pages: "200",
+            title: 'habitos atómicos',
+            author: "Rosa Maria Bedoya",
+            description: "Un libro de programación orientada a objetos que cubre los fundamentos de la programación y el desarrollo ",
+            additionalDescription: 
+                `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in malesuada enim, id vehicula sem. Donec finibus finibus quam nec posuere.
+                Suspendisse et dignissim elit, ac porta tortor. Vivamus nec velit nec dui vestibulum mattis.
+                Vivamus ipsum dui, aliquet auctor commodo quis, pellentesque ut nisl. Nulla cursus malesuada dolor vel luctus. Donec quis finibus dolor.
+                Curabitur ante turpis, cursus id rhoncus at, viverra ornare ipsum. Donec consectetur est non justo tempor, in pellentesque elit iaculis.
+                Donec rhoncus mollis purus. Morbi quis arcu id odio rutrum porttitor. Ut molestie turpis ac ex venenatis iaculis.`,
+            available: true,
+            image: "https://thebookmarkpr.com/cdn/shop/products/713PN1USzXL_580x.jpg?v=1687187516", 
+        },
+        {
+            id: 17,
+            type: 'Most Requested',
+            category: "clasicos",
+            isbn: "120839712903",
+            pages: "200",
+            title: 'Padre Rico, Padre Pobre',
+            author: "Rosa Maria Bedoya",
+            description: "Un libro de programación orientada a objetos que cubre los fundamentos de la programación y el desarrollo ",
+            additionalDescription: 
+                `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in malesuada enim, id vehicula sem. Donec finibus finibus quam nec posuere.
+                Suspendisse et dignissim elit, ac porta tortor. Vivamus nec velit nec dui vestibulum mattis.
+                Vivamus ipsum dui, aliquet auctor commodo quis, pellentesque ut nisl. Nulla cursus malesuada dolor vel luctus. Donec quis finibus dolor.
+                Curabitur ante turpis, cursus id rhoncus at, viverra ornare ipsum. Donec consectetur est non justo tempor, in pellentesque elit iaculis.
+                Donec rhoncus mollis purus. Morbi quis arcu id odio rutrum porttitor. Ut molestie turpis ac ex venenatis iaculis.`,
+            available: true,
+            image: "https://www.crisol.com.pe/media/catalog/product/cache/f6d2c62455a42b0d712f6c919e880845/9/7/9786073815017_poss4m2k9zmk4w85.jpg", 
+        },
+        {
+            id: 18,
+            type: 'Most Requested',
+            category: "cienciaficcion",
+            isbn: "120839712903",
+            pages: "200",
+            title: 'Allinta munay',
+            author: "Rosa Maria Bedoya",
+            description: "Un libro de programación orientada a objetos que cubre los fundamentos de la programación y el desarrollo ",
+            additionalDescription: 
+                `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in malesuada enim, id vehicula sem. Donec finibus finibus quam nec posuere.
+                Suspendisse et dignissim elit, ac porta tortor. Vivamus nec velit nec dui vestibulum mattis.
+                Vivamus ipsum dui, aliquet auctor commodo quis, pellentesque ut nisl. Nulla cursus malesuada dolor vel luctus. Donec quis finibus dolor.
+                Curabitur ante turpis, cursus id rhoncus at, viverra ornare ipsum. Donec consectetur est non justo tempor, in pellentesque elit iaculis.
+                Donec rhoncus mollis purus. Morbi quis arcu id odio rutrum porttitor. Ut molestie turpis ac ex venenatis iaculis.`,
+            available: true,
+            image: "https://www.crisol.com.pe/media/catalog/product/cache/f6d2c62455a42b0d712f6c919e880845/9/7/9786125038135_1.jpg", 
+        },
+        {
+            id: 19,
+            type: 'Most Requested',
+            category: "cienciaficcion",
+            isbn: "120839712903",
+            pages: "200",
+            title: 'Los Ríos Profundos',
+            author: "Rosa Maria Bedoya",
+            description: "Un libro de programación orientada a objetos que cubre los fundamentos de la programación y el desarrollo ",
+            additionalDescription: 
+                `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in malesuada enim, id vehicula sem. Donec finibus finibus quam nec posuere.
+                Suspendisse et dignissim elit, ac porta tortor. Vivamus nec velit nec dui vestibulum mattis.
+                Vivamus ipsum dui, aliquet auctor commodo quis, pellentesque ut nisl. Nulla cursus malesuada dolor vel luctus. Donec quis finibus dolor.
+                Curabitur ante turpis, cursus id rhoncus at, viverra ornare ipsum. Donec consectetur est non justo tempor, in pellentesque elit iaculis.
+                Donec rhoncus mollis purus. Morbi quis arcu id odio rutrum porttitor. Ut molestie turpis ac ex venenatis iaculis.`,
+            available: true,
+            image: "https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F01693602-a85a-4852-b275-7e21274d1d7b_2000x3336.jpeg", 
+        },
+        {
+            id: 20,
+            type: 'Most Requested',
+            category: "historia",
+            isbn: "120839712903",
+            pages: "200",
+            title: 'Un mundo para Julius',
+            author: "Rosa Maria Bedoya",
+            description: "Un libro de programación orientada a objetos que cubre los fundamentos de la programación y el desarrollo ",
+            additionalDescription: 
+                `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in malesuada enim, id vehicula sem. Donec finibus finibus quam nec posuere.
+                Suspendisse et dignissim elit, ac porta tortor. Vivamus nec velit nec dui vestibulum mattis.
+                Vivamus ipsum dui, aliquet auctor commodo quis, pellentesque ut nisl. Nulla cursus malesuada dolor vel luctus. Donec quis finibus dolor.
+                Curabitur ante turpis, cursus id rhoncus at, viverra ornare ipsum. Donec consectetur est non justo tempor, in pellentesque elit iaculis.
+                Donec rhoncus mollis purus. Morbi quis arcu id odio rutrum porttitor. Ut molestie turpis ac ex venenatis iaculis.`,
+            available: true,
+            image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjVuI7QH3lyPUu44JL6iKlJvdZJT2UWJoHn5o8-zRrGC8xRjgpdR0X9Xp5FAuTM2tzqv_LVRqSk3H9MvcdArnedsn-ridhRkt1cAVpFjnDSKCwzIhYg36CxOIzuYCTAjfCh5Jwc88wQgNo/s1600/Un-mundo-para-Julius.jpg", 
         }
     ]
 ]
