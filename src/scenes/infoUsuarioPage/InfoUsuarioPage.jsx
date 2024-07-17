@@ -83,6 +83,7 @@ const InfoUsuarioPage = () => {
             <Navbar />
             <div className="main-content">
                 <div className='ul-admincomp'>
+                <AdminComponent />
                 </div>
                 <div className='user-list'>
                     <div id='urh1'>
