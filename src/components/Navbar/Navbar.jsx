@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import SearchBarIcon from '../../assets/icons/SearchBarIcon';
-import logoImage from '../../assets/images/LiwruIcon.png';
+import logoImage from '../../assets/images/liwru-logo.png';
 import './Navbar.css';
 
 export default function Navbar({ isLoggedIn, onLogout }) {

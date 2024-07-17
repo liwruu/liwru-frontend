@@ -7,7 +7,7 @@ export default function Footer() {
         <footer className='footer'>
             <div className='footer__content'>
                 <div className='footer__logo'>
-                    <img src={logoImage} alt="Logo" className='footer__logo__icon' />
+                <img className='nav__logo__icon' src={logoImage} alt="Logo" />
                 </div>
                 <div className='footer__links'>
                     <div className='footer__section'>

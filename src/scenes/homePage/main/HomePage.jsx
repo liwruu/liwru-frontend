@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import axiosInstance from '../../../api/axios';
 import Slider from '../../../components/Slider/Slider';
 import Type from '../Type';
 import detail from '../../../assets/data/detail'; 
