@@ -34,9 +34,9 @@ const UsersList = () => {
       let filteredList = users;
 
       if (filterOption === 'active') {
-        filteredList = filteredList.filter(user => user.state !== 'inactive');
+        filteredList = filteredList.filter(user => user.state !== 'Inactive');
       } else if (filterOption === 'inactive') {
-        filteredList = filteredList.filter(user => user.state === 'inactive');
+        filteredList = filteredList.filter(user => user.state === 'Inactive');
       }
 
       filteredList = filteredList.filter(user =>

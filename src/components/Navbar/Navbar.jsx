@@ -4,9 +4,10 @@ import SearchBarIcon from '../../assets/icons/SearchBarIcon';
 import logoImage from '../../assets/images/LiwruIcon.png';
 import './Navbar.css';
 
-export default function Navbar({ isLoggedIn }) {
+export default function Navbar({ isLoggedIn, onLogout }) {
     const [search, setSearch] = useState('');
-    const [isDropdownVisible, setDropdownVisible] = useState(false);
+    const [isAccountDropdownVisible, setAccountDropdownVisible] = useState(false);
+    const [isAdministrateDropdownVisible, setAdministrateDropdownVisible] = useState(false);
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -22,11 +23,17 @@ export default function Navbar({ isLoggedIn }) {
         setSearch('');
     }
 
-    function toggleDropdown() {
-        setDropdownVisible(!isDropdownVisible);
+    function toggleAccountDropdown() {
+        setAccountDropdownVisible(!isAccountDropdownVisible);
+    }
+
+    function toggleAdministrateDropdown() {
+        setAdministrateDropdownVisible(!isAdministrateDropdownVisible);
     }
 
     function handleLogout() {
+        onLogout();
+        alert('Your session has been closed.');
     }
 
     return (
@@ -37,15 +44,27 @@ export default function Navbar({ isLoggedIn }) {
             <div className='nav__links'>
                 <Link className={`nav__link ${location.pathname === '/' ? 'selected' : ''}`} to='/'>Home page</Link>
                 <Link className={`nav__link ${location.pathname === '/categories' ? 'selected' : ''}`} to='/categories'>Categories</Link>
-                <Link className={`nav__link ${location.pathname === '/services' ? 'selected' : ''}`} to='/administrate'>Administrate</Link>
-                <div className='nav__link nav__link--dropdown' onClick={toggleDropdown}>
+                {isLoggedIn ? (
+                    <div className='nav__link nav__link--dropdown' onClick={toggleAdministrateDropdown}>
+                        Administrate
+                        {isAdministrateDropdownVisible && (
+                            <div className='nav__dropdown-menu'>
+                                <Link className='nav__dropdown-item' to='/test'>User List</Link>
+                                <Link className='nav__dropdown-item' to='/administratoPage'>Information</Link>
+                            </div>
+                        )}
+                    </div>
+                ) : (
+                    <Link className={`nav__link ${location.pathname === '/administrate' ? 'selected' : ''}`} to='/'>Administrate</Link>
+                )}
+                <div className='nav__link nav__link--dropdown' onClick={toggleAccountDropdown}>
                     My account
-                    {isDropdownVisible && (
+                    {isAccountDropdownVisible && (
                         <div className='nav__dropdown-menu'>
                             {isLoggedIn ? (
                                 <>
+                                    <Link className='nav__dropdown-item' to='/descPage'>My reservation</Link>
                                     <Link className='nav__dropdown-item' to='/infoUsuario'>User Information</Link>
-                                    <Link className='nav__dropdown-item' to='/loanHistory'>Loan History</Link>
                                     <button className='nav__dropdown-item' onClick={handleLogout}>Logout</button>
                                 </>
                             ) : (
@@ -54,7 +73,7 @@ export default function Navbar({ isLoggedIn }) {
                         </div>
                     )}
                 </div>
-            </div>      
+            </div>
             <div className='nav__search-bar'>
                 <input
                     className='nav__search-bar__input'

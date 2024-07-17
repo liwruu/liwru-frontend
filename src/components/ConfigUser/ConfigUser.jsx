@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from '../../api/axios';
 import './ConfigUser.css/';
-import { useParams } from 'react-router-dom';
 import Navbar from '../../components/Navbar/Navbar';
 
 const ConfigUser = () => {
-    const { username } = useParams();
     const [user, setUser] = useState({
+        username: '',
         name: '',
         lastname: '',
         email: ''
@@ -25,8 +24,9 @@ const ConfigUser = () => {
                     credentials: 'include'
                 });
                 const jsonData = await response.json();
-                const {name, lastname, email} = jsonData;
+                const {username, name, lastname, email} = jsonData;
                 setUser({
+                    username: username,
                     name: name,
                     lastname: lastname,
                     email: email
@@ -63,42 +63,37 @@ const ConfigUser = () => {
         e.preventDefault();
 
         const jsonData = {
+            username: user.username,
             name: user.name,
             lastname: user.lastname,
             email: user.email
         };
 
         try {
-            await fetch('http://localhost:4000/users/update', {
-                method: 'PUT',
-                credentials: 'include',
-                headers: {
-                    "Content-Type": 'application/json'
-                },
-                body: JSON.stringify(jsonData)
-            });
-
+            await axios.put(`/users/${user.username}`, jsonData);
             alert('Perfil actualizado correctamente');
         } catch (error) {
             console.log('An error occurred: ' + error);
         }
     };
 
-    const handlePasswordSubmit = (e) => {
+    const handlePasswordSubmit = async (e) => {
         e.preventDefault();
         if (newPassword !== newPasswordConfirm) {
             setError('Las contraseñas no coinciden');
             return;
         }
-        axios.put(`/users/newpassword/${username}`, {
-            Password: newPassword,
-        })
-        .then(response => {
+    
+        try {
+            const response = await axios.put(`/users/newpassword/${user.username}`, {
+                password: newPassword, // Asegúrate de usar 'password' en minúsculas
+            });
             alert('Contraseña actualizada correctamente');
-        })
-        .catch(err => {
+            setError('');
+        } catch (error) {
             setError('Error actualizando la contraseña');
-        });
+            console.error('An error occurred:', error);
+        }
     };
 
     return (

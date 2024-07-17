@@ -1,0 +1,115 @@
+.update-pwd-page {
+    position: relative;
+    min-height: 100vh;
+}
+
+.update-pwd-page__left-panel {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+}
+
+.update-pwd-page__left-panel__background {
+    display: block;
+    object-fit: cover;
+    object-position: 45%;
+    width: 100%;
+    height: 100%;
+}
+
+.update-pwd-page__left-panel__logo {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 30%;
+    height: auto;
+}
+
+.update-pwd-page__left-panel__transparency {
+    background: #E18A8F;
+    opacity: 90%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.update-pwd-page__right-panel {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    padding: 95px 10% 0 10%;
+    background: #E59A9C;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    text-align: right;
+}
+
+.update-pwd-page__code {
+    background: #E59A9C;
+    color: white;
+    font-size: 1em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.update-pwd-page__form {
+    background: #E59A9C;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: none;
+    box-shadow: none;
+}
+
+.update-pwd-page__right-panel__input {
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    width: 100%;
+    height: 35px;
+    box-shadow: none;
+    background-color: #f8d7da;
+}
+
+.update-pwd-page__right-panel__input:focus {
+    outline: none;
+}
+
+.update-pwd-page__right-panel__label {
+    color: white;
+    font-size: 0.8em;
+    text-align: left;
+}
+
+.update-pwd-page__right-panel__button {
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    width: 100%;
+    height: 35px;
+    background: rgba(255, 0, 0, 70%);
+    color: white;
+}
+
+.update-pwd-page__right-panel__register {
+    margin: 30px 0 0 0;
+    color: black;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.update-pwd-page__right-panel__message2 {
+    color: red;
+    text-align: left;
+}

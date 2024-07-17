@@ -1,11 +1,10 @@
-import './LoginPage.css'
-import background from '../../assets/images/background.jpg'
-import logo from '../../assets/images/liwru-logo.png'
-import {Link, useNavigate} from 'react-router-dom';
+import './LoginPage.css';
+import background from '../../assets/images/background.jpg';
+import logo from '../../assets/images/liwru-logo.png';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import axiosInstance from '../../api/axios';
 
-export default function LoginPage() {
+export default function LoginPage({ onLogin }) {
     const navigate = useNavigate();
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -14,7 +13,7 @@ export default function LoginPage() {
     async function handleLoginWithCookies() {
         const jsonData = {
             username: username,
-            password: password
+            password: password,
         };
 
         try {
@@ -22,13 +21,17 @@ export default function LoginPage() {
                 method: 'POST',
                 credentials: 'include',
                 headers: {
-                    "Content-Type": 'application/json'
+                    'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(jsonData)
+                body: JSON.stringify(jsonData),
             });
 
-            if (response.status === 200) navigate('/');
-            else alert('Wrong username and/or password. Try again or click forgot your password? to reset it.')
+            if (response.status === 200) {
+                onLogin(); // Llamar a la función onLogin cuando el inicio de sesión sea exitoso
+                navigate('/');
+            } else {
+                alert('Wrong username and/or password. Try again or click forgot your password? to reset it.');
+            }
         } catch (error) {
             console.log('An error occurred: ' + error);
         }
