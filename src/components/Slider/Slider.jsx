@@ -2,7 +2,7 @@ import {useEffect, useState} from 'react';
 import BackIcon from '../../assets/icons/BackIcon';
 import ForwardIcon from '../../assets/icons/ForwardIcon';
 import './Slider.css';
-import LiwruBackground from '../../assets/images/LiwruBackground.jpeg';
+import LiwruBackground from '../../assets/images/liwru-slider.png';
 
 export default function Slider() {
     const slides = [LiwruBackground];
