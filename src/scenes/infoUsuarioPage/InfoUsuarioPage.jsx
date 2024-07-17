@@ -1,23 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './InfoUsuarioPage.css';
 import Navbar from '../../components/Navbar/Navbar';
+import AdminComponent from '../../components/AdminComponent/admin-component.jsx';
 import LoanListComponent from '../../components/loanlist-component/LoanListComponent.jsx';
+import Footer from '../../components/Footer/Footer.jsx';
 
 const InfoUsuarioPage = () => {
-    const [usuario, setUsuario] = useState({
-        nombreCompleto: '',
-        codigo: '',
-        tieneLibroPrestado: false
+    const [user, setUser] = useState({
+        name: '',
+        username: '',
+        loanBook: false
     });
-    const [reservas, setReservas] = useState([]);
-    const [reservasActivas, setReservasActivas] = useState([]);
-    const [reservasPasadas, setReservasPasadas] = useState([]);
-    const [selectedCategory, setSelectedCategory] = useState("all");
-
-    const handleCategoryClick = (category) => {
-        setSelectedCategory(category);
-    };
+    const [loans, setLoans] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         async function fetchUserSession() {
@@ -27,50 +23,52 @@ const InfoUsuarioPage = () => {
                     credentials: 'include'
                 });
                 const jsonData = await response.json();
-                const { name, id } = jsonData;
-                setUsuario({
-                    nombreCompleto: name,
-                    codigo: id,
-                    tieneLibroPrestado: false
+                const { name, username } = jsonData;
+                setUser({
+                    name: name,
+                    username: username,
+                    loanBook: false
                 });
+                await fetchUserLoans(username);
             } catch (error) {
                 console.log('An error occurred: ' + error);
             }
         }
-    
-        async function fetchUserLoans() {
+
+        async function fetchUserLoans(username) {
             try {
-                const response = await fetch(`/loans/${user.id}`, {
+                const response = await fetch(`http://localhost:4000/users/${username}/loans`, {
                     method: 'GET',
                     credentials: 'include'
                 });
                 const data = await response.json();
-                setReservas(data);
-                clasificarReservas(data);
+                setLoans(data);
             } catch (error) {
                 console.error("Error al obtener datos del API", error);
+            } finally {
+                setLoading(false);
             }
         }
-    
+
         fetchUserSession();
         fetchUserLoans();
     }, []);
-    
+
     const handleExtendReservation = async (id) => {
         try {
-            const reserva = reservas.find(r => r.ID === id);
+            const reserva = loans.find(r => r.id === id);
             if (!reserva) {
                 console.error(`Reserva con ID: ${id} no encontrada`);
                 return;
             }
-    
-            const response = await fetch(`extend/loans/${id}`, {
+
+            const response = await fetch(`http://localhost:4000/extend/loans/${id}`, {
                 method: 'PUT',
                 credentials: 'include'
             });
-            
+
             if (response.ok) {
-                fetchUserLoans();
+                await fetchUserLoans(user.id);
                 console.log(`Reserva con ID: ${id} ha sido extendida`);
             } else {
                 console.error(`Error al extender la reserva con ID: ${id}`);
@@ -79,43 +77,31 @@ const InfoUsuarioPage = () => {
             console.error(`Error al extender la reserva con ID: ${id}`, error);
         }
     };
-    
-    // async function clasificarReservas(reservas) {
-    //     const fechaActual = new Date();
-    //     const activas = [];
-    //     const pasadas = [];
-    
-    //     reservas.forEach(reserva => {
-    //         const returnDate = new Date(reserva.returnDate);
-    //         const returnExtensionDate = reserva.returnExtensionDate ? new Date(reserva.returnExtensionDate) : null;
-            
-    //         if (returnDate >= fechaActual || (returnExtensionDate && returnExtensionDate >= fechaActual)) {
-    //             activas.push(reserva);
-    //         } else {
-    //             pasadas.push(reserva);
-    //         }
-    //     });
-    
-    //     setReservasActivas(activas);
-    //     setReservasPasadas(pasadas);
-    // } 
-  
-    return (
-        <div className="page-container">
-            <Navbar/>
-            <div className="info-container">
-                <div className="info-form">
-                    <h1>Bienvenido {usuario.nombreCompleto} :D </h1>
-                    <p><strong>Código:</strong> {usuario.codigo}</p>
-                    <p>{usuario.tieneLibroPrestado ? 'Tienes' : 'No tienes'} libros prestados D: </p>
-                    <Link to="/configUser"> Configurar Usuario </Link>
 
-                    <h2>Mis Prestamos Activos</h2>
+    return (
+        <div id='userlistcontaniner'>
+            <Navbar />
+            <div className="main-content">
+                <div className='ul-admincomp'>
+                    <AdminComponent />
                 </div>
-                <section className="reservas-activas">
-                        <LoanListComponent/>
-                </section>
+                <div className='user-list'>
+                    <div id='urh1'>
+                        <h1>Welcome {user.name} :D </h1>
+                    </div>
+                    <div id='uls'>
+                        <p>{user.loanBook ? 'You have loans :D' : 'You have not loans D:'} </p>
+                    </div>
+                    <div id='ulsc'>
+                        {loading ? (
+                            <p>Cargando préstamos...</p>
+                        ) : (
+                            <LoanListComponent loans={loans} onAction={handleExtendReservation} />
+                        )}
+                    </div>
+                </div>
             </div>
+            <Footer />
         </div>
     );
 };

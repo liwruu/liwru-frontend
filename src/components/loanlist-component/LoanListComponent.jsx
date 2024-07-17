@@ -3,7 +3,7 @@ import LoanTable from './LoanTable.jsx';
 
 function LoanListComponent({ loans, onAction }) {
   return (
-    <LoanTable loan={loans} onAction={onAction} />
+    <LoanTable loans={loans} onAction={onAction} />
   );
 }
 

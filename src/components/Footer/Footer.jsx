@@ -1,4 +1,4 @@
-import logoImage from '../../assets/images/slider/image_4_logo.png';
+import logoImage from '../../assets/images/liwru-logo.png';
 import { Link } from 'react-router-dom';
 import './Footer.css';
 
@@ -8,7 +8,6 @@ export default function Footer() {
             <div className='footer__content'>
                 <div className='footer__logo'>
                     <img src={logoImage} alt="Logo" className='footer__logo__icon' />
-                    <span className='footer__tagline'>kind of a library</span>
                 </div>
                 <div className='footer__links'>
                     <div className='footer__section'>
