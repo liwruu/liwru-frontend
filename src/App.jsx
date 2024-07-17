@@ -17,6 +17,7 @@ import CategoriesPage from './scenes/categoriesPage/CategoriesPage';
 import ReservationMadePage from './scenes/reservationMadePage/ReservationMadePage';
 import DetailPage from './scenes/detailsPage/DetailPage';
 import InfoUsuarioPage from './scenes/infoUsuarioPage/InfoUsuarioPage'; 
+import Footer from './components/Footer/Footer';
 import ReservationFormPage from './scenes/reservationFormPage/ReservationFormPage';
 import Navbar from './components/Navbar/Navbar'; 
 import './App.css';
@@ -34,8 +35,53 @@ function App() {
 
     const router = createBrowserRouter([
         {
+            path: '/',
+            element: (
+                <>
+                    <Navbar isLoggedIn={isLoggedIn} onLogout={handleLogout} />
+                    <Outlet />
+                    <Footer />
+                </>
+            ),
+            errorElement: <ErrorPage />,
+            children: [
+                {
+                    path: '/',
+                    element: <HomePage />,
+                },
+                {
+                    path: '/searchPage/:searchQuery',
+                    element: <SearchPage />,
+                },
+                {
+                    path: '/reservationMadePage/',
+                    element: <ReservationMadePage />,
+                },
+                {
+                    path: '/DescPage/',
+                    element: <DescPage />,
+                },
+                {
+                    path: '/Test/',
+                    element: <Test />,
+                },
+                {
+                    path: '/categories',
+                    element: <CategoriesPage />,
+                },
+                {
+                    path: '/ReservationForm',
+                    element: <ReservationFormPage />,
+                },
+                {
+                    path: '/details/:detailId',
+                    element: <DetailPage />,
+                },
+            ],
+        },
+        {
             path: '/login',
-            element: <LoginPage onLogin={handleLogin} />, 
+            element: <LoginPage onLogin={handleLogin} />,
         },
         {
             path: '/register',
@@ -76,50 +122,6 @@ function App() {
         {
             path: '/administratoPage',
             element: <AdminHomePage />,
-        },
-        {
-            path: '/',
-            element: (
-                <>
-                    <Navbar isLoggedIn={isLoggedIn} onLogout={handleLogout} />
-                    <Outlet />
-                </>
-            ),
-            errorElement: <ErrorPage />,
-            children: [
-                {
-                    path: '/',
-                    element: <HomePage />,
-                },
-                {
-                    path: '/searchPage/:searchQuery',
-                    element: <SearchPage />,
-                },
-                {
-                    path: '/reservationMadePage/',
-                    element: <ReservationMadePage />,
-                },
-                {
-                    path: '/DescPage/',
-                    element: <DescPage />,
-                },
-                {
-                    path: '/Test/',
-                    element: <Test />,
-                },
-                {
-                    path: '/categories',
-                    element: <CategoriesPage />,
-                },
-                {
-                    path: '/ReservationForm',
-                    element: <ReservationFormPage />,
-                },
-                {
-                    path: '/details/:detailId',
-                    element: <DetailPage />,
-                },
-            ],
         },
     ]);
 
